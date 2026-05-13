@@ -1,0 +1,28 @@
+data:
+  cache_dir: './data/chunked_context4096'
+
+teacher_model:
+  name: 'Qwen/Qwen2.5-1.5B-Instruct'
+
+student_model:
+  name: 'gdn_v4'
+  keep_full_attention_layers: [0, 1, 11, 13, 21, 25, 27]
+
+train:
+  target_tokens: 600_000_000
+  batch_size: 32
+  micro_batch_size: 4
+  train_seq_len: 4096
+  lr_scheduler_type: constant
+  lr: 0.000007
+  lr_attn: 0.0001
+  max_grad_norm: 1.0
+  output_dir: './checkpoints/ar_baseline_stage2'
+  student_init_ckpt: './checkpoints/ar_baseline_stage1/converted-hf'
+  gradient_checkpointing: true
+  save_steps: 500
+  save_total_limit: 9999
+  add_eos_token: false
+  resume_from_checkpoint: None
+
+stage: 2
