@@ -1,0 +1,11 @@
+teacher_model:
+  # FLA-converted teacher (run convert/convert_from_qwen2.5.py first if not present)
+  name: './teachers/Qwen2.5-1.5b-Instruct'
+
+student_model:
+  name: 'gdn_v4'
+  # 25% full attention layers kept (7 out of 28)
+  keep_full_attention_layers: [0, 4, 8, 12, 16, 20, 24]
+
+train:
+  output_dir: 'output/qwen2_1_5b_gdn_v4'

@@ -1,0 +1,71 @@
+Loading teacher: meta-llama/Llama-3.2-3B-Instruct
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:00<00:00,  1.06it/s]Loading checkpoint shards: 100%|██████████| 2/2 [00:01<00:00,  1.79it/s]Loading checkpoint shards: 100%|██████████| 2/2 [00:01<00:00,  1.62it/s]
+Computing baseline PPL (no bypass)...
+Generating test split:   0%|          | 0/4358 [00:00<?, ? examples/s]Generating test split: 100%|██████████| 4358/4358 [00:00<00:00, 358935.23 examples/s]
+Generating train split:   0%|          | 0/36718 [00:00<?, ? examples/s]Generating train split: 100%|██████████| 36718/36718 [00:00<00:00, 980270.99 examples/s]
+Generating validation split:   0%|          | 0/3760 [00:00<?, ? examples/s]Generating validation split: 100%|██████████| 3760/3760 [00:00<00:00, 613378.83 examples/s]
+Token indices sequence length is longer than the specified maximum sequence length for this model (289077 > 131072). Running this sequence through the model will result in indexing errors
+  Baseline PPL = 11.05
+  Probing layer 0... PPL=129.36  delta=+118.31  (7.2s)
+  Probing layer 1... PPL=45.03  delta=+33.98  (7.1s)
+  Probing layer 2... PPL=11.81  delta=+0.76  (7.1s)
+  Probing layer 3... PPL=12.05  delta=+1.00  (7.1s)
+  Probing layer 4... PPL=11.57  delta=+0.52  (7.3s)
+  Probing layer 5... PPL=11.49  delta=+0.44  (7.2s)
+  Probing layer 6... PPL=11.31  delta=+0.26  (7.1s)
+  Probing layer 7... PPL=12.00  delta=+0.95  (7.0s)
+  Probing layer 8... PPL=11.15  delta=+0.10  (7.2s)
+  Probing layer 9... PPL=11.71  delta=+0.66  (7.0s)
+  Probing layer 10... PPL=11.52  delta=+0.47  (7.0s)
+  Probing layer 11... PPL=11.61  delta=+0.56  (7.0s)
+  Probing layer 12... PPL=11.76  delta=+0.71  (7.0s)
+  Probing layer 13... PPL=12.16  delta=+1.11  (7.1s)
+  Probing layer 14... PPL=11.93  delta=+0.88  (7.0s)
+  Probing layer 15... PPL=11.83  delta=+0.78  (7.2s)
+  Probing layer 16... PPL=11.65  delta=+0.60  (7.0s)
+  Probing layer 17... PPL=11.43  delta=+0.38  (7.0s)
+  Probing layer 18... PPL=11.26  delta=+0.21  (7.2s)
+  Probing layer 19... PPL=11.45  delta=+0.40  (7.0s)
+  Probing layer 20... PPL=11.37  delta=+0.32  (7.0s)
+  Probing layer 21... PPL=11.23  delta=+0.18  (7.0s)
+  Probing layer 22... PPL=11.38  delta=+0.33  (7.0s)
+  Probing layer 23... PPL=11.42  delta=+0.37  (7.1s)
+  Probing layer 24... PPL=11.52  delta=+0.47  (7.1s)
+  Probing layer 25... PPL=11.84  delta=+0.79  (7.1s)
+  Probing layer 26... PPL=11.52  delta=+0.47  (7.1s)
+  Probing layer 27... PPL=12.18  delta=+1.13  (7.1s)
+
+============================================================
+  RANKING (higher delta = more important to keep as softmax)
+============================================================
+  # 1  Layer  0  PPL_bypass=129.36  delta=+118.31
+  # 2  Layer  1  PPL_bypass=45.03  delta=+33.98
+  # 3  Layer 27  PPL_bypass=12.18  delta=+1.13
+  # 4  Layer 13  PPL_bypass=12.16  delta=+1.11
+  # 5  Layer  3  PPL_bypass=12.05  delta=+1.00
+  # 6  Layer  7  PPL_bypass=12.00  delta=+0.95
+  # 7  Layer 14  PPL_bypass=11.93  delta=+0.88
+  # 8  Layer 25  PPL_bypass=11.84  delta=+0.79
+  # 9  Layer 15  PPL_bypass=11.83  delta=+0.78
+  #10  Layer  2  PPL_bypass=11.81  delta=+0.76
+  #11  Layer 12  PPL_bypass=11.76  delta=+0.71
+  #12  Layer  9  PPL_bypass=11.71  delta=+0.66
+  #13  Layer 16  PPL_bypass=11.65  delta=+0.60
+  #14  Layer 11  PPL_bypass=11.61  delta=+0.56
+  #15  Layer  4  PPL_bypass=11.57  delta=+0.52
+  #16  Layer 24  PPL_bypass=11.52  delta=+0.47
+  #17  Layer 26  PPL_bypass=11.52  delta=+0.47
+  #18  Layer 10  PPL_bypass=11.52  delta=+0.47
+  #19  Layer  5  PPL_bypass=11.49  delta=+0.44
+  #20  Layer 19  PPL_bypass=11.45  delta=+0.40
+  #21  Layer 17  PPL_bypass=11.43  delta=+0.38
+  #22  Layer 23  PPL_bypass=11.42  delta=+0.37
+  #23  Layer 22  PPL_bypass=11.38  delta=+0.33
+  #24  Layer 20  PPL_bypass=11.37  delta=+0.32
+  #25  Layer  6  PPL_bypass=11.31  delta=+0.26
+  #26  Layer 18  PPL_bypass=11.26  delta=+0.21
+  #27  Layer 21  PPL_bypass=11.23  delta=+0.18
+  #28  Layer  8  PPL_bypass=11.15  delta=+0.10
+
+  Top-14 layers: [0, 1, 2, 3, 7, 9, 11, 12, 13, 14, 15, 16, 25, 27]
+  Saved to /home/charlie/Taylor-Distill/results/zeroshot_llama3b_50pct/ar_lmppl/gpu0.json

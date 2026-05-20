@@ -1,0 +1,132 @@
+{
+  "results": [
+    {
+      "layer": 0,
+      "ppl": 1167230.375,
+      "init_time": 67.42588257789612,
+      "eval_time": 70.89188170433044
+    },
+    {
+      "layer": 1,
+      "ppl": 4207336.5,
+      "init_time": 64.11675930023193,
+      "eval_time": 10.986573934555054
+    },
+    {
+      "layer": 2,
+      "ppl": 3534131.5,
+      "init_time": 63.76058340072632,
+      "eval_time": 10.754745960235596
+    },
+    {
+      "layer": 3,
+      "ppl": 6361734.0,
+      "init_time": 64.64586520195007,
+      "eval_time": 10.511520862579346
+    },
+    {
+      "layer": 4,
+      "ppl": 6194158.5,
+      "init_time": 63.28795146942139,
+      "eval_time": 10.438758373260498
+    },
+    {
+      "layer": 5,
+      "ppl": 8516920.0,
+      "init_time": 63.067075967788696,
+      "eval_time": 9.844876289367676
+    },
+    {
+      "layer": 6,
+      "ppl": 11061580.0,
+      "init_time": 63.289347887039185,
+      "eval_time": 10.160892963409424
+    },
+    {
+      "layer": 7,
+      "ppl": 6030727.0,
+      "init_time": 64.3987135887146,
+      "eval_time": 9.451391220092773
+    },
+    {
+      "layer": 8,
+      "ppl": 8179799.0,
+      "init_time": 64.10770153999329,
+      "eval_time": 9.600404262542725
+    },
+    {
+      "layer": 9,
+      "ppl": 6955830.0,
+      "init_time": 64.68578696250916,
+      "eval_time": 9.494484424591064
+    }
+  ],
+  "ranking": [
+    {
+      "rank": 1,
+      "layer": 0,
+      "ppl": 1167230.375
+    },
+    {
+      "rank": 2,
+      "layer": 2,
+      "ppl": 3534131.5
+    },
+    {
+      "rank": 3,
+      "layer": 1,
+      "ppl": 4207336.5
+    },
+    {
+      "rank": 4,
+      "layer": 7,
+      "ppl": 6030727.0
+    },
+    {
+      "rank": 5,
+      "layer": 4,
+      "ppl": 6194158.5
+    },
+    {
+      "rank": 6,
+      "layer": 3,
+      "ppl": 6361734.0
+    },
+    {
+      "rank": 7,
+      "layer": 9,
+      "ppl": 6955830.0
+    },
+    {
+      "rank": 8,
+      "layer": 8,
+      "ppl": 8179799.0
+    },
+    {
+      "rank": 9,
+      "layer": 5,
+      "ppl": 8516920.0
+    },
+    {
+      "rank": 10,
+      "layer": 6,
+      "ppl": 11061580.0
+    }
+  ],
+  "top_k": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    7,
+    9
+  ],
+  "config": {
+    "teacher": "/data/shared/charlie/converted_teachers/Qwen2.5-1.5b-Instruct",
+    "hf_teacher": "Qwen/Qwen2.5-1.5B-Instruct",
+    "student": "gdn_v4",
+    "strategy": "baseline",
+    "top_k": 7
+  }
+}

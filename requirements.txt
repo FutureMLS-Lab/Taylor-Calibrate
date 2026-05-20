@@ -1,0 +1,10 @@
+torch>=2.1.0
+transformers>=4.40.0
+datasets
+accelerate
+deepspeed
+safetensors
+omegaconf
+pyyaml
+fla
+lm-eval==0.4.11

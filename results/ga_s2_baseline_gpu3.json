@@ -1,0 +1,121 @@
+{
+  "results": [
+    {
+      "layer": 19,
+      "ppl": 4455031.0,
+      "init_time": 70.42074179649353,
+      "eval_time": 70.8819522857666
+    },
+    {
+      "layer": 20,
+      "ppl": 5323763.0,
+      "init_time": 66.57663989067078,
+      "eval_time": 9.13561224937439
+    },
+    {
+      "layer": 21,
+      "ppl": 5693796.5,
+      "init_time": 66.07612299919128,
+      "eval_time": 9.582040548324585
+    },
+    {
+      "layer": 22,
+      "ppl": 3288685.75,
+      "init_time": 66.1063163280487,
+      "eval_time": 9.207700967788696
+    },
+    {
+      "layer": 23,
+      "ppl": 4527112.5,
+      "init_time": 65.72923445701599,
+      "eval_time": 8.873560905456543
+    },
+    {
+      "layer": 24,
+      "ppl": 8148134.5,
+      "init_time": 65.49024677276611,
+      "eval_time": 10.080979108810425
+    },
+    {
+      "layer": 25,
+      "ppl": 2945668.5,
+      "init_time": 65.75383710861206,
+      "eval_time": 9.894983530044556
+    },
+    {
+      "layer": 26,
+      "ppl": 1977058.875,
+      "init_time": 65.98499917984009,
+      "eval_time": 9.82058572769165
+    },
+    {
+      "layer": 27,
+      "ppl": 3212154.25,
+      "init_time": 67.1914734840393,
+      "eval_time": 9.487161874771118
+    }
+  ],
+  "ranking": [
+    {
+      "rank": 1,
+      "layer": 26,
+      "ppl": 1977058.875
+    },
+    {
+      "rank": 2,
+      "layer": 25,
+      "ppl": 2945668.5
+    },
+    {
+      "rank": 3,
+      "layer": 27,
+      "ppl": 3212154.25
+    },
+    {
+      "rank": 4,
+      "layer": 22,
+      "ppl": 3288685.75
+    },
+    {
+      "rank": 5,
+      "layer": 19,
+      "ppl": 4455031.0
+    },
+    {
+      "rank": 6,
+      "layer": 23,
+      "ppl": 4527112.5
+    },
+    {
+      "rank": 7,
+      "layer": 20,
+      "ppl": 5323763.0
+    },
+    {
+      "rank": 8,
+      "layer": 21,
+      "ppl": 5693796.5
+    },
+    {
+      "rank": 9,
+      "layer": 24,
+      "ppl": 8148134.5
+    }
+  ],
+  "top_k": [
+    19,
+    20,
+    22,
+    23,
+    25,
+    26,
+    27
+  ],
+  "config": {
+    "teacher": "/data/shared/charlie/converted_teachers/Qwen2.5-1.5b-Instruct",
+    "hf_teacher": "Qwen/Qwen2.5-1.5B-Instruct",
+    "student": "gdn_v4",
+    "strategy": "baseline",
+    "top_k": 7
+  }
+}

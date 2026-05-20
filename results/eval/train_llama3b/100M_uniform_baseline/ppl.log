@@ -1,0 +1,19 @@
+Current Python version 3.10 is below the recommended 3.11 version. It is recommended to upgrade to Python 3.11 or higher for the best experience.
+torch.compile is not available in Python 3.10, using identity decorator instead
+The tokenizer you are loading from '/data/shared/gdn_training/checkpoints_llama3b/uniform_baseline_stage1/converted-hf' with an incorrect regex pattern: https://huggingface.co/mistralai/Mistral-Small-3.1-24B-Instruct-2503/discussions/84#69121093e8b480e709447d5e. This will lead to incorrect tokenization. You should set the `fix_mistral_regex=True` flag when loading this tokenizer to fix this issue.
+Loading model from /data/shared/gdn_training/checkpoints_llama3b/uniform_baseline_stage1/converted-hf
+/home/charlie/anaconda3/envs/taylor/lib/python3.10/site-packages/fla/layers/gated_deltanet.py:191: UserWarning: ShortConvolution is crucial to the performance. Do not turn it off, i.e., setting `use_short_conv=False` unless you know what you are doing.
+  warnings.warn(
+Model loaded. Evaluating PPL on wikitext2 (seqlen=2048)...
+Token indices sequence length is longer than the specified maximum sequence length for this model (289077 > 131072). Running this sequence through the model will result in indexing errors
+  chunk 20/141: PPL=22.62
+  chunk 40/141: PPL=20.39
+  chunk 60/141: PPL=20.84
+  chunk 80/141: PPL=20.41
+  chunk 100/141: PPL=20.77
+  chunk 120/141: PPL=20.41
+  chunk 140/141: PPL=20.70
+
+==================================================
+Wikitext2 PPL = 20.74
+==================================================

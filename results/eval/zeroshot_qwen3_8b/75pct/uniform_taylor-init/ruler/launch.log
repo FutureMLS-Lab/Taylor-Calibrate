@@ -1,0 +1,71 @@
+==============================================
+ RULER Long-Context Evaluation
+==============================================
+  Model:       /data/shared/charlie/zeroshot_qwen3_8b_75pct/uniform/taylor-init
+  Tasks:       ruler
+  Seq lengths: 4096
+  GPUs:        4
+  Batch size:  4
+  Output:      /home/charlie/Taylor-Distill/eval_results/zeroshot_qwen3_8b_75pct/uniform_taylor-init/ruler
+==============================================
+
+>>> Evaluating at max_seq_length = 4096
+-------------------------------------------
+2026-04-05:10:01:57 INFO     [_cli.run:376] Selected Tasks: ['ruler']
+2026-04-05:10:01:57 INFO     [evaluator:211] Setting random seed to 0 | Setting numpy seed to 0 | Setting torch manual seed to 0 | Setting fewshot manual seed to 0
+2026-04-05:10:01:57 INFO     [evaluator:236] Initializing hf model, with arguments: {'pretrained': '/data/shared/charlie/zeroshot_qwen3_8b_75pct/uniform/taylor-init', 'dtype': 'bfloat16', 'trust_remote_code': True, 'max_length': 4096}
+2026-04-05:10:01:57 INFO     [models.huggingface:161] Using device 'cuda'
+Traceback (most recent call last):
+  File "/home/charlie/miniconda3/envs/taylor/lib/python3.12/site-packages/transformers/tokenization_utils_base.py", line 2260, in _from_pretrained
+    tokenizer = cls(*init_inputs, **init_kwargs)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/charlie/miniconda3/envs/taylor/lib/python3.12/site-packages/transformers/models/qwen2/tokenization_qwen2.py", line 172, in __init__
+    with open(vocab_file, encoding="utf-8") as vocab_handle:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: expected str, bytes or os.PathLike object, not NoneType
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/charlie/Taylor-Distill/eval/harness.py", line 266, in <module>
+    cli_evaluate()
+  File "/home/charlie/miniconda3/envs/taylor/lib/python3.12/site-packages/lm_eval/__main__.py", line 10, in cli_evaluate
+    parser.execute(args)
+  File "/home/charlie/miniconda3/envs/taylor/lib/python3.12/site-packages/lm_eval/_cli/harness.py", line 60, in execute
+    args.func(args)
+  File "/home/charlie/miniconda3/envs/taylor/lib/python3.12/site-packages/lm_eval/_cli/run.py", line 379, in _execute
+    results = simple_evaluate(
+              ^^^^^^^^^^^^^^^^
+  File "/home/charlie/miniconda3/envs/taylor/lib/python3.12/site-packages/lm_eval/utils.py", line 498, in _wrapper
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/charlie/miniconda3/envs/taylor/lib/python3.12/site-packages/lm_eval/evaluator.py", line 239, in simple_evaluate
+    lm = lm_eval.api.registry.get_model(model).create_from_arg_obj(
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/charlie/miniconda3/envs/taylor/lib/python3.12/site-packages/lm_eval/api/model.py", line 180, in create_from_arg_obj
+    return cls(**arg_dict, **additional_config)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/charlie/miniconda3/envs/taylor/lib/python3.12/site-packages/lm_eval/models/huggingface.py", line 204, in __init__
+    self._create_tokenizer(
+  File "/home/charlie/miniconda3/envs/taylor/lib/python3.12/site-packages/lm_eval/models/huggingface.py", line 793, in _create_tokenizer
+    self.tokenizer = transformers.AutoTokenizer.from_pretrained(
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/charlie/miniconda3/envs/taylor/lib/python3.12/site-packages/transformers/models/auto/tokenization_auto.py", line 1069, in from_pretrained
+    return tokenizer_class_fast.from_pretrained(pretrained_model_name_or_path, *inputs, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/charlie/miniconda3/envs/taylor/lib/python3.12/site-packages/transformers/tokenization_utils_base.py", line 2014, in from_pretrained
+    return cls._from_pretrained(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/charlie/miniconda3/envs/taylor/lib/python3.12/site-packages/transformers/tokenization_utils_base.py", line 2052, in _from_pretrained
+    slow_tokenizer = (cls.slow_tokenizer_class)._from_pretrained(
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/charlie/miniconda3/envs/taylor/lib/python3.12/site-packages/transformers/tokenization_utils_base.py", line 2261, in _from_pretrained
+    except import_protobuf_decode_error():
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/charlie/miniconda3/envs/taylor/lib/python3.12/site-packages/transformers/tokenization_utils_base.py", line 87, in import_protobuf_decode_error
+    raise ImportError(PROTOBUF_IMPORT_ERROR.format(error_message))
+ImportError: 
+ requires the protobuf library but it was not found in your environment. Check out the instructions on the
+installation page of its repo: https://github.com/protocolbuffers/protobuf/tree/master/python#installation and follow the ones
+that match your environment. Please note that you may need to restart your runtime after installation.
+

@@ -1,0 +1,15 @@
+Loading model from meta-llama/Llama-3.2-3B-Instruct
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards: 100%|██████████| 2/2 [00:00<00:00, 122.38it/s]
+Model loaded. Evaluating PPL on wikitext2 (seqlen=2048)...
+Token indices sequence length is longer than the specified maximum sequence length for this model (289077 > 131072). Running this sequence through the model will result in indexing errors
+  chunk 20/141: PPL=11.56
+  chunk 40/141: PPL=10.61
+  chunk 60/141: PPL=10.91
+  chunk 80/141: PPL=10.75
+  chunk 100/141: PPL=11.14
+  chunk 120/141: PPL=11.05
+  chunk 140/141: PPL=11.04
+
+==================================================
+Wikitext2 PPL = 11.05
+==================================================
