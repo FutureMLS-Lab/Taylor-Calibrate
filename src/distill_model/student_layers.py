@@ -173,6 +173,12 @@ class GatedDeltaNetStudentV4(GatedDeltaNet):
         logger.info(f"GDN V4 layer {self.layer_idx} init from teacher done.")
 
 
+from fla.layers.gated_deltanet import (
+    chunk_gated_delta_rule, fused_recurrent_gated_delta_rule,
+)
+from fla.layers.utils import get_layer_cache, get_unpad_data, index_first_axis, pad_input, update_layer_cache
+
+
 class GatedDeltaNetStudentV4NoSilu(GatedDeltaNet):
     """V4 variant that removes SiLU from Q/K/V projections."""
     def __init__(self, config, layer_idx: int):
@@ -187,12 +193,6 @@ class GatedDeltaNetStudentV4NoSilu(GatedDeltaNet):
 
     def forward(self, hidden_states, attention_mask=None, past_key_values=None,
                 use_cache=False, output_attentions=False, **kwargs):
-        from einops import rearrange, repeat
-        from fla.layers.gated_deltanet import (
-            chunk_gated_delta_rule, fused_recurrent_gated_delta_rule,
-        )
-        from fla.layers.utils import get_layer_cache, get_unpad_data, index_first_axis, pad_input, update_layer_cache
-
         if attention_mask is not None:
             assert len(attention_mask.shape) == 2
 

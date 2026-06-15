@@ -2,7 +2,7 @@ data:
   cache_dir: './data/chunked_context512'
 
 teacher_model:
-  name: './teachers/Qwen2.5-1.5b-Instruct'
+  name: './teachers/Qwen2.5-1.5B-Instruct'
 
 student_model:
   name: 'gdn_v4'

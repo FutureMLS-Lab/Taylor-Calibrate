@@ -180,7 +180,7 @@ class SecondOrderQwen2Attention(nn.Module):
                 valid_t,
                 self._cached_state,
             )
-            attn_output = context.transpose(1, 2).contiguous().reshape(batch, 1, -1)
+            attn_output = context.reshape(batch, 1, -1)
         else:
             states = self._allocate_states(batch, query_states.device, query_states.dtype)
             outputs = []

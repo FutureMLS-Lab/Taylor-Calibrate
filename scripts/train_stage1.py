@@ -28,6 +28,13 @@ from transformers import (
     AutoConfig, AutoTokenizer, AutoModelForCausalLM, TrainingArguments, Trainer
 )
 
+import fla  # noqa: F401
+from fla.models.transformer.configuration_transformer import TransformerConfig
+from fla.models.transformer.modeling_transformer import TransformerForCausalLM
+
+AutoConfig.register('transformer', TransformerConfig, exist_ok=True)
+AutoModelForCausalLM.register(TransformerConfig, TransformerForCausalLM, exist_ok=True)
+
 from distill_model.config_distilled_student import StudentConfig
 from distill_model.modeling_distilled_student import (
     StudentForCausalLM, get_student_attention_class

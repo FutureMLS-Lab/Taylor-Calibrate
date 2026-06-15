@@ -182,8 +182,10 @@ After Stage 2, an instruction SFT pass on a chat-format dataset.
 
 ```bash
 torchrun --nproc_per_node=8 scripts/sft.py \
-    --cfg configs/qwen2_1.5b/uniform_calibrate_sft.yaml
+    --cfg configs/<model>/uniform_calibrate_sft.yaml
 ```
+
+> **Note:** No SFT config is shipped in this repo. Create one following the Stage 2 YAML layout, replacing `student_init_ckpt` with the Stage 2 final dir and adding a `sft_dataset` field.
 
 The default config streams a chat-format dataset, applies the tokenizer's chat template, and masks all non-assistant tokens (`-100`) so cross-entropy is computed only on assistant responses.
 

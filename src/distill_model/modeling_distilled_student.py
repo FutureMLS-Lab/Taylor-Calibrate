@@ -15,15 +15,16 @@ from transformers.modeling_utils import PreTrainedModel
 from transformers.utils import logging
 from transformers.utils.deprecation import deprecate_kwarg
 
+from distill_model.config_distilled_student import StudentConfig
+import importlib
+
 if torch.cuda.is_available():
     from fla.layers.attn import Attention as _FLAAttention
-    from distill_model.config_distilled_student import StudentConfig
     from fla.models.utils import Cache
     from fla.modules import FusedCrossEntropyLoss, FusedLinearCrossEntropyLoss
     from fla.modules import RMSNorm
     from fla.modules.mlp import SwiGLULinear, swiglu
     from fla.modules.fused_kl_div import fused_kl_div_loss
-    import importlib
 
     class Attention(_FLAAttention):
         """Extended FLA Attention that accepts explicit head_dim for models
@@ -112,8 +113,8 @@ class StudentMLP(nn.Module):
         if self.fuse_swiglu:
             return self.swiglu_linear(
                 gate, y,
-                self.down_proj.weight.data.clone(),
-                self.down_proj.bias.data.clone() if self.down_proj.bias is not None else None
+                self.down_proj.weight,
+                self.down_proj.bias if self.down_proj.bias is not None else None
             )
         else:
             return self.down_proj(swiglu(gate, y))
@@ -429,7 +430,7 @@ class StudentForCausalLM(StudentPreTrainedModel, GenerationMixin):
     ):
         if past_key_values is not None and len(past_key_values) > 0:
             input_ids = input_ids[:, -1:]
-        if inputs_embeds is not None and len(past_key_values) == 0:
+        if inputs_embeds is not None and (past_key_values is None or len(past_key_values) == 0):
             model_inputs = {'inputs_embeds': inputs_embeds}
         else:
             model_inputs = {'input_ids': input_ids.contiguous()}
