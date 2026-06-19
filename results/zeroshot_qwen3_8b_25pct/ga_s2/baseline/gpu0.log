@@ -1,0 +1,340 @@
+Strategy: baseline
+Teacher (FLA): /data/shared/charlie/converted_teachers/Qwen3-8B
+Teacher (HF):  Qwen/Qwen3-8B
+
+============================================================
+  Probing layer 0 | strategy=baseline
+============================================================
+Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:  25%|██▌       | 1/4 [00:00<00:01,  1.52it/s]Loading checkpoint shards:  50%|█████     | 2/4 [00:01<00:01,  1.18it/s]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:02<00:00,  1.20it/s]Loading checkpoint shards: 100%|██████████| 4/4 [00:02<00:00,  1.59it/s]
+/home/charlie/miniconda3/envs/taylor/lib/python3.12/site-packages/fla/layers/gated_deltanet.py:191: UserWarning: ShortConvolution is crucial to the performance. Do not turn it off, i.e., setting `use_short_conv=False` unless you know what you are doing.
+  warnings.warn(
+  Init (baseline) done in 328.9s
+Token indices sequence length is longer than the specified maximum sequence length for this model (299078 > 131072). Running this sequence through the model will result in indexing errors
+  Layer 0: PPL = 23050972.00  (eval 93.3s)
+
+============================================================
+  Probing layer 1 | strategy=baseline
+============================================================
+Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards: 100%|██████████| 4/4 [00:00<00:00, 142.24it/s]
+/home/charlie/miniconda3/envs/taylor/lib/python3.12/site-packages/fla/layers/gated_deltanet.py:191: UserWarning: ShortConvolution is crucial to the performance. Do not turn it off, i.e., setting `use_short_conv=False` unless you know what you are doing.
+  warnings.warn(
+  Init (baseline) done in 303.1s
+Token indices sequence length is longer than the specified maximum sequence length for this model (299078 > 131072). Running this sequence through the model will result in indexing errors
+  Layer 1: PPL = 130160952.00  (eval 13.6s)
+
+============================================================
+  Probing layer 2 | strategy=baseline
+============================================================
+Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards: 100%|██████████| 4/4 [00:00<00:00, 145.41it/s]
+  Init (baseline) done in 300.9s
+Token indices sequence length is longer than the specified maximum sequence length for this model (299078 > 131072). Running this sequence through the model will result in indexing errors
+  Layer 2: PPL = 49997416.00  (eval 13.7s)
+
+============================================================
+  Probing layer 3 | strategy=baseline
+============================================================
+Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards: 100%|██████████| 4/4 [00:00<00:00, 142.23it/s]
+  Init (baseline) done in 303.8s
+Token indices sequence length is longer than the specified maximum sequence length for this model (299078 > 131072). Running this sequence through the model will result in indexing errors
+  Layer 3: PPL = 24180398.00  (eval 13.6s)
+
+============================================================
+  Probing layer 4 | strategy=baseline
+============================================================
+Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards: 100%|██████████| 4/4 [00:00<00:00, 145.80it/s]
+  Init (baseline) done in 304.1s
+Token indices sequence length is longer than the specified maximum sequence length for this model (299078 > 131072). Running this sequence through the model will result in indexing errors
+  Layer 4: PPL = 128373432.00  (eval 18.6s)
+
+============================================================
+  Probing layer 5 | strategy=baseline
+============================================================
+Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards: 100%|██████████| 4/4 [00:00<00:00, 133.78it/s]
+  Init (baseline) done in 301.3s
+Token indices sequence length is longer than the specified maximum sequence length for this model (299078 > 131072). Running this sequence through the model will result in indexing errors
+  Layer 5: PPL = 102343152.00  (eval 14.0s)
+
+============================================================
+  Probing layer 6 | strategy=baseline
+============================================================
+Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards: 100%|██████████| 4/4 [00:00<00:00, 145.42it/s]
+  Init (baseline) done in 300.3s
+Token indices sequence length is longer than the specified maximum sequence length for this model (299078 > 131072). Running this sequence through the model will result in indexing errors
+  Layer 6: PPL = 62338012.00  (eval 14.5s)
+
+============================================================
+  Probing layer 7 | strategy=baseline
+============================================================
+Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards: 100%|██████████| 4/4 [00:00<00:00, 137.49it/s]
+  Init (baseline) done in 300.3s
+Token indices sequence length is longer than the specified maximum sequence length for this model (299078 > 131072). Running this sequence through the model will result in indexing errors
+  Layer 7: PPL = 21478370.00  (eval 14.3s)
+
+============================================================
+  Probing layer 8 | strategy=baseline
+============================================================
+Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards: 100%|██████████| 4/4 [00:00<00:00, 120.37it/s]
+  Init (baseline) done in 300.6s
+Token indices sequence length is longer than the specified maximum sequence length for this model (299078 > 131072). Running this sequence through the model will result in indexing errors
+  Layer 8: PPL = 60570424.00  (eval 14.0s)
+
+============================================================
+  Probing layer 9 | strategy=baseline
+============================================================
+Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards: 100%|██████████| 4/4 [00:00<00:00, 146.11it/s]
+  Init (baseline) done in 300.0s
+Token indices sequence length is longer than the specified maximum sequence length for this model (299078 > 131072). Running this sequence through the model will result in indexing errors
+  Layer 9: PPL = 26503738.00  (eval 13.5s)
+
+============================================================
+  Probing layer 10 | strategy=baseline
+============================================================
+Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards: 100%|██████████| 4/4 [00:00<00:00, 115.90it/s]
+  Init (baseline) done in 300.6s
+Token indices sequence length is longer than the specified maximum sequence length for this model (299078 > 131072). Running this sequence through the model will result in indexing errors
+  Layer 10: PPL = 43291940.00  (eval 14.0s)
+
+============================================================
+  Probing layer 11 | strategy=baseline
+============================================================
+Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards: 100%|██████████| 4/4 [00:00<00:00, 143.14it/s]
+  Init (baseline) done in 301.4s
+Token indices sequence length is longer than the specified maximum sequence length for this model (299078 > 131072). Running this sequence through the model will result in indexing errors
+  Layer 11: PPL = 86558328.00  (eval 14.0s)
+
+============================================================
+  Probing layer 12 | strategy=baseline
+============================================================
+Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards: 100%|██████████| 4/4 [00:00<00:00, 154.71it/s]
+  Init (baseline) done in 299.4s
+Token indices sequence length is longer than the specified maximum sequence length for this model (299078 > 131072). Running this sequence through the model will result in indexing errors
+  Layer 12: PPL = 42131204.00  (eval 15.7s)
+
+============================================================
+  Probing layer 13 | strategy=baseline
+============================================================
+Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards: 100%|██████████| 4/4 [00:00<00:00, 158.50it/s]
+  Init (baseline) done in 304.0s
+Token indices sequence length is longer than the specified maximum sequence length for this model (299078 > 131072). Running this sequence through the model will result in indexing errors
+  Layer 13: PPL = 46280372.00  (eval 15.1s)
+
+============================================================
+  Probing layer 14 | strategy=baseline
+============================================================
+Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards: 100%|██████████| 4/4 [00:00<00:00, 154.27it/s]
+  Init (baseline) done in 299.5s
+Token indices sequence length is longer than the specified maximum sequence length for this model (299078 > 131072). Running this sequence through the model will result in indexing errors
+  Layer 14: PPL = 72480720.00  (eval 14.3s)
+
+============================================================
+  Probing layer 15 | strategy=baseline
+============================================================
+Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards: 100%|██████████| 4/4 [00:00<00:00, 130.25it/s]
+  Init (baseline) done in 298.6s
+Token indices sequence length is longer than the specified maximum sequence length for this model (299078 > 131072). Running this sequence through the model will result in indexing errors
+  Layer 15: PPL = 35958320.00  (eval 13.4s)
+
+============================================================
+  Probing layer 16 | strategy=baseline
+============================================================
+Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards: 100%|██████████| 4/4 [00:00<00:00, 151.45it/s]
+  Init (baseline) done in 299.9s
+Token indices sequence length is longer than the specified maximum sequence length for this model (299078 > 131072). Running this sequence through the model will result in indexing errors
+  Layer 16: PPL = 42352932.00  (eval 13.8s)
+
+============================================================
+  Probing layer 17 | strategy=baseline
+============================================================
+Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards: 100%|██████████| 4/4 [00:00<00:00, 149.40it/s]
+  Init (baseline) done in 303.7s
+Token indices sequence length is longer than the specified maximum sequence length for this model (299078 > 131072). Running this sequence through the model will result in indexing errors
+  Layer 17: PPL = 57202832.00  (eval 13.6s)
+
+============================================================
+  Probing layer 18 | strategy=baseline
+============================================================
+Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards: 100%|██████████| 4/4 [00:00<00:00, 69.09it/s]
+  Init (baseline) done in 307.0s
+Token indices sequence length is longer than the specified maximum sequence length for this model (299078 > 131072). Running this sequence through the model will result in indexing errors
+  Layer 18: PPL = 18352756.00  (eval 13.8s)
+
+============================================================
+  Probing layer 19 | strategy=baseline
+============================================================
+Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards: 100%|██████████| 4/4 [00:00<00:00, 141.48it/s]
+  Init (baseline) done in 304.5s
+Token indices sequence length is longer than the specified maximum sequence length for this model (299078 > 131072). Running this sequence through the model will result in indexing errors
+  Layer 19: PPL = 48745976.00  (eval 14.3s)
+
+============================================================
+  Probing layer 20 | strategy=baseline
+============================================================
+Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards: 100%|██████████| 4/4 [00:00<00:00, 107.73it/s]
+  Init (baseline) done in 301.8s
+Token indices sequence length is longer than the specified maximum sequence length for this model (299078 > 131072). Running this sequence through the model will result in indexing errors
+  Layer 20: PPL = 127523680.00  (eval 14.2s)
+
+============================================================
+  Probing layer 21 | strategy=baseline
+============================================================
+Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards: 100%|██████████| 4/4 [00:00<00:00, 121.07it/s]
+  Init (baseline) done in 301.3s
+Token indices sequence length is longer than the specified maximum sequence length for this model (299078 > 131072). Running this sequence through the model will result in indexing errors
+  Layer 21: PPL = 47695308.00  (eval 15.1s)
+
+============================================================
+  Probing layer 22 | strategy=baseline
+============================================================
+Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards: 100%|██████████| 4/4 [00:00<00:00, 142.15it/s]
+  Init (baseline) done in 303.6s
+Token indices sequence length is longer than the specified maximum sequence length for this model (299078 > 131072). Running this sequence through the model will result in indexing errors
+  Layer 22: PPL = 52357280.00  (eval 14.4s)
+
+============================================================
+  Probing layer 23 | strategy=baseline
+============================================================
+Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards: 100%|██████████| 4/4 [00:00<00:00, 115.12it/s]
+  Init (baseline) done in 316.0s
+Token indices sequence length is longer than the specified maximum sequence length for this model (299078 > 131072). Running this sequence through the model will result in indexing errors
+  Layer 23: PPL = 69991928.00  (eval 16.2s)
+
+============================================================
+  Probing layer 24 | strategy=baseline
+============================================================
+Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards: 100%|██████████| 4/4 [00:00<00:00, 63.06it/s]
+  Init (baseline) done in 501.8s
+Token indices sequence length is longer than the specified maximum sequence length for this model (299078 > 131072). Running this sequence through the model will result in indexing errors
+  Layer 24: PPL = 35098492.00  (eval 18.1s)
+
+============================================================
+  Probing layer 25 | strategy=baseline
+============================================================
+Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards: 100%|██████████| 4/4 [00:00<00:00, 47.97it/s]
+  Init (baseline) done in 341.1s
+Token indices sequence length is longer than the specified maximum sequence length for this model (299078 > 131072). Running this sequence through the model will result in indexing errors
+  Layer 25: PPL = 54641032.00  (eval 14.0s)
+
+============================================================
+  Probing layer 26 | strategy=baseline
+============================================================
+Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards: 100%|██████████| 4/4 [00:00<00:00, 140.87it/s]
+  Init (baseline) done in 299.3s
+Token indices sequence length is longer than the specified maximum sequence length for this model (299078 > 131072). Running this sequence through the model will result in indexing errors
+  Layer 26: PPL = 153778336.00  (eval 14.4s)
+
+============================================================
+  Probing layer 27 | strategy=baseline
+============================================================
+Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards: 100%|██████████| 4/4 [00:00<00:00, 141.32it/s]
+  Init (baseline) done in 298.3s
+Token indices sequence length is longer than the specified maximum sequence length for this model (299078 > 131072). Running this sequence through the model will result in indexing errors
+  Layer 27: PPL = 22156066.00  (eval 15.2s)
+
+============================================================
+  Probing layer 28 | strategy=baseline
+============================================================
+Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards: 100%|██████████| 4/4 [00:00<00:00, 142.82it/s]
+  Init (baseline) done in 299.6s
+Token indices sequence length is longer than the specified maximum sequence length for this model (299078 > 131072). Running this sequence through the model will result in indexing errors
+  Layer 28: PPL = 156610768.00  (eval 14.0s)
+
+============================================================
+  Probing layer 29 | strategy=baseline
+============================================================
+Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards: 100%|██████████| 4/4 [00:00<00:00, 140.73it/s]
+  Init (baseline) done in 438.8s
+Token indices sequence length is longer than the specified maximum sequence length for this model (299078 > 131072). Running this sequence through the model will result in indexing errors
+  Layer 29: PPL = 54703596.00  (eval 19.9s)
+
+============================================================
+  Probing layer 30 | strategy=baseline
+============================================================
+Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards: 100%|██████████| 4/4 [00:00<00:00, 38.24it/s]Loading checkpoint shards: 100%|██████████| 4/4 [00:00<00:00, 38.09it/s]
+  Init (baseline) done in 413.1s
+Token indices sequence length is longer than the specified maximum sequence length for this model (299078 > 131072). Running this sequence through the model will result in indexing errors
+  Layer 30: PPL = 48667380.00  (eval 15.2s)
+
+============================================================
+  Probing layer 31 | strategy=baseline
+============================================================
+Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards: 100%|██████████| 4/4 [00:00<00:00, 119.64it/s]
+  Init (baseline) done in 300.3s
+Token indices sequence length is longer than the specified maximum sequence length for this model (299078 > 131072). Running this sequence through the model will result in indexing errors
+  Layer 31: PPL = 77858120.00  (eval 13.9s)
+
+============================================================
+  Probing layer 32 | strategy=baseline
+============================================================
+Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards: 100%|██████████| 4/4 [00:00<00:00, 147.06it/s]
+  Init (baseline) done in 299.3s
+Token indices sequence length is longer than the specified maximum sequence length for this model (299078 > 131072). Running this sequence through the model will result in indexing errors
+  Layer 32: PPL = 400541792.00  (eval 14.0s)
+
+============================================================
+  Probing layer 33 | strategy=baseline
+============================================================
+Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards: 100%|██████████| 4/4 [00:00<00:00, 139.34it/s]
+  Init (baseline) done in 300.6s
+Token indices sequence length is longer than the specified maximum sequence length for this model (299078 > 131072). Running this sequence through the model will result in indexing errors
+  Layer 33: PPL = 140341616.00  (eval 13.6s)
+
+============================================================
+  Probing layer 34 | strategy=baseline
+============================================================
+Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards: 100%|██████████| 4/4 [00:00<00:00, 141.94it/s]
+  Init (baseline) done in 457.4s
+Token indices sequence length is longer than the specified maximum sequence length for this model (299078 > 131072). Running this sequence through the model will result in indexing errors
+  Layer 34: PPL = 3329312.00  (eval 23.8s)
+
+============================================================
+  Probing layer 35 | strategy=baseline
+============================================================
+Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:00<00:00, 16.47it/s]Loading checkpoint shards: 100%|██████████| 4/4 [00:00<00:00, 20.88it/s]
+  Init (baseline) done in 387.7s
+Token indices sequence length is longer than the specified maximum sequence length for this model (299078 > 131072). Running this sequence through the model will result in indexing errors
+  Layer 35: PPL = 1065097.88  (eval 14.0s)
+
+============================================================
+  RANKING [baseline] (lower PPL = more important to keep)
+============================================================
+  # 1  Layer 35  PPL = 1065097.88
+  # 2  Layer 34  PPL = 3329312.00
+  # 3  Layer 18  PPL = 18352756.00
+  # 4  Layer  7  PPL = 21478370.00
+  # 5  Layer 27  PPL = 22156066.00
+  # 6  Layer  0  PPL = 23050972.00
+  # 7  Layer  3  PPL = 24180398.00
+  # 8  Layer  9  PPL = 26503738.00
+  # 9  Layer 24  PPL = 35098492.00
+  #10  Layer 15  PPL = 35958320.00
+  #11  Layer 12  PPL = 42131204.00
+  #12  Layer 16  PPL = 42352932.00
+  #13  Layer 10  PPL = 43291940.00
+  #14  Layer 13  PPL = 46280372.00
+  #15  Layer 21  PPL = 47695308.00
+  #16  Layer 30  PPL = 48667380.00
+  #17  Layer 19  PPL = 48745976.00
+  #18  Layer  2  PPL = 49997416.00
+  #19  Layer 22  PPL = 52357280.00
+  #20  Layer 25  PPL = 54641032.00
+  #21  Layer 29  PPL = 54703596.00
+  #22  Layer 17  PPL = 57202832.00
+  #23  Layer  8  PPL = 60570424.00
+  #24  Layer  6  PPL = 62338012.00
+  #25  Layer 23  PPL = 69991928.00
+  #26  Layer 14  PPL = 72480720.00
+  #27  Layer 31  PPL = 77858120.00
+  #28  Layer 11  PPL = 86558328.00
+  #29  Layer  5  PPL = 102343152.00
+  #30  Layer 20  PPL = 127523680.00
+  #31  Layer  4  PPL = 128373432.00
+  #32  Layer  1  PPL = 130160952.00
+  #33  Layer 33  PPL = 140341616.00
+  #34  Layer 26  PPL = 153778336.00
+  #35  Layer 28  PPL = 156610768.00
+  #36  Layer 32  PPL = 400541792.00
+
+  Top-9 layers (sorted): [0, 3, 7, 9, 18, 24, 27, 34, 35]
+  keep_full_attention_layers: [0, 3, 7, 9, 18, 24, 27, 34, 35]
+
+  Results saved to /home/charlie/Taylor-Distill/results/zeroshot_qwen3_8b_25pct/ga_s2/baseline/gpu0.json

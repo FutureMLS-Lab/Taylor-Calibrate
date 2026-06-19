@@ -1,0 +1,36 @@
+Traceback (most recent call last):
+  File "/home/charlie/miniconda3/envs/taylor/lib/python3.12/site-packages/transformers/tokenization_utils_base.py", line 2260, in _from_pretrained
+    tokenizer = cls(*init_inputs, **init_kwargs)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/charlie/miniconda3/envs/taylor/lib/python3.12/site-packages/transformers/models/qwen2/tokenization_qwen2.py", line 172, in __init__
+    with open(vocab_file, encoding="utf-8") as vocab_handle:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: expected str, bytes or os.PathLike object, not NoneType
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/charlie/Taylor-Distill/scripts/quick_ppl_eval.py", line 117, in <module>
+    main()
+  File "/home/charlie/Taylor-Distill/scripts/quick_ppl_eval.py", line 99, in main
+    tokenizer = AutoTokenizer.from_pretrained(tok_path)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/charlie/miniconda3/envs/taylor/lib/python3.12/site-packages/transformers/models/auto/tokenization_auto.py", line 1069, in from_pretrained
+    return tokenizer_class_fast.from_pretrained(pretrained_model_name_or_path, *inputs, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/charlie/miniconda3/envs/taylor/lib/python3.12/site-packages/transformers/tokenization_utils_base.py", line 2014, in from_pretrained
+    return cls._from_pretrained(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/charlie/miniconda3/envs/taylor/lib/python3.12/site-packages/transformers/tokenization_utils_base.py", line 2052, in _from_pretrained
+    slow_tokenizer = (cls.slow_tokenizer_class)._from_pretrained(
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/charlie/miniconda3/envs/taylor/lib/python3.12/site-packages/transformers/tokenization_utils_base.py", line 2261, in _from_pretrained
+    except import_protobuf_decode_error():
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/charlie/miniconda3/envs/taylor/lib/python3.12/site-packages/transformers/tokenization_utils_base.py", line 87, in import_protobuf_decode_error
+    raise ImportError(PROTOBUF_IMPORT_ERROR.format(error_message))
+ImportError: 
+ requires the protobuf library but it was not found in your environment. Check out the instructions on the
+installation page of its repo: https://github.com/protocolbuffers/protobuf/tree/master/python#installation and follow the ones
+that match your environment. Please note that you may need to restart your runtime after installation.
+

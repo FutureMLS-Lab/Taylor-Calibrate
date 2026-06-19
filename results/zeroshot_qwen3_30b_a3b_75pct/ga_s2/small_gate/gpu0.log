@@ -1,0 +1,494 @@
+Strategy: small_gate
+Teacher (FLA): /data/shared/charlie/converted_teachers/Qwen3-30B-A3B
+Teacher (HF):  Qwen/Qwen3-30B-A3B
+
+============================================================
+  Probing layer 0 | strategy=small_gate
+============================================================
+Loading checkpoint shards:   0%|          | 0/12 [00:00<?, ?it/s]Loading checkpoint shards:  17%|█▋        | 2/12 [00:00<00:01,  7.87it/s]Loading checkpoint shards:  25%|██▌       | 3/12 [00:00<00:01,  6.67it/s]Loading checkpoint shards:  33%|███▎      | 4/12 [00:00<00:01,  6.19it/s]Loading checkpoint shards:  42%|████▏     | 5/12 [00:00<00:01,  5.40it/s]Loading checkpoint shards:  50%|█████     | 6/12 [00:01<00:01,  5.04it/s]Loading checkpoint shards:  58%|█████▊    | 7/12 [00:01<00:01,  4.42it/s]Loading checkpoint shards:  67%|██████▋   | 8/12 [00:01<00:01,  3.92it/s]Loading checkpoint shards:  75%|███████▌  | 9/12 [00:01<00:00,  3.76it/s]Loading checkpoint shards:  83%|████████▎ | 10/12 [00:02<00:00,  3.39it/s]Loading checkpoint shards:  92%|█████████▏| 11/12 [00:02<00:00,  3.81it/s]Loading checkpoint shards: 100%|██████████| 12/12 [00:02<00:00,  4.68it/s]
+/home/charlie/miniconda3/envs/taylor/lib/python3.12/site-packages/fla/layers/gated_deltanet.py:191: UserWarning: ShortConvolution is crucial to the performance. Do not turn it off, i.e., setting `use_short_conv=False` unless you know what you are doing.
+  warnings.warn(
+  Scaled g_proj by 0.02 in 47 GDN layers
+  Init (small_gate) done in 1164.9s
+Token indices sequence length is longer than the specified maximum sequence length for this model (299078 > 131072). Running this sequence through the model will result in indexing errors
+  Layer 0: PPL = 1024571.06  (eval 248.0s)
+
+============================================================
+  Probing layer 1 | strategy=small_gate
+============================================================
+Loading checkpoint shards:   0%|          | 0/12 [00:00<?, ?it/s]Loading checkpoint shards:  17%|█▋        | 2/12 [00:00<00:01,  7.35it/s]Loading checkpoint shards:  25%|██▌       | 3/12 [00:00<00:01,  6.09it/s]Loading checkpoint shards:  33%|███▎      | 4/12 [00:00<00:01,  5.58it/s]Loading checkpoint shards:  42%|████▏     | 5/12 [00:00<00:01,  4.78it/s]Loading checkpoint shards:  50%|█████     | 6/12 [00:01<00:01,  4.45it/s]Loading checkpoint shards:  58%|█████▊    | 7/12 [00:01<00:01,  3.83it/s]Loading checkpoint shards:  67%|██████▋   | 8/12 [00:01<00:01,  3.39it/s]Loading checkpoint shards:  75%|███████▌  | 9/12 [00:02<00:00,  3.26it/s]Loading checkpoint shards:  83%|████████▎ | 10/12 [00:02<00:00,  2.90it/s]Loading checkpoint shards:  92%|█████████▏| 11/12 [00:02<00:00,  3.29it/s]Loading checkpoint shards: 100%|██████████| 12/12 [00:02<00:00,  4.08it/s]
+  Scaled g_proj by 0.02 in 47 GDN layers
+  Init (small_gate) done in 1153.7s
+Token indices sequence length is longer than the specified maximum sequence length for this model (299078 > 131072). Running this sequence through the model will result in indexing errors
+  Layer 1: PPL = 928858.44  (eval 224.8s)
+
+============================================================
+  Probing layer 2 | strategy=small_gate
+============================================================
+Loading checkpoint shards:   0%|          | 0/12 [00:00<?, ?it/s]Loading checkpoint shards:   8%|▊         | 1/12 [00:00<00:01,  9.31it/s]Loading checkpoint shards:  17%|█▋        | 2/12 [00:00<00:01,  6.78it/s]Loading checkpoint shards:  25%|██▌       | 3/12 [00:00<00:01,  5.83it/s]Loading checkpoint shards:  33%|███▎      | 4/12 [00:00<00:01,  5.38it/s]Loading checkpoint shards:  42%|████▏     | 5/12 [00:00<00:01,  4.71it/s]Loading checkpoint shards:  50%|█████     | 6/12 [00:01<00:01,  4.37it/s]Loading checkpoint shards:  58%|█████▊    | 7/12 [00:01<00:01,  3.81it/s]Loading checkpoint shards:  67%|██████▋   | 8/12 [00:01<00:01,  3.36it/s]Loading checkpoint shards:  75%|███████▌  | 9/12 [00:02<00:00,  3.21it/s]Loading checkpoint shards:  83%|████████▎ | 10/12 [00:02<00:00,  2.87it/s]Loading checkpoint shards:  92%|█████████▏| 11/12 [00:02<00:00,  3.26it/s]Loading checkpoint shards: 100%|██████████| 12/12 [00:02<00:00,  4.06it/s]
+  Scaled g_proj by 0.02 in 47 GDN layers
+  Init (small_gate) done in 1122.1s
+Token indices sequence length is longer than the specified maximum sequence length for this model (299078 > 131072). Running this sequence through the model will result in indexing errors
+  Layer 2: PPL = 985796.94  (eval 231.3s)
+
+============================================================
+  Probing layer 3 | strategy=small_gate
+============================================================
+Loading checkpoint shards:   0%|          | 0/12 [00:00<?, ?it/s]Loading checkpoint shards:   8%|▊         | 1/12 [00:00<00:01,  9.82it/s]Loading checkpoint shards:  17%|█▋        | 2/12 [00:00<00:01,  6.88it/s]Loading checkpoint shards:  25%|██▌       | 3/12 [00:00<00:01,  5.85it/s]Loading checkpoint shards:  33%|███▎      | 4/12 [00:00<00:01,  5.36it/s]Loading checkpoint shards:  42%|████▏     | 5/12 [00:00<00:01,  4.59it/s]Loading checkpoint shards:  50%|█████     | 6/12 [00:01<00:01,  4.26it/s]Loading checkpoint shards:  58%|█████▊    | 7/12 [00:01<00:01,  3.68it/s]Loading checkpoint shards:  67%|██████▋   | 8/12 [00:01<00:01,  3.22it/s]Loading checkpoint shards:  75%|███████▌  | 9/12 [00:02<00:00,  3.08it/s]Loading checkpoint shards:  83%|████████▎ | 10/12 [00:02<00:00,  2.81it/s]Loading checkpoint shards:  92%|█████████▏| 11/12 [00:02<00:00,  3.22it/s]Loading checkpoint shards: 100%|██████████| 12/12 [00:03<00:00,  3.98it/s]
+  Scaled g_proj by 0.02 in 47 GDN layers
+  Init (small_gate) done in 1129.9s
+Token indices sequence length is longer than the specified maximum sequence length for this model (299078 > 131072). Running this sequence through the model will result in indexing errors
+  Layer 3: PPL = 751678.94  (eval 227.5s)
+
+============================================================
+  Probing layer 4 | strategy=small_gate
+============================================================
+Loading checkpoint shards:   0%|          | 0/12 [00:00<?, ?it/s]Loading checkpoint shards:   8%|▊         | 1/12 [00:00<00:01,  9.82it/s]Loading checkpoint shards:  17%|█▋        | 2/12 [00:00<00:01,  7.12it/s]Loading checkpoint shards:  25%|██▌       | 3/12 [00:00<00:01,  6.08it/s]Loading checkpoint shards:  33%|███▎      | 4/12 [00:00<00:01,  5.56it/s]Loading checkpoint shards:  42%|████▏     | 5/12 [00:00<00:01,  4.85it/s]Loading checkpoint shards:  50%|█████     | 6/12 [00:01<00:01,  4.52it/s]Loading checkpoint shards:  58%|█████▊    | 7/12 [00:01<00:01,  3.95it/s]Loading checkpoint shards:  67%|██████▋   | 8/12 [00:01<00:01,  3.50it/s]Loading checkpoint shards:  75%|███████▌  | 9/12 [00:02<00:00,  3.38it/s]Loading checkpoint shards:  83%|████████▎ | 10/12 [00:02<00:00,  3.05it/s]Loading checkpoint shards:  92%|█████████▏| 11/12 [00:02<00:00,  3.47it/s]Loading checkpoint shards: 100%|██████████| 12/12 [00:02<00:00,  4.26it/s]
+  Scaled g_proj by 0.02 in 47 GDN layers
+  Init (small_gate) done in 1127.2s
+Token indices sequence length is longer than the specified maximum sequence length for this model (299078 > 131072). Running this sequence through the model will result in indexing errors
+  Layer 4: PPL = 805079.81  (eval 222.4s)
+
+============================================================
+  Probing layer 5 | strategy=small_gate
+============================================================
+Loading checkpoint shards:   0%|          | 0/12 [00:00<?, ?it/s]Loading checkpoint shards:   8%|▊         | 1/12 [00:00<00:01,  9.19it/s]Loading checkpoint shards:  17%|█▋        | 2/12 [00:00<00:01,  6.80it/s]Loading checkpoint shards:  25%|██▌       | 3/12 [00:00<00:01,  5.91it/s]Loading checkpoint shards:  33%|███▎      | 4/12 [00:00<00:01,  5.31it/s]Loading checkpoint shards:  42%|████▏     | 5/12 [00:00<00:01,  4.68it/s]Loading checkpoint shards:  50%|█████     | 6/12 [00:01<00:01,  4.36it/s]Loading checkpoint shards:  58%|█████▊    | 7/12 [00:01<00:01,  3.73it/s]Loading checkpoint shards:  67%|██████▋   | 8/12 [00:01<00:01,  3.32it/s]Loading checkpoint shards:  75%|███████▌  | 9/12 [00:02<00:00,  3.19it/s]Loading checkpoint shards:  83%|████████▎ | 10/12 [00:02<00:00,  2.87it/s]Loading checkpoint shards:  92%|█████████▏| 11/12 [00:02<00:00,  3.27it/s]Loading checkpoint shards: 100%|██████████| 12/12 [00:02<00:00,  4.04it/s]
+  Scaled g_proj by 0.02 in 47 GDN layers
+  Init (small_gate) done in 1127.3s
+Token indices sequence length is longer than the specified maximum sequence length for this model (299078 > 131072). Running this sequence through the model will result in indexing errors
+  Layer 5: PPL = 831342.69  (eval 227.3s)
+
+============================================================
+  Probing layer 6 | strategy=small_gate
+============================================================
+Loading checkpoint shards:   0%|          | 0/12 [00:00<?, ?it/s]Loading checkpoint shards:   8%|▊         | 1/12 [00:00<00:01,  9.68it/s]Loading checkpoint shards:  17%|█▋        | 2/12 [00:00<00:01,  6.95it/s]Loading checkpoint shards:  25%|██▌       | 3/12 [00:00<00:01,  5.93it/s]Loading checkpoint shards:  33%|███▎      | 4/12 [00:00<00:01,  5.51it/s]Loading checkpoint shards:  42%|████▏     | 5/12 [00:00<00:01,  4.82it/s]Loading checkpoint shards:  50%|█████     | 6/12 [00:01<00:01,  4.44it/s]Loading checkpoint shards:  58%|█████▊    | 7/12 [00:01<00:01,  3.83it/s]Loading checkpoint shards:  67%|██████▋   | 8/12 [00:01<00:01,  3.41it/s]Loading checkpoint shards:  75%|███████▌  | 9/12 [00:02<00:00,  3.29it/s]Loading checkpoint shards:  83%|████████▎ | 10/12 [00:02<00:00,  2.95it/s]Loading checkpoint shards:  92%|█████████▏| 11/12 [00:02<00:00,  3.34it/s]Loading checkpoint shards: 100%|██████████| 12/12 [00:02<00:00,  4.13it/s]
+  Scaled g_proj by 0.02 in 47 GDN layers
+  Init (small_gate) done in 1140.0s
+Token indices sequence length is longer than the specified maximum sequence length for this model (299078 > 131072). Running this sequence through the model will result in indexing errors
+  Layer 6: PPL = 1007208.19  (eval 225.7s)
+
+============================================================
+  Probing layer 7 | strategy=small_gate
+============================================================
+Loading checkpoint shards:   0%|          | 0/12 [00:00<?, ?it/s]Loading checkpoint shards:   8%|▊         | 1/12 [00:00<00:01,  9.34it/s]Loading checkpoint shards:  17%|█▋        | 2/12 [00:00<00:01,  6.81it/s]Loading checkpoint shards:  25%|██▌       | 3/12 [00:00<00:01,  5.86it/s]Loading checkpoint shards:  33%|███▎      | 4/12 [00:00<00:01,  5.39it/s]Loading checkpoint shards:  42%|████▏     | 5/12 [00:00<00:01,  4.66it/s]Loading checkpoint shards:  50%|█████     | 6/12 [00:01<00:01,  4.29it/s]Loading checkpoint shards:  58%|█████▊    | 7/12 [00:01<00:01,  3.66it/s]Loading checkpoint shards:  67%|██████▋   | 8/12 [00:01<00:01,  3.22it/s]Loading checkpoint shards:  75%|███████▌  | 9/12 [00:02<00:00,  3.07it/s]Loading checkpoint shards:  83%|████████▎ | 10/12 [00:02<00:00,  2.73it/s]Loading checkpoint shards:  92%|█████████▏| 11/12 [00:03<00:00,  3.12it/s]Loading checkpoint shards: 100%|██████████| 12/12 [00:03<00:00,  3.92it/s]
+  Scaled g_proj by 0.02 in 47 GDN layers
+  Init (small_gate) done in 1152.3s
+Token indices sequence length is longer than the specified maximum sequence length for this model (299078 > 131072). Running this sequence through the model will result in indexing errors
+  Layer 7: PPL = 942558.62  (eval 223.6s)
+
+============================================================
+  Probing layer 8 | strategy=small_gate
+============================================================
+Loading checkpoint shards:   0%|          | 0/12 [00:00<?, ?it/s]Loading checkpoint shards:   8%|▊         | 1/12 [00:00<00:01,  9.68it/s]Loading checkpoint shards:  17%|█▋        | 2/12 [00:00<00:01,  6.94it/s]Loading checkpoint shards:  25%|██▌       | 3/12 [00:00<00:01,  5.59it/s]Loading checkpoint shards:  33%|███▎      | 4/12 [00:00<00:01,  5.29it/s]Loading checkpoint shards:  42%|████▏     | 5/12 [00:00<00:01,  4.65it/s]Loading checkpoint shards:  50%|█████     | 6/12 [00:01<00:01,  4.34it/s]Loading checkpoint shards:  58%|█████▊    | 7/12 [00:01<00:01,  3.75it/s]Loading checkpoint shards:  67%|██████▋   | 8/12 [00:01<00:01,  3.30it/s]Loading checkpoint shards:  75%|███████▌  | 9/12 [00:02<00:00,  3.15it/s]Loading checkpoint shards:  83%|████████▎ | 10/12 [00:02<00:00,  2.81it/s]Loading checkpoint shards:  92%|█████████▏| 11/12 [00:02<00:00,  3.20it/s]Loading checkpoint shards: 100%|██████████| 12/12 [00:03<00:00,  3.99it/s]
+  Scaled g_proj by 0.02 in 47 GDN layers
+  Init (small_gate) done in 1166.2s
+Token indices sequence length is longer than the specified maximum sequence length for this model (299078 > 131072). Running this sequence through the model will result in indexing errors
+  Layer 8: PPL = 754317.31  (eval 224.3s)
+
+============================================================
+  Probing layer 9 | strategy=small_gate
+============================================================
+Loading checkpoint shards:   0%|          | 0/12 [00:00<?, ?it/s]Loading checkpoint shards:   8%|▊         | 1/12 [00:00<00:01,  9.11it/s]Loading checkpoint shards:  17%|█▋        | 2/12 [00:00<00:01,  6.81it/s]Loading checkpoint shards:  25%|██▌       | 3/12 [00:00<00:01,  5.89it/s]Loading checkpoint shards:  33%|███▎      | 4/12 [00:00<00:01,  5.39it/s]Loading checkpoint shards:  42%|████▏     | 5/12 [00:00<00:01,  4.67it/s]Loading checkpoint shards:  50%|█████     | 6/12 [00:01<00:01,  4.31it/s]Loading checkpoint shards:  58%|█████▊    | 7/12 [00:01<00:01,  3.65it/s]Loading checkpoint shards:  67%|██████▋   | 8/12 [00:01<00:01,  3.23it/s]Loading checkpoint shards:  75%|███████▌  | 9/12 [00:02<00:00,  3.09it/s]Loading checkpoint shards:  83%|████████▎ | 10/12 [00:02<00:00,  2.76it/s]Loading checkpoint shards:  92%|█████████▏| 11/12 [00:02<00:00,  3.15it/s]Loading checkpoint shards: 100%|██████████| 12/12 [00:03<00:00,  3.93it/s]
+  Scaled g_proj by 0.02 in 47 GDN layers
+  Init (small_gate) done in 1163.1s
+Token indices sequence length is longer than the specified maximum sequence length for this model (299078 > 131072). Running this sequence through the model will result in indexing errors
+  Layer 9: PPL = 614401.81  (eval 227.9s)
+
+============================================================
+  Probing layer 10 | strategy=small_gate
+============================================================
+Loading checkpoint shards:   0%|          | 0/12 [00:00<?, ?it/s]Loading checkpoint shards:   8%|▊         | 1/12 [00:00<00:01,  9.77it/s]Loading checkpoint shards:  17%|█▋        | 2/12 [00:00<00:01,  6.97it/s]Loading checkpoint shards:  25%|██▌       | 3/12 [00:00<00:01,  5.77it/s]Loading checkpoint shards:  33%|███▎      | 4/12 [00:00<00:01,  5.34it/s]Loading checkpoint shards:  42%|████▏     | 5/12 [00:00<00:01,  4.65it/s]Loading checkpoint shards:  50%|█████     | 6/12 [00:01<00:01,  4.39it/s]Loading checkpoint shards:  58%|█████▊    | 7/12 [00:01<00:01,  3.82it/s]Loading checkpoint shards:  67%|██████▋   | 8/12 [00:01<00:01,  3.38it/s]Loading checkpoint shards:  75%|███████▌  | 9/12 [00:02<00:00,  3.26it/s]Loading checkpoint shards:  83%|████████▎ | 10/12 [00:02<00:00,  2.89it/s]Loading checkpoint shards:  92%|█████████▏| 11/12 [00:02<00:00,  3.28it/s]Loading checkpoint shards: 100%|██████████| 12/12 [00:02<00:00,  4.08it/s]
+  Scaled g_proj by 0.02 in 47 GDN layers
+  Init (small_gate) done in 1152.4s
+Token indices sequence length is longer than the specified maximum sequence length for this model (299078 > 131072). Running this sequence through the model will result in indexing errors
+  Layer 10: PPL = 927272.38  (eval 224.8s)
+
+============================================================
+  Probing layer 11 | strategy=small_gate
+============================================================
+Loading checkpoint shards:   0%|          | 0/12 [00:00<?, ?it/s]Loading checkpoint shards:   8%|▊         | 1/12 [00:00<00:01,  9.01it/s]Loading checkpoint shards:  17%|█▋        | 2/12 [00:00<00:01,  6.72it/s]Loading checkpoint shards:  25%|██▌       | 3/12 [00:00<00:01,  5.83it/s]Loading checkpoint shards:  33%|███▎      | 4/12 [00:00<00:01,  5.36it/s]Loading checkpoint shards:  42%|████▏     | 5/12 [00:00<00:01,  4.67it/s]Loading checkpoint shards:  50%|█████     | 6/12 [00:01<00:01,  4.31it/s]Loading checkpoint shards:  58%|█████▊    | 7/12 [00:01<00:01,  3.73it/s]Loading checkpoint shards:  67%|██████▋   | 8/12 [00:01<00:01,  3.29it/s]Loading checkpoint shards:  75%|███████▌  | 9/12 [00:02<00:00,  3.14it/s]Loading checkpoint shards:  83%|████████▎ | 10/12 [00:02<00:00,  2.81it/s]Loading checkpoint shards:  92%|█████████▏| 11/12 [00:02<00:00,  3.21it/s]Loading checkpoint shards: 100%|██████████| 12/12 [00:03<00:00,  3.99it/s]
+  Scaled g_proj by 0.02 in 47 GDN layers
+  Init (small_gate) done in 1170.1s
+Token indices sequence length is longer than the specified maximum sequence length for this model (299078 > 131072). Running this sequence through the model will result in indexing errors
+  Layer 11: PPL = 1037715.69  (eval 225.4s)
+
+============================================================
+  Probing layer 12 | strategy=small_gate
+============================================================
+Loading checkpoint shards:   0%|          | 0/12 [00:00<?, ?it/s]Loading checkpoint shards:   8%|▊         | 1/12 [00:00<00:01,  9.34it/s]Loading checkpoint shards:  17%|█▋        | 2/12 [00:00<00:01,  6.78it/s]Loading checkpoint shards:  25%|██▌       | 3/12 [00:00<00:01,  5.90it/s]Loading checkpoint shards:  33%|███▎      | 4/12 [00:00<00:01,  5.50it/s]Loading checkpoint shards:  42%|████▏     | 5/12 [00:00<00:01,  4.79it/s]Loading checkpoint shards:  50%|█████     | 6/12 [00:01<00:01,  4.45it/s]Loading checkpoint shards:  58%|█████▊    | 7/12 [00:01<00:01,  3.85it/s]Loading checkpoint shards:  67%|██████▋   | 8/12 [00:01<00:01,  3.38it/s]Loading checkpoint shards:  75%|███████▌  | 9/12 [00:02<00:00,  3.17it/s]Loading checkpoint shards:  83%|████████▎ | 10/12 [00:02<00:00,  2.78it/s]Loading checkpoint shards:  92%|█████████▏| 11/12 [00:02<00:00,  3.18it/s]Loading checkpoint shards: 100%|██████████| 12/12 [00:02<00:00,  4.01it/s]
+  Scaled g_proj by 0.02 in 47 GDN layers
+  Init (small_gate) done in 1172.2s
+Token indices sequence length is longer than the specified maximum sequence length for this model (299078 > 131072). Running this sequence through the model will result in indexing errors
+  Layer 12: PPL = 966716.94  (eval 225.9s)
+
+============================================================
+  Probing layer 13 | strategy=small_gate
+============================================================
+Loading checkpoint shards:   0%|          | 0/12 [00:00<?, ?it/s]Loading checkpoint shards:   8%|▊         | 1/12 [00:00<00:01,  7.68it/s]Loading checkpoint shards:  17%|█▋        | 2/12 [00:00<00:01,  6.20it/s]Loading checkpoint shards:  25%|██▌       | 3/12 [00:00<00:01,  5.48it/s]Loading checkpoint shards:  33%|███▎      | 4/12 [00:00<00:01,  4.96it/s]Loading checkpoint shards:  42%|████▏     | 5/12 [00:01<00:01,  4.23it/s]Loading checkpoint shards:  50%|█████     | 6/12 [00:01<00:01,  3.97it/s]Loading checkpoint shards:  58%|█████▊    | 7/12 [00:01<00:01,  3.54it/s]Loading checkpoint shards:  67%|██████▋   | 8/12 [00:02<00:01,  3.12it/s]Loading checkpoint shards:  75%|███████▌  | 9/12 [00:02<00:01,  2.94it/s]Loading checkpoint shards:  83%|████████▎ | 10/12 [00:02<00:00,  2.65it/s]Loading checkpoint shards:  92%|█████████▏| 11/12 [00:03<00:00,  2.99it/s]Loading checkpoint shards: 100%|██████████| 12/12 [00:03<00:00,  3.69it/s]
+  Scaled g_proj by 0.02 in 47 GDN layers
+  Init (small_gate) done in 1168.1s
+Token indices sequence length is longer than the specified maximum sequence length for this model (299078 > 131072). Running this sequence through the model will result in indexing errors
+  Layer 13: PPL = 855262.31  (eval 223.5s)
+
+============================================================
+  Probing layer 14 | strategy=small_gate
+============================================================
+Loading checkpoint shards:   0%|          | 0/12 [00:00<?, ?it/s]Loading checkpoint shards:   8%|▊         | 1/12 [00:00<00:01,  8.22it/s]Loading checkpoint shards:  17%|█▋        | 2/12 [00:00<00:01,  6.31it/s]Loading checkpoint shards:  25%|██▌       | 3/12 [00:00<00:01,  5.60it/s]Loading checkpoint shards:  33%|███▎      | 4/12 [00:00<00:01,  5.22it/s]Loading checkpoint shards:  42%|████▏     | 5/12 [00:01<00:01,  4.42it/s]Loading checkpoint shards:  50%|█████     | 6/12 [00:01<00:01,  4.02it/s]Loading checkpoint shards:  58%|█████▊    | 7/12 [00:01<00:01,  3.50it/s]Loading checkpoint shards:  67%|██████▋   | 8/12 [00:02<00:01,  3.12it/s]Loading checkpoint shards:  75%|███████▌  | 9/12 [00:02<00:01,  2.93it/s]Loading checkpoint shards:  83%|████████▎ | 10/12 [00:02<00:00,  2.57it/s]Loading checkpoint shards:  92%|█████████▏| 11/12 [00:03<00:00,  2.93it/s]Loading checkpoint shards: 100%|██████████| 12/12 [00:03<00:00,  3.69it/s]
+  Scaled g_proj by 0.02 in 47 GDN layers
+  Init (small_gate) done in 1192.4s
+Token indices sequence length is longer than the specified maximum sequence length for this model (299078 > 131072). Running this sequence through the model will result in indexing errors
+  Layer 14: PPL = 889508.50  (eval 223.6s)
+
+============================================================
+  Probing layer 15 | strategy=small_gate
+============================================================
+Loading checkpoint shards:   0%|          | 0/12 [00:00<?, ?it/s]Loading checkpoint shards:   8%|▊         | 1/12 [00:00<00:01,  8.01it/s]Loading checkpoint shards:  17%|█▋        | 2/12 [00:00<00:01,  6.30it/s]Loading checkpoint shards:  25%|██▌       | 3/12 [00:00<00:01,  5.43it/s]Loading checkpoint shards:  33%|███▎      | 4/12 [00:00<00:01,  5.22it/s]Loading checkpoint shards:  42%|████▏     | 5/12 [00:00<00:01,  4.63it/s]Loading checkpoint shards:  50%|█████     | 6/12 [00:01<00:01,  4.11it/s]Loading checkpoint shards:  58%|█████▊    | 7/12 [00:01<00:01,  3.68it/s]Loading checkpoint shards:  67%|██████▋   | 8/12 [00:01<00:01,  3.26it/s]Loading checkpoint shards:  75%|███████▌  | 9/12 [00:02<00:00,  3.06it/s]Loading checkpoint shards:  83%|████████▎ | 10/12 [00:02<00:00,  2.76it/s]Loading checkpoint shards:  92%|█████████▏| 11/12 [00:03<00:00,  3.13it/s]Loading checkpoint shards: 100%|██████████| 12/12 [00:03<00:00,  3.85it/s]
+  Scaled g_proj by 0.02 in 47 GDN layers
+  Init (small_gate) done in 1193.3s
+Token indices sequence length is longer than the specified maximum sequence length for this model (299078 > 131072). Running this sequence through the model will result in indexing errors
+  Layer 15: PPL = 1055973.00  (eval 233.6s)
+
+============================================================
+  Probing layer 16 | strategy=small_gate
+============================================================
+Loading checkpoint shards:   0%|          | 0/12 [00:00<?, ?it/s]Loading checkpoint shards:   8%|▊         | 1/12 [00:00<00:01,  8.30it/s]Loading checkpoint shards:  17%|█▋        | 2/12 [00:00<00:01,  6.45it/s]Loading checkpoint shards:  25%|██▌       | 3/12 [00:00<00:01,  5.56it/s]Loading checkpoint shards:  33%|███▎      | 4/12 [00:00<00:01,  5.13it/s]Loading checkpoint shards:  42%|████▏     | 5/12 [00:00<00:01,  4.50it/s]Loading checkpoint shards:  50%|█████     | 6/12 [00:01<00:01,  4.17it/s]Loading checkpoint shards:  58%|█████▊    | 7/12 [00:01<00:01,  3.63it/s]Loading checkpoint shards:  67%|██████▋   | 8/12 [00:02<00:01,  3.24it/s]Loading checkpoint shards:  75%|███████▌  | 9/12 [00:02<00:00,  3.09it/s]Loading checkpoint shards:  83%|████████▎ | 10/12 [00:02<00:00,  2.81it/s]Loading checkpoint shards:  92%|█████████▏| 11/12 [00:03<00:00,  3.18it/s]Loading checkpoint shards: 100%|██████████| 12/12 [00:03<00:00,  3.91it/s]
+  Scaled g_proj by 0.02 in 47 GDN layers
+  Init (small_gate) done in 1192.3s
+Token indices sequence length is longer than the specified maximum sequence length for this model (299078 > 131072). Running this sequence through the model will result in indexing errors
+  Layer 16: PPL = 937760.00  (eval 225.3s)
+
+============================================================
+  Probing layer 17 | strategy=small_gate
+============================================================
+Loading checkpoint shards:   0%|          | 0/12 [00:00<?, ?it/s]Loading checkpoint shards:  17%|█▋        | 2/12 [00:00<00:01,  7.37it/s]Loading checkpoint shards:  25%|██▌       | 3/12 [00:00<00:01,  6.26it/s]Loading checkpoint shards:  33%|███▎      | 4/12 [00:00<00:01,  5.78it/s]Loading checkpoint shards:  42%|████▏     | 5/12 [00:00<00:01,  4.97it/s]Loading checkpoint shards:  50%|█████     | 6/12 [00:01<00:01,  4.65it/s]Loading checkpoint shards:  58%|█████▊    | 7/12 [00:01<00:01,  4.03it/s]Loading checkpoint shards:  67%|██████▋   | 8/12 [00:01<00:01,  3.57it/s]Loading checkpoint shards:  75%|███████▌  | 9/12 [00:02<00:00,  3.42it/s]Loading checkpoint shards:  83%|████████▎ | 10/12 [00:02<00:00,  3.06it/s]Loading checkpoint shards:  92%|█████████▏| 11/12 [00:02<00:00,  3.44it/s]Loading checkpoint shards: 100%|██████████| 12/12 [00:02<00:00,  4.26it/s]
+  Scaled g_proj by 0.02 in 47 GDN layers
+  Init (small_gate) done in 1296.0s
+Token indices sequence length is longer than the specified maximum sequence length for this model (299078 > 131072). Running this sequence through the model will result in indexing errors
+  Layer 17: PPL = 1027940.81  (eval 228.2s)
+
+============================================================
+  Probing layer 18 | strategy=small_gate
+============================================================
+Loading checkpoint shards:   0%|          | 0/12 [00:00<?, ?it/s]Loading checkpoint shards:   8%|▊         | 1/12 [00:00<00:01,  9.79it/s]Loading checkpoint shards:  17%|█▋        | 2/12 [00:00<00:01,  7.01it/s]Loading checkpoint shards:  25%|██▌       | 3/12 [00:00<00:01,  5.84it/s]Loading checkpoint shards:  33%|███▎      | 4/12 [00:00<00:01,  5.39it/s]Loading checkpoint shards:  42%|████▏     | 5/12 [00:00<00:01,  4.60it/s]Loading checkpoint shards:  50%|█████     | 6/12 [00:01<00:01,  4.28it/s]Loading checkpoint shards:  58%|█████▊    | 7/12 [00:01<00:01,  3.65it/s]Loading checkpoint shards:  67%|██████▋   | 8/12 [00:01<00:01,  3.20it/s]Loading checkpoint shards:  75%|███████▌  | 9/12 [00:02<00:00,  3.06it/s]Loading checkpoint shards:  83%|████████▎ | 10/12 [00:02<00:00,  2.69it/s]Loading checkpoint shards:  92%|█████████▏| 11/12 [00:03<00:00,  3.06it/s]Loading checkpoint shards: 100%|██████████| 12/12 [00:03<00:00,  3.88it/s]
+  Scaled g_proj by 0.02 in 47 GDN layers
+  Init (small_gate) done in 1219.7s
+Token indices sequence length is longer than the specified maximum sequence length for this model (299078 > 131072). Running this sequence through the model will result in indexing errors
+  Layer 18: PPL = 972576.94  (eval 228.7s)
+
+============================================================
+  Probing layer 19 | strategy=small_gate
+============================================================
+Loading checkpoint shards:   0%|          | 0/12 [00:00<?, ?it/s]Loading checkpoint shards:   8%|▊         | 1/12 [00:00<00:01,  9.29it/s]Loading checkpoint shards:  17%|█▋        | 2/12 [00:00<00:01,  6.72it/s]Loading checkpoint shards:  25%|██▌       | 3/12 [00:00<00:01,  5.82it/s]Loading checkpoint shards:  33%|███▎      | 4/12 [00:00<00:01,  5.37it/s]Loading checkpoint shards:  42%|████▏     | 5/12 [00:00<00:01,  4.67it/s]Loading checkpoint shards:  50%|█████     | 6/12 [00:01<00:01,  4.32it/s]Loading checkpoint shards:  58%|█████▊    | 7/12 [00:01<00:01,  3.70it/s]Loading checkpoint shards:  67%|██████▋   | 8/12 [00:01<00:01,  3.23it/s]Loading checkpoint shards:  75%|███████▌  | 9/12 [00:02<00:00,  3.08it/s]Loading checkpoint shards:  83%|████████▎ | 10/12 [00:02<00:00,  2.72it/s]Loading checkpoint shards:  92%|█████████▏| 11/12 [00:03<00:00,  3.11it/s]Loading checkpoint shards: 100%|██████████| 12/12 [00:03<00:00,  3.92it/s]
+  Scaled g_proj by 0.02 in 47 GDN layers
+  Init (small_gate) done in 1205.0s
+Token indices sequence length is longer than the specified maximum sequence length for this model (299078 > 131072). Running this sequence through the model will result in indexing errors
+  Layer 19: PPL = 1126566.12  (eval 226.8s)
+
+============================================================
+  Probing layer 20 | strategy=small_gate
+============================================================
+Loading checkpoint shards:   0%|          | 0/12 [00:00<?, ?it/s]Loading checkpoint shards:   8%|▊         | 1/12 [00:00<00:01,  9.62it/s]Loading checkpoint shards:  17%|█▋        | 2/12 [00:00<00:01,  6.76it/s]Loading checkpoint shards:  25%|██▌       | 3/12 [00:00<00:02,  4.43it/s]Loading checkpoint shards:  33%|███▎      | 4/12 [00:00<00:01,  4.37it/s]Loading checkpoint shards:  42%|████▏     | 5/12 [00:01<00:01,  4.04it/s]Loading checkpoint shards:  50%|█████     | 6/12 [00:01<00:01,  3.34it/s]Loading checkpoint shards:  58%|█████▊    | 7/12 [00:01<00:01,  3.03it/s]Loading checkpoint shards:  67%|██████▋   | 8/12 [00:02<00:01,  2.88it/s]Loading checkpoint shards:  75%|███████▌  | 9/12 [00:02<00:01,  2.85it/s]Loading checkpoint shards:  83%|████████▎ | 10/12 [00:03<00:00,  2.52it/s]Loading checkpoint shards:  92%|█████████▏| 11/12 [00:03<00:00,  2.72it/s]Loading checkpoint shards: 100%|██████████| 12/12 [00:03<00:00,  3.41it/s]
+  Scaled g_proj by 0.02 in 47 GDN layers
+  Init (small_gate) done in 1216.9s
+Token indices sequence length is longer than the specified maximum sequence length for this model (299078 > 131072). Running this sequence through the model will result in indexing errors
+  Layer 20: PPL = 1262895.62  (eval 226.4s)
+
+============================================================
+  Probing layer 21 | strategy=small_gate
+============================================================
+Loading checkpoint shards:   0%|          | 0/12 [00:00<?, ?it/s]Loading checkpoint shards:   8%|▊         | 1/12 [00:00<00:01,  9.95it/s]Loading checkpoint shards:  17%|█▋        | 2/12 [00:00<00:01,  7.13it/s]Loading checkpoint shards:  25%|██▌       | 3/12 [00:00<00:01,  6.02it/s]Loading checkpoint shards:  33%|███▎      | 4/12 [00:00<00:01,  5.59it/s]Loading checkpoint shards:  42%|████▏     | 5/12 [00:00<00:01,  4.89it/s]Loading checkpoint shards:  50%|█████     | 6/12 [00:01<00:01,  4.49it/s]Loading checkpoint shards:  58%|█████▊    | 7/12 [00:01<00:01,  3.94it/s]Loading checkpoint shards:  67%|██████▋   | 8/12 [00:01<00:01,  3.52it/s]Loading checkpoint shards:  75%|███████▌  | 9/12 [00:02<00:00,  3.38it/s]Loading checkpoint shards:  83%|████████▎ | 10/12 [00:02<00:00,  3.05it/s]Loading checkpoint shards:  92%|█████████▏| 11/12 [00:02<00:00,  3.45it/s]Loading checkpoint shards: 100%|██████████| 12/12 [00:02<00:00,  4.25it/s]
+  Scaled g_proj by 0.02 in 47 GDN layers
+  Init (small_gate) done in 1213.9s
+Token indices sequence length is longer than the specified maximum sequence length for this model (299078 > 131072). Running this sequence through the model will result in indexing errors
+  Layer 21: PPL = 907026.50  (eval 221.6s)
+
+============================================================
+  Probing layer 22 | strategy=small_gate
+============================================================
+Loading checkpoint shards:   0%|          | 0/12 [00:00<?, ?it/s]Loading checkpoint shards:   8%|▊         | 1/12 [00:00<00:01,  8.78it/s]Loading checkpoint shards:  17%|█▋        | 2/12 [00:00<00:01,  6.69it/s]Loading checkpoint shards:  25%|██▌       | 3/12 [00:00<00:01,  5.85it/s]Loading checkpoint shards:  33%|███▎      | 4/12 [00:00<00:01,  5.36it/s]Loading checkpoint shards:  42%|████▏     | 5/12 [00:00<00:01,  4.60it/s]Loading checkpoint shards:  50%|█████     | 6/12 [00:01<00:01,  4.27it/s]Loading checkpoint shards:  58%|█████▊    | 7/12 [00:01<00:01,  3.74it/s]Loading checkpoint shards:  67%|██████▋   | 8/12 [00:01<00:01,  3.27it/s]Loading checkpoint shards:  75%|███████▌  | 9/12 [00:02<00:00,  3.10it/s]Loading checkpoint shards:  83%|████████▎ | 10/12 [00:02<00:00,  2.75it/s]Loading checkpoint shards:  92%|█████████▏| 11/12 [00:03<00:00,  3.09it/s]Loading checkpoint shards: 100%|██████████| 12/12 [00:03<00:00,  3.91it/s]
+  Scaled g_proj by 0.02 in 47 GDN layers
+  Init (small_gate) done in 1213.2s
+Token indices sequence length is longer than the specified maximum sequence length for this model (299078 > 131072). Running this sequence through the model will result in indexing errors
+  Layer 22: PPL = 1136461.38  (eval 225.2s)
+
+============================================================
+  Probing layer 23 | strategy=small_gate
+============================================================
+Loading checkpoint shards:   0%|          | 0/12 [00:00<?, ?it/s]Loading checkpoint shards:   8%|▊         | 1/12 [00:00<00:01,  9.37it/s]Loading checkpoint shards:  17%|█▋        | 2/12 [00:00<00:01,  6.97it/s]Loading checkpoint shards:  25%|██▌       | 3/12 [00:00<00:01,  6.03it/s]Loading checkpoint shards:  33%|███▎      | 4/12 [00:00<00:01,  5.59it/s]Loading checkpoint shards:  42%|████▏     | 5/12 [00:00<00:01,  4.92it/s]Loading checkpoint shards:  50%|█████     | 6/12 [00:01<00:01,  4.59it/s]Loading checkpoint shards:  58%|█████▊    | 7/12 [00:01<00:01,  4.01it/s]Loading checkpoint shards:  67%|██████▋   | 8/12 [00:01<00:01,  3.54it/s]Loading checkpoint shards:  75%|███████▌  | 9/12 [00:02<00:00,  3.39it/s]Loading checkpoint shards:  83%|████████▎ | 10/12 [00:02<00:00,  3.03it/s]Loading checkpoint shards:  92%|█████████▏| 11/12 [00:02<00:00,  3.43it/s]Loading checkpoint shards: 100%|██████████| 12/12 [00:02<00:00,  4.26it/s]
+  Scaled g_proj by 0.02 in 47 GDN layers
+  Init (small_gate) done in 1219.1s
+Token indices sequence length is longer than the specified maximum sequence length for this model (299078 > 131072). Running this sequence through the model will result in indexing errors
+  Layer 23: PPL = 1074231.88  (eval 225.2s)
+
+============================================================
+  Probing layer 24 | strategy=small_gate
+============================================================
+Loading checkpoint shards:   0%|          | 0/12 [00:00<?, ?it/s]Loading checkpoint shards:   8%|▊         | 1/12 [00:00<00:01,  9.63it/s]Loading checkpoint shards:  17%|█▋        | 2/12 [00:00<00:01,  6.96it/s]Loading checkpoint shards:  25%|██▌       | 3/12 [00:00<00:01,  5.87it/s]Loading checkpoint shards:  33%|███▎      | 4/12 [00:00<00:01,  5.41it/s]Loading checkpoint shards:  42%|████▏     | 5/12 [00:00<00:01,  4.68it/s]Loading checkpoint shards:  50%|█████     | 6/12 [00:01<00:01,  4.36it/s]Loading checkpoint shards:  58%|█████▊    | 7/12 [00:01<00:01,  3.77it/s]Loading checkpoint shards:  67%|██████▋   | 8/12 [00:01<00:01,  3.31it/s]Loading checkpoint shards:  75%|███████▌  | 9/12 [00:02<00:00,  3.18it/s]Loading checkpoint shards:  83%|████████▎ | 10/12 [00:02<00:00,  2.82it/s]Loading checkpoint shards:  92%|█████████▏| 11/12 [00:02<00:00,  3.14it/s]Loading checkpoint shards: 100%|██████████| 12/12 [00:03<00:00,  3.99it/s]
+  Scaled g_proj by 0.02 in 47 GDN layers
+  Init (small_gate) done in 1219.4s
+Token indices sequence length is longer than the specified maximum sequence length for this model (299078 > 131072). Running this sequence through the model will result in indexing errors
+  Layer 24: PPL = 1039468.81  (eval 226.0s)
+
+============================================================
+  Probing layer 25 | strategy=small_gate
+============================================================
+Loading checkpoint shards:   0%|          | 0/12 [00:00<?, ?it/s]Loading checkpoint shards:   8%|▊         | 1/12 [00:00<00:01,  9.89it/s]Loading checkpoint shards:  17%|█▋        | 2/12 [00:00<00:01,  7.12it/s]Loading checkpoint shards:  25%|██▌       | 3/12 [00:00<00:01,  6.01it/s]Loading checkpoint shards:  33%|███▎      | 4/12 [00:00<00:01,  5.51it/s]Loading checkpoint shards:  42%|████▏     | 5/12 [00:00<00:01,  4.80it/s]Loading checkpoint shards:  50%|█████     | 6/12 [00:01<00:01,  4.39it/s]Loading checkpoint shards:  58%|█████▊    | 7/12 [00:01<00:01,  3.73it/s]Loading checkpoint shards:  67%|██████▋   | 8/12 [00:01<00:01,  3.33it/s]Loading checkpoint shards:  75%|███████▌  | 9/12 [00:02<00:00,  3.19it/s]Loading checkpoint shards:  83%|████████▎ | 10/12 [00:02<00:00,  2.85it/s]Loading checkpoint shards:  92%|█████████▏| 11/12 [00:02<00:00,  3.25it/s]Loading checkpoint shards: 100%|██████████| 12/12 [00:02<00:00,  4.05it/s]
+  Scaled g_proj by 0.02 in 47 GDN layers
+  Init (small_gate) done in 1233.2s
+Token indices sequence length is longer than the specified maximum sequence length for this model (299078 > 131072). Running this sequence through the model will result in indexing errors
+  Layer 25: PPL = 802545.50  (eval 224.2s)
+
+============================================================
+  Probing layer 26 | strategy=small_gate
+============================================================
+Loading checkpoint shards:   0%|          | 0/12 [00:00<?, ?it/s]Loading checkpoint shards:  17%|█▋        | 2/12 [00:00<00:01,  7.33it/s]Loading checkpoint shards:  25%|██▌       | 3/12 [00:00<00:01,  6.06it/s]Loading checkpoint shards:  33%|███▎      | 4/12 [00:00<00:01,  5.56it/s]Loading checkpoint shards:  42%|████▏     | 5/12 [00:00<00:01,  4.89it/s]Loading checkpoint shards:  50%|█████     | 6/12 [00:01<00:01,  4.52it/s]Loading checkpoint shards:  58%|█████▊    | 7/12 [00:01<00:01,  3.96it/s]Loading checkpoint shards:  67%|██████▋   | 8/12 [00:01<00:01,  3.54it/s]Loading checkpoint shards:  75%|███████▌  | 9/12 [00:02<00:00,  3.41it/s]Loading checkpoint shards:  83%|████████▎ | 10/12 [00:02<00:00,  3.05it/s]Loading checkpoint shards:  92%|█████████▏| 11/12 [00:02<00:00,  3.42it/s]Loading checkpoint shards: 100%|██████████| 12/12 [00:02<00:00,  4.21it/s]
+  Scaled g_proj by 0.02 in 47 GDN layers
+  Init (small_gate) done in 1228.0s
+Token indices sequence length is longer than the specified maximum sequence length for this model (299078 > 131072). Running this sequence through the model will result in indexing errors
+  Layer 26: PPL = 1187129.88  (eval 221.8s)
+
+============================================================
+  Probing layer 27 | strategy=small_gate
+============================================================
+Loading checkpoint shards:   0%|          | 0/12 [00:00<?, ?it/s]Loading checkpoint shards:   8%|▊         | 1/12 [00:00<00:01,  9.74it/s]Loading checkpoint shards:  17%|█▋        | 2/12 [00:00<00:01,  6.21it/s]Loading checkpoint shards:  25%|██▌       | 3/12 [00:00<00:01,  5.49it/s]Loading checkpoint shards:  33%|███▎      | 4/12 [00:00<00:01,  5.19it/s]Loading checkpoint shards:  42%|████▏     | 5/12 [00:00<00:01,  4.52it/s]Loading checkpoint shards:  50%|█████     | 6/12 [00:01<00:01,  4.13it/s]Loading checkpoint shards:  58%|█████▊    | 7/12 [00:01<00:01,  3.69it/s]Loading checkpoint shards:  67%|██████▋   | 8/12 [00:02<00:01,  3.18it/s]Loading checkpoint shards:  75%|███████▌  | 9/12 [00:02<00:00,  3.09it/s]Loading checkpoint shards:  83%|████████▎ | 10/12 [00:02<00:00,  2.76it/s]Loading checkpoint shards:  92%|█████████▏| 11/12 [00:03<00:00,  3.17it/s]Loading checkpoint shards: 100%|██████████| 12/12 [00:03<00:00,  3.90it/s]
+  Scaled g_proj by 0.02 in 47 GDN layers
+  Init (small_gate) done in 1233.5s
+Token indices sequence length is longer than the specified maximum sequence length for this model (299078 > 131072). Running this sequence through the model will result in indexing errors
+  Layer 27: PPL = 975757.94  (eval 225.2s)
+
+============================================================
+  Probing layer 28 | strategy=small_gate
+============================================================
+Loading checkpoint shards:   0%|          | 0/12 [00:00<?, ?it/s]Loading checkpoint shards:   8%|▊         | 1/12 [00:00<00:01,  9.21it/s]Loading checkpoint shards:  17%|█▋        | 2/12 [00:00<00:01,  6.61it/s]Loading checkpoint shards:  25%|██▌       | 3/12 [00:00<00:01,  5.55it/s]Loading checkpoint shards:  33%|███▎      | 4/12 [00:00<00:01,  5.07it/s]Loading checkpoint shards:  42%|████▏     | 5/12 [00:00<00:01,  4.49it/s]Loading checkpoint shards:  50%|█████     | 6/12 [00:01<00:01,  4.06it/s]Loading checkpoint shards:  58%|█████▊    | 7/12 [00:01<00:01,  3.60it/s]Loading checkpoint shards:  67%|██████▋   | 8/12 [00:02<00:01,  3.25it/s]Loading checkpoint shards:  75%|███████▌  | 9/12 [00:02<00:00,  3.14it/s]Loading checkpoint shards:  83%|████████▎ | 10/12 [00:02<00:00,  2.83it/s]Loading checkpoint shards:  92%|█████████▏| 11/12 [00:02<00:00,  3.23it/s]Loading checkpoint shards: 100%|██████████| 12/12 [00:03<00:00,  3.94it/s]
+  Scaled g_proj by 0.02 in 47 GDN layers
+  Init (small_gate) done in 1230.2s
+Token indices sequence length is longer than the specified maximum sequence length for this model (299078 > 131072). Running this sequence through the model will result in indexing errors
+  Layer 28: PPL = 1097498.00  (eval 221.7s)
+
+============================================================
+  Probing layer 29 | strategy=small_gate
+============================================================
+Loading checkpoint shards:   0%|          | 0/12 [00:00<?, ?it/s]Loading checkpoint shards:   8%|▊         | 1/12 [00:00<00:01,  8.96it/s]Loading checkpoint shards:  17%|█▋        | 2/12 [00:00<00:01,  6.69it/s]Loading checkpoint shards:  25%|██▌       | 3/12 [00:00<00:01,  5.58it/s]Loading checkpoint shards:  33%|███▎      | 4/12 [00:00<00:01,  5.18it/s]Loading checkpoint shards:  42%|████▏     | 5/12 [00:00<00:01,  4.51it/s]Loading checkpoint shards:  50%|█████     | 6/12 [00:01<00:01,  4.21it/s]Loading checkpoint shards:  58%|█████▊    | 7/12 [00:01<00:01,  3.65it/s]Loading checkpoint shards:  67%|██████▋   | 8/12 [00:02<00:01,  3.20it/s]Loading checkpoint shards:  75%|███████▌  | 9/12 [00:02<00:00,  3.04it/s]Loading checkpoint shards:  83%|████████▎ | 10/12 [00:02<00:00,  2.72it/s]Loading checkpoint shards:  92%|█████████▏| 11/12 [00:03<00:00,  3.07it/s]Loading checkpoint shards: 100%|██████████| 12/12 [00:03<00:00,  3.85it/s]
+  Scaled g_proj by 0.02 in 47 GDN layers
+  Init (small_gate) done in 1221.8s
+Token indices sequence length is longer than the specified maximum sequence length for this model (299078 > 131072). Running this sequence through the model will result in indexing errors
+  Layer 29: PPL = 1236553.62  (eval 232.6s)
+
+============================================================
+  Probing layer 30 | strategy=small_gate
+============================================================
+Loading checkpoint shards:   0%|          | 0/12 [00:00<?, ?it/s]Loading checkpoint shards:   8%|▊         | 1/12 [00:00<00:01,  8.58it/s]Loading checkpoint shards:  17%|█▋        | 2/12 [00:00<00:01,  6.56it/s]Loading checkpoint shards:  25%|██▌       | 3/12 [00:00<00:01,  5.48it/s]Loading checkpoint shards:  33%|███▎      | 4/12 [00:00<00:01,  5.20it/s]Loading checkpoint shards:  42%|████▏     | 5/12 [00:00<00:01,  4.60it/s]Loading checkpoint shards:  50%|█████     | 6/12 [00:01<00:01,  4.15it/s]Loading checkpoint shards:  58%|█████▊    | 7/12 [00:01<00:01,  3.56it/s]Loading checkpoint shards:  67%|██████▋   | 8/12 [00:02<00:01,  3.17it/s]Loading checkpoint shards:  75%|███████▌  | 9/12 [00:02<00:01,  2.99it/s]Loading checkpoint shards:  83%|████████▎ | 10/12 [00:02<00:00,  2.69it/s]Loading checkpoint shards:  92%|█████████▏| 11/12 [00:03<00:00,  3.03it/s]Loading checkpoint shards: 100%|██████████| 12/12 [00:03<00:00,  3.79it/s]
+  Scaled g_proj by 0.02 in 47 GDN layers
+  Init (small_gate) done in 1212.3s
+Token indices sequence length is longer than the specified maximum sequence length for this model (299078 > 131072). Running this sequence through the model will result in indexing errors
+  Layer 30: PPL = 1096706.00  (eval 260.8s)
+
+============================================================
+  Probing layer 31 | strategy=small_gate
+============================================================
+Loading checkpoint shards:   0%|          | 0/12 [00:00<?, ?it/s]Loading checkpoint shards:   8%|▊         | 1/12 [00:00<00:01,  9.59it/s]Loading checkpoint shards:  17%|█▋        | 2/12 [00:00<00:01,  6.86it/s]Loading checkpoint shards:  25%|██▌       | 3/12 [00:00<00:01,  5.59it/s]Loading checkpoint shards:  33%|███▎      | 4/12 [00:00<00:01,  5.24it/s]Loading checkpoint shards:  42%|████▏     | 5/12 [00:00<00:01,  4.61it/s]Loading checkpoint shards:  50%|█████     | 6/12 [00:01<00:01,  4.33it/s]Loading checkpoint shards:  58%|█████▊    | 7/12 [00:01<00:01,  3.75it/s]Loading checkpoint shards:  67%|██████▋   | 8/12 [00:01<00:01,  3.29it/s]Loading checkpoint shards:  75%|███████▌  | 9/12 [00:02<00:00,  3.13it/s]Loading checkpoint shards:  83%|████████▎ | 10/12 [00:02<00:00,  2.77it/s]Loading checkpoint shards:  92%|█████████▏| 11/12 [00:02<00:00,  3.14it/s]Loading checkpoint shards: 100%|██████████| 12/12 [00:03<00:00,  3.94it/s]
+  Scaled g_proj by 0.02 in 47 GDN layers
+  Init (small_gate) done in 1110.2s
+Token indices sequence length is longer than the specified maximum sequence length for this model (299078 > 131072). Running this sequence through the model will result in indexing errors
+  Layer 31: PPL = 964806.75  (eval 247.3s)
+
+============================================================
+  Probing layer 32 | strategy=small_gate
+============================================================
+Loading checkpoint shards:   0%|          | 0/12 [00:00<?, ?it/s]Loading checkpoint shards:   8%|▊         | 1/12 [00:00<00:02,  5.32it/s]Loading checkpoint shards:  17%|█▋        | 2/12 [00:00<00:02,  3.71it/s]Loading checkpoint shards:  25%|██▌       | 3/12 [00:00<00:02,  3.10it/s]Loading checkpoint shards:  33%|███▎      | 4/12 [00:01<00:02,  2.73it/s]Loading checkpoint shards:  42%|████▏     | 5/12 [00:01<00:02,  2.38it/s]Loading checkpoint shards:  50%|█████     | 6/12 [00:02<00:02,  2.67it/s]Loading checkpoint shards:  58%|█████▊    | 7/12 [00:02<00:01,  2.65it/s]Loading checkpoint shards:  67%|██████▋   | 8/12 [00:03<00:01,  2.11it/s]Loading checkpoint shards:  75%|███████▌  | 9/12 [00:03<00:01,  1.95it/s]Loading checkpoint shards:  83%|████████▎ | 10/12 [00:04<00:01,  1.84it/s]Loading checkpoint shards:  92%|█████████▏| 11/12 [00:04<00:00,  2.02it/s]Loading checkpoint shards: 100%|██████████| 12/12 [00:04<00:00,  2.66it/s]Loading checkpoint shards: 100%|██████████| 12/12 [00:04<00:00,  2.45it/s]
+  Scaled g_proj by 0.02 in 47 GDN layers
+  Init (small_gate) done in 1108.6s
+Token indices sequence length is longer than the specified maximum sequence length for this model (299078 > 131072). Running this sequence through the model will result in indexing errors
+  Layer 32: PPL = 1006559.06  (eval 236.2s)
+
+============================================================
+  Probing layer 33 | strategy=small_gate
+============================================================
+Loading checkpoint shards:   0%|          | 0/12 [00:00<?, ?it/s]Loading checkpoint shards:   8%|▊         | 1/12 [00:00<00:02,  3.94it/s]Loading checkpoint shards:  17%|█▋        | 2/12 [00:00<00:02,  3.92it/s]Loading checkpoint shards:  25%|██▌       | 3/12 [00:00<00:02,  3.29it/s]Loading checkpoint shards:  33%|███▎      | 4/12 [00:01<00:02,  3.58it/s]Loading checkpoint shards:  42%|████▏     | 5/12 [00:01<00:02,  2.65it/s]Loading checkpoint shards:  50%|█████     | 6/12 [00:02<00:02,  2.72it/s]Loading checkpoint shards:  58%|█████▊    | 7/12 [00:02<00:02,  2.31it/s]Loading checkpoint shards:  67%|██████▋   | 8/12 [00:03<00:01,  2.26it/s]Loading checkpoint shards:  75%|███████▌  | 9/12 [00:03<00:01,  2.42it/s]Loading checkpoint shards:  83%|████████▎ | 10/12 [00:03<00:00,  2.37it/s]Loading checkpoint shards:  92%|█████████▏| 11/12 [00:04<00:00,  2.74it/s]Loading checkpoint shards: 100%|██████████| 12/12 [00:04<00:00,  2.91it/s]
+  Scaled g_proj by 0.02 in 47 GDN layers
+  Init (small_gate) done in 1117.3s
+Token indices sequence length is longer than the specified maximum sequence length for this model (299078 > 131072). Running this sequence through the model will result in indexing errors
+  Layer 33: PPL = 1033403.88  (eval 225.6s)
+
+============================================================
+  Probing layer 34 | strategy=small_gate
+============================================================
+Loading checkpoint shards:   0%|          | 0/12 [00:00<?, ?it/s]Loading checkpoint shards:   8%|▊         | 1/12 [00:00<00:02,  5.07it/s]Loading checkpoint shards:  17%|█▋        | 2/12 [00:00<00:02,  4.80it/s]Loading checkpoint shards:  25%|██▌       | 3/12 [00:00<00:02,  3.70it/s]Loading checkpoint shards:  33%|███▎      | 4/12 [00:01<00:02,  3.01it/s]Loading checkpoint shards:  42%|████▏     | 5/12 [00:01<00:02,  2.83it/s]Loading checkpoint shards:  50%|█████     | 6/12 [00:01<00:01,  3.09it/s]Loading checkpoint shards:  58%|█████▊    | 7/12 [00:02<00:01,  3.04it/s]Loading checkpoint shards:  67%|██████▋   | 8/12 [00:02<00:01,  2.87it/s]Loading checkpoint shards:  75%|███████▌  | 9/12 [00:03<00:01,  2.43it/s]Loading checkpoint shards:  83%|████████▎ | 10/12 [00:03<00:00,  2.03it/s]Loading checkpoint shards:  92%|█████████▏| 11/12 [00:04<00:00,  2.41it/s]Loading checkpoint shards: 100%|██████████| 12/12 [00:04<00:00,  3.08it/s]Loading checkpoint shards: 100%|██████████| 12/12 [00:04<00:00,  2.89it/s]
+  Scaled g_proj by 0.02 in 47 GDN layers
+  Init (small_gate) done in 1129.5s
+Token indices sequence length is longer than the specified maximum sequence length for this model (299078 > 131072). Running this sequence through the model will result in indexing errors
+  Layer 34: PPL = 958371.88  (eval 222.6s)
+
+============================================================
+  Probing layer 35 | strategy=small_gate
+============================================================
+Loading checkpoint shards:   0%|          | 0/12 [00:00<?, ?it/s]Loading checkpoint shards:   8%|▊         | 1/12 [00:00<00:01,  9.22it/s]Loading checkpoint shards:  17%|█▋        | 2/12 [00:00<00:01,  6.76it/s]Loading checkpoint shards:  25%|██▌       | 3/12 [00:00<00:01,  5.57it/s]Loading checkpoint shards:  33%|███▎      | 4/12 [00:00<00:01,  5.07it/s]Loading checkpoint shards:  42%|████▏     | 5/12 [00:00<00:01,  4.49it/s]Loading checkpoint shards:  50%|█████     | 6/12 [00:01<00:01,  4.25it/s]Loading checkpoint shards:  58%|█████▊    | 7/12 [00:01<00:01,  3.71it/s]Loading checkpoint shards:  67%|██████▋   | 8/12 [00:01<00:01,  3.28it/s]Loading checkpoint shards:  75%|███████▌  | 9/12 [00:02<00:00,  3.16it/s]Loading checkpoint shards:  83%|████████▎ | 10/12 [00:02<00:00,  2.81it/s]Loading checkpoint shards:  92%|█████████▏| 11/12 [00:02<00:00,  3.19it/s]Loading checkpoint shards: 100%|██████████| 12/12 [00:03<00:00,  3.95it/s]
+  Scaled g_proj by 0.02 in 47 GDN layers
+  Init (small_gate) done in 1121.2s
+Token indices sequence length is longer than the specified maximum sequence length for this model (299078 > 131072). Running this sequence through the model will result in indexing errors
+  Layer 35: PPL = 753496.25  (eval 231.5s)
+
+============================================================
+  Probing layer 36 | strategy=small_gate
+============================================================
+Loading checkpoint shards:   0%|          | 0/12 [00:00<?, ?it/s]Loading checkpoint shards:   8%|▊         | 1/12 [00:00<00:01,  9.98it/s]Loading checkpoint shards:  17%|█▋        | 2/12 [00:00<00:01,  6.96it/s]Loading checkpoint shards:  25%|██▌       | 3/12 [00:00<00:01,  5.96it/s]Loading checkpoint shards:  33%|███▎      | 4/12 [00:00<00:01,  5.56it/s]Loading checkpoint shards:  42%|████▏     | 5/12 [00:00<00:01,  4.81it/s]Loading checkpoint shards:  50%|█████     | 6/12 [00:01<00:01,  4.54it/s]Loading checkpoint shards:  58%|█████▊    | 7/12 [00:01<00:01,  3.92it/s]Loading checkpoint shards:  67%|██████▋   | 8/12 [00:01<00:01,  3.50it/s]Loading checkpoint shards:  75%|███████▌  | 9/12 [00:02<00:00,  3.37it/s]Loading checkpoint shards:  83%|████████▎ | 10/12 [00:02<00:00,  3.00it/s]Loading checkpoint shards:  92%|█████████▏| 11/12 [00:02<00:00,  3.39it/s]Loading checkpoint shards: 100%|██████████| 12/12 [00:02<00:00,  4.21it/s]
+  Scaled g_proj by 0.02 in 47 GDN layers
+  Init (small_gate) done in 1109.5s
+Token indices sequence length is longer than the specified maximum sequence length for this model (299078 > 131072). Running this sequence through the model will result in indexing errors
+  Layer 36: PPL = 1038771.19  (eval 224.1s)
+
+============================================================
+  Probing layer 37 | strategy=small_gate
+============================================================
+Loading checkpoint shards:   0%|          | 0/12 [00:00<?, ?it/s]Loading checkpoint shards:   8%|▊         | 1/12 [00:00<00:01,  9.91it/s]Loading checkpoint shards:  17%|█▋        | 2/12 [00:00<00:01,  7.08it/s]Loading checkpoint shards:  25%|██▌       | 3/12 [00:00<00:01,  5.98it/s]Loading checkpoint shards:  33%|███▎      | 4/12 [00:00<00:01,  5.37it/s]Loading checkpoint shards:  42%|████▏     | 5/12 [00:00<00:01,  4.71it/s]Loading checkpoint shards:  50%|█████     | 6/12 [00:01<00:01,  4.40it/s]Loading checkpoint shards:  58%|█████▊    | 7/12 [00:01<00:01,  3.83it/s]Loading checkpoint shards:  67%|██████▋   | 8/12 [00:01<00:01,  3.40it/s]Loading checkpoint shards:  75%|███████▌  | 9/12 [00:02<00:00,  3.23it/s]Loading checkpoint shards:  83%|████████▎ | 10/12 [00:02<00:00,  2.87it/s]Loading checkpoint shards:  92%|█████████▏| 11/12 [00:02<00:00,  3.27it/s]Loading checkpoint shards: 100%|██████████| 12/12 [00:02<00:00,  4.08it/s]
+  Scaled g_proj by 0.02 in 47 GDN layers
+  Init (small_gate) done in 1114.2s
+Token indices sequence length is longer than the specified maximum sequence length for this model (299078 > 131072). Running this sequence through the model will result in indexing errors
+  Layer 37: PPL = 716978.75  (eval 218.8s)
+
+============================================================
+  Probing layer 38 | strategy=small_gate
+============================================================
+Loading checkpoint shards:   0%|          | 0/12 [00:00<?, ?it/s]Loading checkpoint shards:   8%|▊         | 1/12 [00:00<00:01,  9.60it/s]Loading checkpoint shards:  17%|█▋        | 2/12 [00:00<00:01,  6.63it/s]Loading checkpoint shards:  25%|██▌       | 3/12 [00:00<00:01,  5.78it/s]Loading checkpoint shards:  33%|███▎      | 4/12 [00:00<00:01,  5.36it/s]Loading checkpoint shards:  42%|████▏     | 5/12 [00:00<00:01,  4.69it/s]Loading checkpoint shards:  50%|█████     | 6/12 [00:01<00:01,  4.36it/s]Loading checkpoint shards:  58%|█████▊    | 7/12 [00:01<00:01,  3.79it/s]Loading checkpoint shards:  67%|██████▋   | 8/12 [00:01<00:01,  3.33it/s]Loading checkpoint shards:  75%|███████▌  | 9/12 [00:02<00:00,  3.18it/s]Loading checkpoint shards:  83%|████████▎ | 10/12 [00:02<00:00,  2.82it/s]Loading checkpoint shards:  92%|█████████▏| 11/12 [00:02<00:00,  3.21it/s]Loading checkpoint shards: 100%|██████████| 12/12 [00:02<00:00,  4.01it/s]
+  Scaled g_proj by 0.02 in 47 GDN layers
+  Init (small_gate) done in 1117.3s
+Token indices sequence length is longer than the specified maximum sequence length for this model (299078 > 131072). Running this sequence through the model will result in indexing errors
+  Layer 38: PPL = 1111099.12  (eval 220.4s)
+
+============================================================
+  Probing layer 39 | strategy=small_gate
+============================================================
+Loading checkpoint shards:   0%|          | 0/12 [00:00<?, ?it/s]Loading checkpoint shards:   8%|▊         | 1/12 [00:00<00:01,  9.80it/s]Loading checkpoint shards:  17%|█▋        | 2/12 [00:00<00:01,  6.64it/s]Loading checkpoint shards:  25%|██▌       | 3/12 [00:00<00:01,  5.78it/s]Loading checkpoint shards:  33%|███▎      | 4/12 [00:00<00:01,  5.34it/s]Loading checkpoint shards:  42%|████▏     | 5/12 [00:00<00:01,  4.69it/s]Loading checkpoint shards:  50%|█████     | 6/12 [00:01<00:01,  4.36it/s]Loading checkpoint shards:  58%|█████▊    | 7/12 [00:01<00:01,  3.82it/s]Loading checkpoint shards:  67%|██████▋   | 8/12 [00:01<00:01,  3.39it/s]Loading checkpoint shards:  75%|███████▌  | 9/12 [00:02<00:00,  3.25it/s]Loading checkpoint shards:  83%|████████▎ | 10/12 [00:02<00:00,  2.92it/s]Loading checkpoint shards:  92%|█████████▏| 11/12 [00:02<00:00,  3.32it/s]Loading checkpoint shards: 100%|██████████| 12/12 [00:02<00:00,  4.09it/s]
+  Scaled g_proj by 0.02 in 47 GDN layers
+  Init (small_gate) done in 1111.4s
+Token indices sequence length is longer than the specified maximum sequence length for this model (299078 > 131072). Running this sequence through the model will result in indexing errors
+  Layer 39: PPL = 950871.19  (eval 220.6s)
+
+============================================================
+  Probing layer 40 | strategy=small_gate
+============================================================
+Loading checkpoint shards:   0%|          | 0/12 [00:00<?, ?it/s]Loading checkpoint shards:   8%|▊         | 1/12 [00:00<00:01,  9.49it/s]Loading checkpoint shards:  17%|█▋        | 2/12 [00:00<00:01,  6.68it/s]Loading checkpoint shards:  25%|██▌       | 3/12 [00:00<00:01,  5.60it/s]Loading checkpoint shards:  33%|███▎      | 4/12 [00:00<00:01,  5.21it/s]Loading checkpoint shards:  42%|████▏     | 5/12 [00:00<00:01,  4.53it/s]Loading checkpoint shards:  50%|█████     | 6/12 [00:01<00:01,  4.26it/s]Loading checkpoint shards:  58%|█████▊    | 7/12 [00:01<00:01,  3.70it/s]Loading checkpoint shards:  67%|██████▋   | 8/12 [00:01<00:01,  3.28it/s]Loading checkpoint shards:  75%|███████▌  | 9/12 [00:02<00:00,  3.16it/s]Loading checkpoint shards:  83%|████████▎ | 10/12 [00:02<00:00,  2.81it/s]Loading checkpoint shards:  92%|█████████▏| 11/12 [00:02<00:00,  3.19it/s]Loading checkpoint shards: 100%|██████████| 12/12 [00:03<00:00,  3.96it/s]
+  Scaled g_proj by 0.02 in 47 GDN layers
+  Init (small_gate) done in 1110.2s
+Token indices sequence length is longer than the specified maximum sequence length for this model (299078 > 131072). Running this sequence through the model will result in indexing errors
+  Layer 40: PPL = 1193681.50  (eval 222.3s)
+
+============================================================
+  Probing layer 41 | strategy=small_gate
+============================================================
+Loading checkpoint shards:   0%|          | 0/12 [00:00<?, ?it/s]Loading checkpoint shards:   8%|▊         | 1/12 [00:00<00:01,  9.59it/s]Loading checkpoint shards:  17%|█▋        | 2/12 [00:00<00:01,  7.00it/s]Loading checkpoint shards:  25%|██▌       | 3/12 [00:00<00:01,  5.98it/s]Loading checkpoint shards:  33%|███▎      | 4/12 [00:00<00:01,  5.40it/s]Loading checkpoint shards:  42%|████▏     | 5/12 [00:00<00:01,  4.72it/s]Loading checkpoint shards:  50%|█████     | 6/12 [00:01<00:01,  4.40it/s]Loading checkpoint shards:  58%|█████▊    | 7/12 [00:01<00:01,  3.81it/s]Loading checkpoint shards:  67%|██████▋   | 8/12 [00:01<00:01,  3.39it/s]Loading checkpoint shards:  75%|███████▌  | 9/12 [00:02<00:00,  3.26it/s]Loading checkpoint shards:  83%|████████▎ | 10/12 [00:02<00:00,  2.92it/s]Loading checkpoint shards:  92%|█████████▏| 11/12 [00:02<00:00,  3.32it/s]Loading checkpoint shards: 100%|██████████| 12/12 [00:02<00:00,  4.11it/s]
+  Scaled g_proj by 0.02 in 47 GDN layers
+  Init (small_gate) done in 1120.2s
+Token indices sequence length is longer than the specified maximum sequence length for this model (299078 > 131072). Running this sequence through the model will result in indexing errors
+  Layer 41: PPL = 1223928.38  (eval 220.8s)
+
+============================================================
+  Probing layer 42 | strategy=small_gate
+============================================================
+Loading checkpoint shards:   0%|          | 0/12 [00:00<?, ?it/s]Loading checkpoint shards:   8%|▊         | 1/12 [00:00<00:01,  9.79it/s]Loading checkpoint shards:  17%|█▋        | 2/12 [00:00<00:01,  6.84it/s]Loading checkpoint shards:  25%|██▌       | 3/12 [00:00<00:01,  5.89it/s]Loading checkpoint shards:  33%|███▎      | 4/12 [00:00<00:01,  5.45it/s]Loading checkpoint shards:  42%|████▏     | 5/12 [00:00<00:01,  4.74it/s]Loading checkpoint shards:  50%|█████     | 6/12 [00:01<00:01,  4.38it/s]Loading checkpoint shards:  58%|█████▊    | 7/12 [00:01<00:01,  3.80it/s]Loading checkpoint shards:  67%|██████▋   | 8/12 [00:01<00:01,  3.35it/s]Loading checkpoint shards:  75%|███████▌  | 9/12 [00:02<00:00,  3.22it/s]Loading checkpoint shards:  83%|████████▎ | 10/12 [00:02<00:00,  2.89it/s]Loading checkpoint shards:  92%|█████████▏| 11/12 [00:02<00:00,  3.29it/s]Loading checkpoint shards: 100%|██████████| 12/12 [00:02<00:00,  4.08it/s]
+  Scaled g_proj by 0.02 in 47 GDN layers
+  Init (small_gate) done in 1111.4s
+Token indices sequence length is longer than the specified maximum sequence length for this model (299078 > 131072). Running this sequence through the model will result in indexing errors
+  Layer 42: PPL = 651119.75  (eval 220.1s)
+
+============================================================
+  Probing layer 43 | strategy=small_gate
+============================================================
+Loading checkpoint shards:   0%|          | 0/12 [00:00<?, ?it/s]Loading checkpoint shards:   8%|▊         | 1/12 [00:00<00:01,  9.24it/s]Loading checkpoint shards:  17%|█▋        | 2/12 [00:00<00:01,  6.78it/s]Loading checkpoint shards:  25%|██▌       | 3/12 [00:00<00:01,  5.85it/s]Loading checkpoint shards:  33%|███▎      | 4/12 [00:00<00:01,  5.36it/s]Loading checkpoint shards:  42%|████▏     | 5/12 [00:00<00:01,  4.67it/s]Loading checkpoint shards:  50%|█████     | 6/12 [00:01<00:01,  4.35it/s]Loading checkpoint shards:  58%|█████▊    | 7/12 [00:01<00:01,  3.80it/s]Loading checkpoint shards:  67%|██████▋   | 8/12 [00:01<00:01,  3.36it/s]Loading checkpoint shards:  75%|███████▌  | 9/12 [00:02<00:00,  3.20it/s]Loading checkpoint shards:  83%|████████▎ | 10/12 [00:02<00:00,  2.86it/s]Loading checkpoint shards:  92%|█████████▏| 11/12 [00:02<00:00,  3.26it/s]Loading checkpoint shards: 100%|██████████| 12/12 [00:02<00:00,  4.05it/s]
+  Scaled g_proj by 0.02 in 47 GDN layers
+  Init (small_gate) done in 1107.5s
+Token indices sequence length is longer than the specified maximum sequence length for this model (299078 > 131072). Running this sequence through the model will result in indexing errors
+  Layer 43: PPL = 996188.94  (eval 220.9s)
+
+============================================================
+  Probing layer 44 | strategy=small_gate
+============================================================
+Loading checkpoint shards:   0%|          | 0/12 [00:00<?, ?it/s]Loading checkpoint shards:   8%|▊         | 1/12 [00:00<00:01,  9.91it/s]Loading checkpoint shards:  17%|█▋        | 2/12 [00:00<00:01,  6.87it/s]Loading checkpoint shards:  25%|██▌       | 3/12 [00:00<00:01,  5.83it/s]Loading checkpoint shards:  33%|███▎      | 4/12 [00:00<00:01,  5.32it/s]Loading checkpoint shards:  42%|████▏     | 5/12 [00:00<00:01,  4.63it/s]Loading checkpoint shards:  50%|█████     | 6/12 [00:01<00:01,  4.28it/s]Loading checkpoint shards:  58%|█████▊    | 7/12 [00:01<00:01,  3.72it/s]Loading checkpoint shards:  67%|██████▋   | 8/12 [00:01<00:01,  3.23it/s]Loading checkpoint shards:  75%|███████▌  | 9/12 [00:02<00:00,  3.06it/s]Loading checkpoint shards:  83%|████████▎ | 10/12 [00:02<00:00,  2.73it/s]Loading checkpoint shards:  92%|█████████▏| 11/12 [00:03<00:00,  3.05it/s]Loading checkpoint shards: 100%|██████████| 12/12 [00:03<00:00,  3.87it/s]
+  Scaled g_proj by 0.02 in 47 GDN layers
+  Init (small_gate) done in 1115.5s
+Token indices sequence length is longer than the specified maximum sequence length for this model (299078 > 131072). Running this sequence through the model will result in indexing errors
+  Layer 44: PPL = 487922.94  (eval 226.1s)
+
+============================================================
+  Probing layer 45 | strategy=small_gate
+============================================================
+Loading checkpoint shards:   0%|          | 0/12 [00:00<?, ?it/s]Loading checkpoint shards:   8%|▊         | 1/12 [00:00<00:01,  9.92it/s]Loading checkpoint shards:  17%|█▋        | 2/12 [00:00<00:01,  6.88it/s]Loading checkpoint shards:  25%|██▌       | 3/12 [00:00<00:01,  5.91it/s]Loading checkpoint shards:  33%|███▎      | 4/12 [00:00<00:01,  5.44it/s]Loading checkpoint shards:  42%|████▏     | 5/12 [00:00<00:01,  4.72it/s]Loading checkpoint shards:  50%|█████     | 6/12 [00:01<00:01,  4.36it/s]Loading checkpoint shards:  58%|█████▊    | 7/12 [00:01<00:01,  3.78it/s]Loading checkpoint shards:  67%|██████▋   | 8/12 [00:01<00:01,  3.30it/s]Loading checkpoint shards:  75%|███████▌  | 9/12 [00:02<00:00,  3.15it/s]Loading checkpoint shards:  83%|████████▎ | 10/12 [00:02<00:00,  2.81it/s]Loading checkpoint shards:  92%|█████████▏| 11/12 [00:02<00:00,  3.21it/s]Loading checkpoint shards: 100%|██████████| 12/12 [00:02<00:00,  4.01it/s]
+  Scaled g_proj by 0.02 in 47 GDN layers
+  Init (small_gate) done in 1111.0s
+Token indices sequence length is longer than the specified maximum sequence length for this model (299078 > 131072). Running this sequence through the model will result in indexing errors
+  Layer 45: PPL = 968909.94  (eval 217.0s)
+
+============================================================
+  Probing layer 46 | strategy=small_gate
+============================================================
+Loading checkpoint shards:   0%|          | 0/12 [00:00<?, ?it/s]Loading checkpoint shards:   8%|▊         | 1/12 [00:00<00:01,  9.83it/s]Loading checkpoint shards:  17%|█▋        | 2/12 [00:00<00:01,  7.08it/s]Loading checkpoint shards:  25%|██▌       | 3/12 [00:00<00:01,  5.97it/s]Loading checkpoint shards:  33%|███▎      | 4/12 [00:00<00:01,  5.51it/s]Loading checkpoint shards:  42%|████▏     | 5/12 [00:00<00:01,  4.79it/s]Loading checkpoint shards:  50%|█████     | 6/12 [00:01<00:01,  4.46it/s]Loading checkpoint shards:  58%|█████▊    | 7/12 [00:01<00:01,  3.86it/s]Loading checkpoint shards:  67%|██████▋   | 8/12 [00:01<00:01,  3.39it/s]Loading checkpoint shards:  75%|███████▌  | 9/12 [00:02<00:00,  3.26it/s]Loading checkpoint shards:  83%|████████▎ | 10/12 [00:02<00:00,  2.92it/s]Loading checkpoint shards:  92%|█████████▏| 11/12 [00:02<00:00,  3.30it/s]Loading checkpoint shards: 100%|██████████| 12/12 [00:02<00:00,  4.12it/s]
+  Scaled g_proj by 0.02 in 47 GDN layers
+  Init (small_gate) done in 1113.2s
+Token indices sequence length is longer than the specified maximum sequence length for this model (299078 > 131072). Running this sequence through the model will result in indexing errors
+  Layer 46: PPL = 216933.45  (eval 227.1s)
+
+============================================================
+  Probing layer 47 | strategy=small_gate
+============================================================
+Loading checkpoint shards:   0%|          | 0/12 [00:00<?, ?it/s]Loading checkpoint shards:   8%|▊         | 1/12 [00:00<00:01,  9.76it/s]Loading checkpoint shards:  17%|█▋        | 2/12 [00:00<00:01,  6.99it/s]Loading checkpoint shards:  25%|██▌       | 3/12 [00:00<00:01,  5.84it/s]Loading checkpoint shards:  33%|███▎      | 4/12 [00:00<00:01,  5.40it/s]Loading checkpoint shards:  42%|████▏     | 5/12 [00:00<00:01,  4.74it/s]Loading checkpoint shards:  50%|█████     | 6/12 [00:01<00:01,  4.30it/s]Loading checkpoint shards:  58%|█████▊    | 7/12 [00:01<00:01,  3.78it/s]Loading checkpoint shards:  67%|██████▋   | 8/12 [00:01<00:01,  3.37it/s]Loading checkpoint shards:  75%|███████▌  | 9/12 [00:02<00:00,  3.23it/s]Loading checkpoint shards:  83%|████████▎ | 10/12 [00:02<00:00,  2.84it/s]Loading checkpoint shards:  92%|█████████▏| 11/12 [00:02<00:00,  3.22it/s]Loading checkpoint shards: 100%|██████████| 12/12 [00:02<00:00,  4.03it/s]
+  Scaled g_proj by 0.02 in 47 GDN layers
+  Init (small_gate) done in 1116.0s
+Token indices sequence length is longer than the specified maximum sequence length for this model (299078 > 131072). Running this sequence through the model will result in indexing errors
+  Layer 47: PPL = 2246805.50  (eval 226.3s)
+
+============================================================
+  RANKING [small_gate] (lower PPL = more important to keep)
+============================================================
+  # 1  Layer 46  PPL = 216933.45
+  # 2  Layer 44  PPL = 487922.94
+  # 3  Layer  9  PPL = 614401.81
+  # 4  Layer 42  PPL = 651119.75
+  # 5  Layer 37  PPL = 716978.75
+  # 6  Layer  3  PPL = 751678.94
+  # 7  Layer 35  PPL = 753496.25
+  # 8  Layer  8  PPL = 754317.31
+  # 9  Layer 25  PPL = 802545.50
+  #10  Layer  4  PPL = 805079.81
+  #11  Layer  5  PPL = 831342.69
+  #12  Layer 13  PPL = 855262.31
+  #13  Layer 14  PPL = 889508.50
+  #14  Layer 21  PPL = 907026.50
+  #15  Layer 10  PPL = 927272.38
+  #16  Layer  1  PPL = 928858.44
+  #17  Layer 16  PPL = 937760.00
+  #18  Layer  7  PPL = 942558.62
+  #19  Layer 39  PPL = 950871.19
+  #20  Layer 34  PPL = 958371.88
+  #21  Layer 31  PPL = 964806.75
+  #22  Layer 12  PPL = 966716.94
+  #23  Layer 45  PPL = 968909.94
+  #24  Layer 18  PPL = 972576.94
+  #25  Layer 27  PPL = 975757.94
+  #26  Layer  2  PPL = 985796.94
+  #27  Layer 43  PPL = 996188.94
+  #28  Layer 32  PPL = 1006559.06
+  #29  Layer  6  PPL = 1007208.19
+  #30  Layer  0  PPL = 1024571.06
+  #31  Layer 17  PPL = 1027940.81
+  #32  Layer 33  PPL = 1033403.88
+  #33  Layer 11  PPL = 1037715.69
+  #34  Layer 36  PPL = 1038771.19
+  #35  Layer 24  PPL = 1039468.81
+  #36  Layer 15  PPL = 1055973.00
+  #37  Layer 23  PPL = 1074231.88
+  #38  Layer 30  PPL = 1096706.00
+  #39  Layer 28  PPL = 1097498.00
+  #40  Layer 38  PPL = 1111099.12
+  #41  Layer 19  PPL = 1126566.12
+  #42  Layer 22  PPL = 1136461.38
+  #43  Layer 26  PPL = 1187129.88
+  #44  Layer 40  PPL = 1193681.50
+  #45  Layer 41  PPL = 1223928.38
+  #46  Layer 29  PPL = 1236553.62
+  #47  Layer 20  PPL = 1262895.62
+  #48  Layer 47  PPL = 2246805.50
+
+  Top-36 layers (sorted): [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 21, 24, 25, 27, 31, 32, 33, 34, 35, 36, 37, 39, 42, 43, 44, 45, 46]
+  keep_full_attention_layers: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 21, 24, 25, 27, 31, 32, 33, 34, 35, 36, 37, 39, 42, 43, 44, 45, 46]
+
+  Results saved to /home/charlie/Taylor-Distill/results/zeroshot_qwen3_30b_a3b_75pct/ga_s2/small_gate/gpu0.json

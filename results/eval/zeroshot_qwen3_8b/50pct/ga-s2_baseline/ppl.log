@@ -1,0 +1,16 @@
+Loading model from /data/shared/charlie/zeroshot_qwen3_8b_50pct/ga-s2/baseline
+/home/charlie/miniconda3/envs/taylor/lib/python3.12/site-packages/fla/layers/gated_deltanet.py:191: UserWarning: ShortConvolution is crucial to the performance. Do not turn it off, i.e., setting `use_short_conv=False` unless you know what you are doing.
+  warnings.warn(
+Model loaded. Evaluating PPL on wikitext2 (seqlen=2048)...
+Token indices sequence length is longer than the specified maximum sequence length for this model (299078 > 131072). Running this sequence through the model will result in indexing errors
+  chunk 20/146: PPL=974.06
+  chunk 40/146: PPL=981.18
+  chunk 60/146: PPL=1036.42
+  chunk 80/146: PPL=1064.56
+  chunk 100/146: PPL=1088.76
+  chunk 120/146: PPL=1063.11
+  chunk 140/146: PPL=1044.90
+
+==================================================
+Wikitext2 PPL = 1045.96
+==================================================

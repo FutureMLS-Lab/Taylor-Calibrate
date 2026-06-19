@@ -1,0 +1,17 @@
+Current Python version 3.10 is below the recommended 3.11 version. It is recommended to upgrade to Python 3.11 or higher for the best experience.
+torch.compile is not available in Python 3.10, using identity decorator instead
+Loading model from Qwen/Qwen2.5-1.5B-Instruct
+`torch_dtype` is deprecated! Use `dtype` instead!
+Model loaded. Evaluating PPL on wikitext2 (seqlen=2048)...
+Token indices sequence length is longer than the specified maximum sequence length for this model (299078 > 131072). Running this sequence through the model will result in indexing errors
+  chunk 20/146: PPL=9.38
+  chunk 40/146: PPL=8.99
+  chunk 60/146: PPL=9.12
+  chunk 80/146: PPL=9.36
+  chunk 100/146: PPL=9.69
+  chunk 120/146: PPL=9.70
+  chunk 140/146: PPL=9.59
+
+==================================================
+Wikitext2 PPL = 9.66
+==================================================

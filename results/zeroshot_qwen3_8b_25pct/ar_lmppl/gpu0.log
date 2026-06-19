@@ -1,0 +1,85 @@
+Loading teacher: Qwen/Qwen3-8B
+Could not cache non-existence of file. Will ignore error and continue. Error: [Errno 13] Permission denied: '/data/shared/huggingface/hub/models--Qwen--Qwen3-8B/.no_exist/b968826d9c46dd6066d109eabc6255188de91218/model.safetensors'
+Loading checkpoint shards:   0%|          | 0/5 [00:00<?, ?it/s]Loading checkpoint shards:  20%|██        | 1/5 [00:00<00:01,  2.50it/s]Loading checkpoint shards:  40%|████      | 2/5 [00:01<00:01,  1.83it/s]Loading checkpoint shards:  60%|██████    | 3/5 [00:01<00:01,  1.51it/s]Loading checkpoint shards:  80%|████████  | 4/5 [00:02<00:00,  1.68it/s]Loading checkpoint shards: 100%|██████████| 5/5 [00:02<00:00,  2.13it/s]
+Computing baseline PPL (no bypass)...
+Token indices sequence length is longer than the specified maximum sequence length for this model (299078 > 131072). Running this sequence through the model will result in indexing errors
+  Baseline PPL = 9.73
+  Probing layer 0... PPL=40.20  delta=+30.47  (14.1s)
+  Probing layer 1... PPL=9.87  delta=+0.14  (14.2s)
+  Probing layer 2... PPL=9.91  delta=+0.19  (14.0s)
+  Probing layer 3... PPL=9.85  delta=+0.12  (13.9s)
+  Probing layer 4... PPL=9.87  delta=+0.15  (13.8s)
+  Probing layer 5... PPL=9.85  delta=+0.13  (13.8s)
+  Probing layer 6... PPL=10.05  delta=+0.32  (14.0s)
+  Probing layer 7... PPL=9.85  delta=+0.13  (14.0s)
+  Probing layer 8... PPL=9.94  delta=+0.22  (14.0s)
+  Probing layer 9... PPL=9.93  delta=+0.21  (14.1s)
+  Probing layer 10... PPL=9.80  delta=+0.07  (13.9s)
+  Probing layer 11... PPL=9.94  delta=+0.22  (13.9s)
+  Probing layer 12... PPL=10.09  delta=+0.36  (13.9s)
+  Probing layer 13... PPL=9.99  delta=+0.27  (13.9s)
+  Probing layer 14... PPL=10.01  delta=+0.29  (13.9s)
+  Probing layer 15... PPL=9.49  delta=+-0.24  (13.8s)
+  Probing layer 16... PPL=9.87  delta=+0.14  (13.9s)
+  Probing layer 17... PPL=9.60  delta=+-0.12  (13.9s)
+  Probing layer 18... PPL=9.57  delta=+-0.16  (13.8s)
+  Probing layer 19... PPL=9.71  delta=+-0.01  (14.0s)
+  Probing layer 20... PPL=9.87  delta=+0.14  (13.9s)
+  Probing layer 21... PPL=9.40  delta=+-0.33  (13.9s)
+  Probing layer 22... PPL=10.21  delta=+0.48  (13.9s)
+  Probing layer 23... PPL=9.95  delta=+0.22  (14.0s)
+  Probing layer 24... PPL=10.59  delta=+0.87  (14.2s)
+  Probing layer 25... PPL=9.74  delta=+0.01  (13.8s)
+  Probing layer 26... PPL=9.91  delta=+0.18  (13.9s)
+  Probing layer 27... PPL=10.48  delta=+0.76  (13.8s)
+  Probing layer 28... PPL=9.86  delta=+0.13  (13.8s)
+  Probing layer 29... PPL=9.87  delta=+0.14  (14.0s)
+  Probing layer 30... PPL=9.96  delta=+0.24  (13.9s)
+  Probing layer 31... PPL=9.87  delta=+0.15  (13.9s)
+  Probing layer 32... PPL=9.85  delta=+0.12  (13.9s)
+  Probing layer 33... PPL=10.08  delta=+0.36  (13.9s)
+  Probing layer 34... PPL=10.41  delta=+0.68  (13.8s)
+  Probing layer 35... PPL=9.36  delta=+-0.37  (13.8s)
+
+============================================================
+  RANKING (higher delta = more important to keep as softmax)
+============================================================
+  # 1  Layer  0  PPL_bypass=40.20  delta=+30.47
+  # 2  Layer 24  PPL_bypass=10.59  delta=+0.87
+  # 3  Layer 27  PPL_bypass=10.48  delta=+0.76
+  # 4  Layer 34  PPL_bypass=10.41  delta=+0.68
+  # 5  Layer 22  PPL_bypass=10.21  delta=+0.48
+  # 6  Layer 12  PPL_bypass=10.09  delta=+0.36
+  # 7  Layer 33  PPL_bypass=10.08  delta=+0.36
+  # 8  Layer  6  PPL_bypass=10.05  delta=+0.32
+  # 9  Layer 14  PPL_bypass=10.01  delta=+0.29
+  #10  Layer 13  PPL_bypass=9.99  delta=+0.27
+  #11  Layer 30  PPL_bypass=9.96  delta=+0.24
+  #12  Layer 23  PPL_bypass=9.95  delta=+0.22
+  #13  Layer 11  PPL_bypass=9.94  delta=+0.22
+  #14  Layer  8  PPL_bypass=9.94  delta=+0.22
+  #15  Layer  9  PPL_bypass=9.93  delta=+0.21
+  #16  Layer  2  PPL_bypass=9.91  delta=+0.19
+  #17  Layer 26  PPL_bypass=9.91  delta=+0.18
+  #18  Layer 31  PPL_bypass=9.87  delta=+0.15
+  #19  Layer  4  PPL_bypass=9.87  delta=+0.15
+  #20  Layer 16  PPL_bypass=9.87  delta=+0.14
+  #21  Layer 29  PPL_bypass=9.87  delta=+0.14
+  #22  Layer  1  PPL_bypass=9.87  delta=+0.14
+  #23  Layer 20  PPL_bypass=9.87  delta=+0.14
+  #24  Layer 28  PPL_bypass=9.86  delta=+0.13
+  #25  Layer  7  PPL_bypass=9.85  delta=+0.13
+  #26  Layer  5  PPL_bypass=9.85  delta=+0.13
+  #27  Layer  3  PPL_bypass=9.85  delta=+0.12
+  #28  Layer 32  PPL_bypass=9.85  delta=+0.12
+  #29  Layer 10  PPL_bypass=9.80  delta=+0.07
+  #30  Layer 25  PPL_bypass=9.74  delta=+0.01
+  #31  Layer 19  PPL_bypass=9.71  delta=+-0.01
+  #32  Layer 17  PPL_bypass=9.60  delta=+-0.12
+  #33  Layer 18  PPL_bypass=9.57  delta=+-0.16
+  #34  Layer 15  PPL_bypass=9.49  delta=+-0.24
+  #35  Layer 21  PPL_bypass=9.40  delta=+-0.33
+  #36  Layer 35  PPL_bypass=9.36  delta=+-0.37
+
+  Top-9 layers: [0, 6, 12, 14, 22, 24, 27, 33, 34]
+  Saved to /home/charlie/Taylor-Distill/results/zeroshot_qwen3_8b_25pct/ar_lmppl/gpu0.json

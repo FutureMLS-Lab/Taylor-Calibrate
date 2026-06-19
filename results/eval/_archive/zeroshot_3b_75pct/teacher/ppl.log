@@ -1,0 +1,15 @@
+Loading model from Qwen/Qwen2.5-3B-Instruct
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:00<00:00,  1.17it/s]Loading checkpoint shards: 100%|██████████| 2/2 [00:01<00:00,  1.47it/s]Loading checkpoint shards: 100%|██████████| 2/2 [00:01<00:00,  1.42it/s]
+Token indices sequence length is longer than the specified maximum sequence length for this model (299078 > 131072). Running this sequence through the model will result in indexing errors
+Model loaded. Evaluating PPL on wikitext2 (seqlen=2048)...
+  chunk 20/146: PPL=8.34
+  chunk 40/146: PPL=7.98
+  chunk 60/146: PPL=8.14
+  chunk 80/146: PPL=8.31
+  chunk 100/146: PPL=8.60
+  chunk 120/146: PPL=8.58
+  chunk 140/146: PPL=8.50
+
+==================================================
+Wikitext2 PPL = 8.56
+==================================================

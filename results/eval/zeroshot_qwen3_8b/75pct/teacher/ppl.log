@@ -1,0 +1,16 @@
+Loading model from Qwen/Qwen3-8B
+Could not cache non-existence of file. Will ignore error and continue. Error: [Errno 13] Permission denied: '/data/shared/huggingface/hub/models--Qwen--Qwen3-8B/.no_exist/b968826d9c46dd6066d109eabc6255188de91218/model.safetensors'
+Loading checkpoint shards:   0%|          | 0/5 [00:00<?, ?it/s]Loading checkpoint shards: 100%|██████████| 5/5 [00:00<00:00, 188.99it/s]
+Model loaded. Evaluating PPL on wikitext2 (seqlen=2048)...
+Token indices sequence length is longer than the specified maximum sequence length for this model (299078 > 131072). Running this sequence through the model will result in indexing errors
+  chunk 20/146: PPL=9.60
+  chunk 40/146: PPL=9.01
+  chunk 60/146: PPL=9.15
+  chunk 80/146: PPL=9.36
+  chunk 100/146: PPL=9.72
+  chunk 120/146: PPL=9.73
+  chunk 140/146: PPL=9.65
+
+==================================================
+Wikitext2 PPL = 9.73
+==================================================
