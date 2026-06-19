@@ -1,8 +1,16 @@
-# Taylor-Calibrate
+<h1 align="center">Taylor-Calibrate: Principled Initialization for Hybrid Linear Attention Distillation</h1>
+
+<p align="center">
+  <a href="https://arxiv.org/abs/2606.16429"><img alt="Paper Link" src="https://img.shields.io/badge/Paper%20Link-arXiv%3A2606.16429-b31b1b?style=for-the-badge&logo=arxiv&logoColor=white"></a>
+</p>
+
+---
 
 Distilling softmax-attention Transformers (Qwen, Llama) into hybrid linear-attention students built on **GatedDeltaNet (GDN)**, with a Taylor-series-informed initialization.
 
 The student keeps a small set of **full-attention layers** and replaces the rest with a GDN variant. Training is two stages preceded by an analytical/Taylor initialization.
+
+> **TL;DR** — Naively copying teacher attention into a Gated DeltaNet student leaves the recurrent decay / write / output-gating dynamics unspecified, so distillation burns tokens repairing the initialization. **Taylor-Calibrate** sets the value projection, memory timescale, write gates, and output gate from Taylor-guided teacher-attention statistics, then runs a short per-layer alignment — yielding up to **88× stronger** zero-shot students and matched recovery with **4.9×–9.2× fewer** training tokens than naive conversion.
 
 ```
 Teacher (HF) ──► [convert] ──► FLA-format teacher
@@ -354,3 +362,19 @@ Add new (model, variant) combinations under `configs/<model>/<variant>_stage{1,2
 
 - **Gradient checkpointing for Stage 1.** Not yet supported — per-layer losses are collected through a module-global list, which collides with reentrant recomputation (`use_reentrant=True` zeros gradients silently; `use_reentrant=False` double-appends and shape-mismatches). For very large teachers, int-quantize frozen layers as a stand-in.
 - **Drop the RULER eval patches.** `scripts/ruler_eval_patched.py` defensively monkey-patches around two upstream interactions on long-context eval: a KV-cache + `unpad_input` crash in `fla.layers.attn.Attention.forward`, and first-prefill truncation in `StudentForCausalLM.prepare_inputs_for_generation` with transformers ≥4.56. Plan: retire the patched runner once the upstream fixes land.
+
+---
+
+## Citation
+
+If you find this work useful, please cite:
+
+```bibtex
+@article{zhou2026taylorcalibrate,
+  title   = {Taylor-Calibrate: Principled Initialization for Hybrid Linear Attention Distillation},
+  author  = {Zhou, Zhongzhu and Wu, Qingyang and Wang, Junxiong and Mishra, Mayank and Song, Shuaiwen Leon and Athiwaratkun, Ben and Xu, Chenfeng},
+  journal = {arXiv preprint arXiv:2606.16429},
+  year    = {2026},
+  url     = {https://arxiv.org/abs/2606.16429}
+}
+```
