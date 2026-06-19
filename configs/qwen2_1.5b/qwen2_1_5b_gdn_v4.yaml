@@ -1,6 +1,6 @@
 teacher_model:
   # FLA-converted teacher (run convert/convert_from_qwen2.5.py first if not present)
-  name: './teachers/Qwen2.5-1.5b-Instruct'
+  name: './teachers/Qwen2.5-1.5B-Instruct'
 
 student_model:
   name: 'gdn_v4'

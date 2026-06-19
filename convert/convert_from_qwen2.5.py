@@ -1,27 +1,7 @@
 
 # -*- coding: utf-8 -*-
 
-# scripts for converting pretrained hf model weights to fla style
-# calling the code to make conversions for mistralai/Mistral-7B-v0.1 would achieve the following results:
-# |    Tasks     |Version|Filter|n-shot|  Metric  |Value |   |Stderr|
-# |--------------|------:|------|-----:|----------|-----:|---|-----:|
-# |arc_challenge |      1|none  |     0|acc       |0.5043|±  |0.0146|
-# |              |       |none  |     0|acc_norm  |0.5392|±  |0.0146|
-# |arc_easy      |      1|none  |     0|acc       |0.8081|±  |0.0081|
-# |              |       |none  |     0|acc_norm  |0.7946|±  |0.0083|
-# |boolq         |      2|none  |     0|acc       |0.8373|±  |0.0065|
-# |copa          |      1|none  |     0|acc       |0.9300|±  |0.0256|
-# |hellaswag     |      1|none  |     0|acc       |0.6127|±  |0.0049|
-# |              |       |none  |     0|acc_norm  |0.8100|±  |0.0039|
-# |lambada_openai|      1|none  |     0|perplexity|3.1810|±  |0.0583|
-# |              |       |none  |     0|acc       |0.7563|±  |0.0060|
-# |openbookqa    |      1|none  |     0|acc       |0.3260|±  |0.0210|
-# |              |       |none  |     0|acc_norm  |0.4380|±  |0.0222|
-# |piqa          |      1|none  |     0|acc       |0.8069|±  |0.0092|
-# |              |       |none  |     0|acc_norm  |0.8215|±  |0.0089|
-# |sciq          |      1|none  |     0|acc       |0.9580|±  |0.0063|
-# |              |       |none  |     0|acc_norm  |0.9390|±  |0.0076|
-# |winogrande    |      1|none  |     0|acc       |0.7395|±  |0.0123|
+# Convert pretrained Qwen2.5 HF weights to FLA-compatible TransformerForCausalLM format.
 
 
 import argparse

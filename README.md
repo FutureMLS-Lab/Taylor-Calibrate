@@ -139,7 +139,8 @@ torchrun --nproc_per_node=8 scripts/train_stage1.py \
     --cfg configs/qwen2_1.5b/uniform_calibrate_stage1.yaml
 ```
 
-Gotcha: gradient checkpointing **breaks** Stage 1 (per-layer losses are a side-effect via a module-global list); see `train_stage1.py` for details.
+Do not enable gradient checkpointing here — see [Future work](#future-work).
+
 ---
 
 ## 6 · Convert Stage 1 → clean student
@@ -161,7 +162,7 @@ The Stage-2 YAML's `train.student_init_ckpt` should point at the `converted-hf/`
 
 ## 7 · Stage 2 — end-to-end KL distillation
 
-Student logits ⟂ teacher logits — KL on full sequence. The teacher is loaded once (CPU → GPU on first batch).
+KL divergence between student and teacher logits over the full sequence. Teacher is loaded once (CPU → GPU on first batch).
 
 ```bash
 torchrun --nproc_per_node=8 scripts/train.py \
@@ -181,8 +182,10 @@ After Stage 2, an instruction SFT pass on a chat-format dataset.
 
 ```bash
 torchrun --nproc_per_node=8 scripts/sft.py \
-    --cfg configs/qwen2_1.5b/uniform_calibrate_sft.yaml
+    --cfg configs/<model>/uniform_calibrate_sft.yaml
 ```
+
+> **Note:** No SFT config is shipped in this repo. Create one following the Stage 2 YAML layout, replacing `student_init_ckpt` with the Stage 2 final dir and adding a `sft_dataset` field.
 
 The default config streams a chat-format dataset, applies the tokenizer's chat template, and masks all non-assistant tokens (`-100`) so cross-entropy is computed only on assistant responses.
 
@@ -206,11 +209,7 @@ bash scripts/eval_ruler.sh ./checkpoints/calibrate_stage2/final --seq_lengths '4
 
 ### RULER eval — patched variant
 
-Some `transformers` × `fla` combinations trigger two bugs that silently zero out RULER scores:
-1. `fla.layers.attn.Attention.forward` crashes on `unpad_input` when a KV-cache is present.
-2. `StudentForCausalLM.prepare_inputs_for_generation` slices the prompt to its last token on the first prefill (because newer transformers versions pre-create a non-empty `DynamicCache`).
-
-`scripts/ruler_eval_patched.py` monkey-patches both defensively and otherwise mirrors `eval/harness.py`. Use it instead of the `eval_ruler.sh` wrapper if you see RULER scores collapse to near-zero on multi-needle subtasks.
+Some `transformers` × `fla` versions silently collapse RULER multi-needle scores to near-zero. `scripts/ruler_eval_patched.py` mirrors `eval/harness.py` with defensive monkey-patches — use it in place of the `eval_ruler.sh` wrapper if you see scores collapse. See [Future work](#future-work) for the underlying interactions.
 
 ```bash
 python scripts/ruler_eval_patched.py \
@@ -351,7 +350,7 @@ Add new (model, variant) combinations under `configs/<model>/<variant>_stage{1,2
 
 ---
 
-## Known issues
+## Future work
 
-- Stage 1 + gradient-checkpointing: do not enable. The per-layer loss is collected via a global list and `use_reentrant=True` re-runs the forward in `no_grad` (silent zero gradients), while `use_reentrant=False` re-runs and double-appends (tensor-count mismatch). Use int-quantization of frozen layers for very large teachers instead.
-- RULER + transformers ≥4.56 + the default student `prepare_inputs_for_generation`: first-prefill silently truncates to one token. Use `scripts/ruler_eval_patched.py` (see §9 above).
+- **Gradient checkpointing for Stage 1.** Not yet supported — per-layer losses are collected through a module-global list, which collides with reentrant recomputation (`use_reentrant=True` zeros gradients silently; `use_reentrant=False` double-appends and shape-mismatches). For very large teachers, int-quantize frozen layers as a stand-in.
+- **Drop the RULER eval patches.** `scripts/ruler_eval_patched.py` defensively monkey-patches around two upstream interactions on long-context eval: a KV-cache + `unpad_input` crash in `fla.layers.attn.Attention.forward`, and first-prefill truncation in `StudentForCausalLM.prepare_inputs_for_generation` with transformers ≥4.56. Plan: retire the patched runner once the upstream fixes land.

@@ -106,7 +106,7 @@ def main():
     ds = ds.filter(has_loss)
 
     # Training args
-    g_accum = cfg.train.batch_size // (cfg.train.micro_batch_size * int(os.environ.get("WORLD_SIZE", 1)))
+    g_accum = max(1, cfg.train.batch_size // (cfg.train.micro_batch_size * int(os.environ.get("WORLD_SIZE", 1))))
     tokens_per_step = cfg.train.batch_size * cfg.train.train_seq_len
     max_steps = cfg.train.target_tokens // tokens_per_step
     save_steps = cfg.train.save_steps_tokens // tokens_per_step

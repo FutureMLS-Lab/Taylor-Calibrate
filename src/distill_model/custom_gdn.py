@@ -168,36 +168,6 @@ class GatedDeltaNet_custom(nn.Module):
         # name.endswith("bias") in param_grouping.py
         self.dt_bias._no_weight_decay = True
 
-        # if use_short_conv:
-        #     self.conv_size = conv_size
-        #     self.q_conv1d = ShortConvolution(
-        #         hidden_size=self.key_dim,
-        #         kernel_size=conv_size,
-        #         bias=conv_bias,
-        #         activation='silu'
-        #     )
-        #     self.k_conv1d = ShortConvolution(
-        #         hidden_size=self.key_dim,
-        #         kernel_size=conv_size,
-        #         bias=conv_bias,
-        #         activation='silu'
-        #     )
-        #     self.v_conv1d = ShortConvolution(
-        #         hidden_size=self.value_dim,
-        #         kernel_size=conv_size,
-        #         bias=conv_bias,
-        #         activation='silu'
-        #     )
-        # else:
-        #     warnings.warn(
-        #         "ShortConvolution is crucial to the performance. "
-        #         "Do not turn it off, i.e., setting `use_short_conv=False` unless you know what you are doing."
-        #     )
-        # # if use_gate:
-        # #     self.g_proj = nn.Linear(hidden_size, self.value_dim, bias=False)
-        #     self.o_norm = FusedRMSNormGated(self.head_v_dim, eps=norm_eps)
-        # else:
-        #     self.o_norm = RMSNorm(self.head_v_dim, eps=norm_eps)
         self.o_proj = nn.Linear(self.value_dim, hidden_size, bias=False)
 
     def forward(
