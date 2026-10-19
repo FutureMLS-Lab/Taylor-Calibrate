@@ -1,0 +1,48 @@
+{
+  "converted_layers": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    7,
+    8,
+    9,
+    10,
+    11,
+    13,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    23,
+    25,
+    26,
+    28,
+    29,
+    30,
+    31,
+    32,
+    35
+  ],
+  "policy": "AR (LM-PPL)",
+  "ranking_source": "results/zeroshot_qwen3_8b_75pct/ar_lmppl.json",
+  "retained_full_attention_layers": [
+    0,
+    6,
+    12,
+    14,
+    22,
+    24,
+    27,
+    33,
+    34
+  ],
+  "ratio": {
+    "gdn": 3,
+    "softmax": 1
+  }
+}

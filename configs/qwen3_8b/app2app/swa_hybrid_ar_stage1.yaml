@@ -1,0 +1,33 @@
+data:
+  cache_dir: /shared/charlie/taylor-app2app/data/cleaned-alpaca-qwen3-8b-100m/stage1_context1000
+
+teacher_model:
+  name: /shared/charlie/taylor-app2app/artifacts/teacher-qwen3-8b-fla
+
+student_model:
+  name: swa_sink_v1
+  keep_full_attention_layers: [0, 6, 12, 14, 22, 24, 27, 33, 34]
+  window_size: 64
+  num_sink_tokens: 4
+
+train:
+  target_tokens: 50_000_000
+  batch_size: 40
+  micro_batch_size: 1
+  train_seq_len: 1000
+  seed: 42
+  lr_scheduler_type: cosine
+  lr: 0.001
+  lr_attn: 0.001
+  max_grad_norm: 1.0
+  output_dir: /shared/charlie/taylor-app2app/checkpoints/swa-hybrid-ar/stage1
+  gradient_checkpointing: false
+  quantize_frozen: true
+  save_steps: 1250
+  save_total_limit: 1
+  add_eos_token: false
+  resume_from_checkpoint: null
+  student_init_ckpt: /shared/charlie/taylor-app2app/checkpoints/swa-hybrid-ar/0b
+  deepspeed_config: /shared/charlie/taylor-app2app/repo/configs/deepspeed/stage_1.json
+
+stage: 1

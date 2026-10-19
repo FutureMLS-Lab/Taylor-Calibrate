@@ -69,6 +69,7 @@ def get_student_attention_class(model_name: str):
         'gdn_v5': 'distill_model.student_layers.GatedDeltaNetStudentV5',
         'gdn_v6': 'distill_model.student_layers.GatedDeltaNetStudentV6',
         'swa_v1': 'distill_model.student_layers.SlidingWindowAttentionStudentV1',
+        'swa_sink_v1': 'distill_model.student_layers.SlidingWindowSinkAttentionStudentV1',
     }
     if model_name not in STUDENT_ATTENTION_MAP:
         raise ValueError(f"Unknown student attention: {model_name}")

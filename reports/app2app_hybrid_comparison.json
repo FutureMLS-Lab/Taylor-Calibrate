@@ -1,0 +1,714 @@
+{
+  "accounting": {
+    "hybrid": {
+      "calibration": {
+        "converted_layers": 27,
+        "dataset": "Salesforce/wikitext",
+        "gpu_count": 1,
+        "gpu_hours": 0.046840134544505016,
+        "local_steps_per_converted_layer": 300,
+        "revision": "b08601e04326c79dfdd32d625aee71d232d685c3",
+        "samples": 4,
+        "seconds": 168.62448436021805,
+        "sequence_length": 256,
+        "split": "test",
+        "total_local_steps": 8100,
+        "unique_tokens": 1024
+      },
+      "recovery_training_tokens": 100000000,
+      "stage1_trainable_parameters": 2272007232,
+      "stage2_trainable_parameters": 9330273600,
+      "total_parameters": 9330273600
+    },
+    "swa": {
+      "calibration": {
+        "gpu_hours": 0.0,
+        "seconds": 0.0,
+        "total_local_steps": 0,
+        "unique_tokens": 0
+      },
+      "recovery_training_tokens": 100000000,
+      "stage1_trainable_parameters": 1509958656,
+      "stage2_trainable_parameters": 8190735360,
+      "total_parameters": 8190735360
+    }
+  },
+  "checkpoint": {
+    "artifact_files": {
+      "config.json": {
+        "bytes": 1176,
+        "sha256": "a76baa6bd104b861b843527424f7cafd48e50e26d30d5a590aff8d0bd2829965"
+      },
+      "model-00001-of-00004.safetensors": {
+        "bytes": 4973028096,
+        "sha256": "bd38c7ac63e1c3714f1e2c2c06cc33442cfd1b049cc81196fc93d2d213c184f5"
+      },
+      "model-00002-of-00004.safetensors": {
+        "bytes": 4970975952,
+        "sha256": "c8b75a403ebdff576143a44ba8bbedf9bbf3c5ccd0364a54ac0bca9019494a5f"
+      },
+      "model-00003-of-00004.safetensors": {
+        "bytes": 4987238000,
+        "sha256": "e889b91298e035715d2405d9275982c423eaf248429d9ed40e9407a588c00161"
+      },
+      "model-00004-of-00004.safetensors": {
+        "bytes": 3729360792,
+        "sha256": "20ebabf082ab4e34d41c6b99fa018e332ab5f10ba6dad12de752b07172cc5763"
+      },
+      "model.safetensors.index.json": {
+        "bytes": 39054,
+        "sha256": "a2fe7fd51ea1d85b3de5f06962936ad05560148ffcd3a7446680e5b6f3beb760"
+      }
+    },
+    "parameters": {
+      "by_group": {
+        "attention": 2649496896,
+        "embedding_and_lm_head": 1244659712,
+        "mlp": 5435817984,
+        "norm_and_other": 299008
+      },
+      "checkpoint_tensors": 507,
+      "total": 9330273600
+    },
+    "path": "/shared/charlie/taylor-app2app/checkpoints/taylor-hybrid-ar/stage2/final"
+  },
+  "code_manifest": {
+    "files": {
+      "configs/deepspeed/stage_1.json": {
+        "bytes": 317,
+        "sha256": "d5ddb91c7e863656f7c37eaa742fc066c6708122c924395d65b4047db7df5b00"
+      },
+      "configs/deepspeed/stage_2.json": {
+        "bytes": 317,
+        "sha256": "8cc607b715fe4868fecc26c371f8e33ed9bebf9938bf3968b5f21f888008e4b5"
+      },
+      "configs/deepspeed/stage_2_offload.json": {
+        "bytes": 399,
+        "sha256": "22d7d205778235efd59d12c46d0cec58d0600aa256a6e8e7147c34ad9d0fd90c"
+      },
+      "configs/k8s/app2app-convert.yaml": {
+        "bytes": 2034,
+        "sha256": "542545b84cceb8bd4d615a3498d36f9b7749b16e42b9c7a20a5b93fe14e42391"
+      },
+      "configs/k8s/app2app-eval-0b-swa.yaml": {
+        "bytes": 2663,
+        "sha256": "ce77573229f392b63b446713b2e7750d4b3daa1e187d24ade56f70ff84ac6456"
+      },
+      "configs/k8s/app2app-eval-0b-taylor.yaml": {
+        "bytes": 2653,
+        "sha256": "1c5ba4dbe15f8cd44bf4b00aade254095e6b949899f2328de7c0bd610362c2bc"
+      },
+      "configs/k8s/app2app-eval-100m-swa.yaml": {
+        "bytes": 2650,
+        "sha256": "af6b42c17607fd693253c065b7ab99d452b1e2701bfe57b8bc626f6310514d7d"
+      },
+      "configs/k8s/app2app-eval-100m-taylor.yaml": {
+        "bytes": 2668,
+        "sha256": "483173c6727a0576f4e03d8877f720259a178a919f9369767fadbae139adb903"
+      },
+      "configs/k8s/app2app-init-swa.yaml": {
+        "bytes": 2197,
+        "sha256": "63d5bfdba3a131866f568826a00b5c47141f7e094d13444d8817e82dd276ffa1"
+      },
+      "configs/k8s/app2app-init-taylor-hybrid-ar.yaml": {
+        "bytes": 2541,
+        "sha256": "38450b2e3aac51eaf9c397eb664608fa03d74193f2a29b30ac506b21e9916ed7"
+      },
+      "configs/k8s/app2app-init-taylor.yaml": {
+        "bytes": 2463,
+        "sha256": "8b49430eb0d553b86ba25ee784a1551cf9807f47389533a75cbd42350bafef9c"
+      },
+      "configs/k8s/app2app-prep.yaml": {
+        "bytes": 1545,
+        "sha256": "bf8c261243d3d0eba11f7f608db4e9ad9601fef7f125eee14f847dcf367d9269"
+      },
+      "configs/k8s/app2app-ruler-0b-swa-sharded.yaml": {
+        "bytes": 3084,
+        "sha256": "6d0927ba33c4e18df9295c50bf2b3dad81f93088ab4ba597379967b5a81a1e3f"
+      },
+      "configs/k8s/app2app-ruler-0b-swa.yaml": {
+        "bytes": 2061,
+        "sha256": "c0d143412df2fb6ccef53c385b289e7bb4db7cf645c4c14d27a96b2c26106858"
+      },
+      "configs/k8s/app2app-ruler-0b-taylor-sharded.yaml": {
+        "bytes": 3077,
+        "sha256": "9c9ea671ee5f54aa7bbe2764483793be1e607e8027da06fa2fdef29e1b3e3800"
+      },
+      "configs/k8s/app2app-ruler-0b-taylor.yaml": {
+        "bytes": 2051,
+        "sha256": "9f495863c6cd0d3f84b352f227618c93b2904df3e883793f0aca5870f2803463"
+      },
+      "configs/k8s/app2app-ruler-100m-swa-sharded.yaml": {
+        "bytes": 3076,
+        "sha256": "20230b58ebe0599d8cb37f360fe4c39a1b9b4e0902fa450d9b56a31755c94764"
+      },
+      "configs/k8s/app2app-ruler-100m-taylor-sharded.yaml": {
+        "bytes": 3097,
+        "sha256": "8884edf3fa94292ab8c5007e00d053d138b30ff42df9316c832099d084e10b4e"
+      },
+      "configs/k8s/app2app-smoke.yaml": {
+        "bytes": 1478,
+        "sha256": "3cd97e5c0b7bfdf1b0fd1200ef835d15319200b58569cf3131da6a73a8a33fbc"
+      },
+      "configs/k8s/app2app-train-swa.yaml": {
+        "bytes": 4755,
+        "sha256": "d148846dac52571fbfb42b63088534716c52ff1d4ff5c115aa8ddbae407e2805"
+      },
+      "configs/k8s/app2app-train-taylor-hybrid-ar-2x4.yaml": {
+        "bytes": 7418,
+        "sha256": "795f327fa559d754c0393ce10c3a21b75f342baa5ee61394e40edb478fb55995"
+      },
+      "configs/k8s/app2app-train-taylor-hybrid-ar-4x2.yaml": {
+        "bytes": 7782,
+        "sha256": "b009e5b71dda2687f47aa384dc3d8826935df4e34134b2fc4be8de6831736c09"
+      },
+      "configs/k8s/app2app-train-taylor-hybrid-ar.yaml": {
+        "bytes": 5468,
+        "sha256": "329f5198f8ba0b0f0fd01b5c552ded7660585b7cd9593b0e0f7c442777ff94bc"
+      },
+      "configs/k8s/app2app-train-taylor.yaml": {
+        "bytes": 4812,
+        "sha256": "d69a5d98edcf263cc93192d10a3c1d381fbeb1282d714fcfab22feb49e2b4b12"
+      },
+      "configs/qwen2_1.5b/ar_baseline_stage1.yaml": {
+        "bytes": 511,
+        "sha256": "ace412be0303061703d8c33ad6791008519094fa3e8ca6d6c1835844c688f841"
+      },
+      "configs/qwen2_1.5b/ar_baseline_stage2.yaml": {
+        "bytes": 629,
+        "sha256": "c7398887c6c1ed94c1532e8a94226fc04bbbde1107def0b516c5bb4a2a9a2d93"
+      },
+      "configs/qwen2_1.5b/ar_calibrate_stage1.yaml": {
+        "bytes": 591,
+        "sha256": "f5c840bdea9a88ab3229af8b22eddbddd4d980d3f924dce507ffb8247274365a"
+      },
+      "configs/qwen2_1.5b/ar_calibrate_stage2.yaml": {
+        "bytes": 631,
+        "sha256": "d503d482a3a53b4eef0da1fb08c43aa02cb4909701967dc2e1e7e59167fa17ae"
+      },
+      "configs/qwen2_1.5b/ga_s2_baseline_stage1.yaml": {
+        "bytes": 514,
+        "sha256": "51811d9d6e628438852c2e6a7427a99a3896a19afbcd0d761fe428f5dfbee4c4"
+      },
+      "configs/qwen2_1.5b/ga_s2_baseline_stage2.yaml": {
+        "bytes": 635,
+        "sha256": "95c9a62fc55efa6a2d39c253bde2d2cb3b187a0a6771db853bd2aabbcbeacffa"
+      },
+      "configs/qwen2_1.5b/ga_s2_calibrate_stage1.yaml": {
+        "bytes": 597,
+        "sha256": "9289af15f1a980c450a6715d96f44923b2e424a96af075112155a80a47593a13"
+      },
+      "configs/qwen2_1.5b/ga_s2_calibrate_stage2.yaml": {
+        "bytes": 637,
+        "sha256": "e30fc1f7ad2950729743ad95e50c17f605dac7c1dcb2675eb9fc36edf52dd6ac"
+      },
+      "configs/qwen2_1.5b/qwen2_1_5b_gdn_v4.yaml": {
+        "bytes": 330,
+        "sha256": "c6d7b7629beb7689357d37e15d9ec4dd53ae200d65ef4aa1a7db7d4d4dcba68a"
+      },
+      "configs/qwen2_1.5b/uniform_baseline_stage1.yaml": {
+        "bytes": 508,
+        "sha256": "b0eaf436e51eded55888cd9efcdb0b4905cc17385cc06975c5cd78a44feab38b"
+      },
+      "configs/qwen2_1.5b/uniform_baseline_stage2.yaml": {
+        "bytes": 622,
+        "sha256": "6bb52387174f70da024394c37e72dbf202be1181f96b8db82cc1fa4b182d0c7c"
+      },
+      "configs/qwen2_1.5b/uniform_calibrate_stage1.yaml": {
+        "bytes": 584,
+        "sha256": "cb05ddc4db001c2df83a5fc115de3168be492ae79deb113ede01ffa2b2b18ede"
+      },
+      "configs/qwen2_1.5b/uniform_calibrate_stage2.yaml": {
+        "bytes": 624,
+        "sha256": "5cf7dc63083866b0a2fd4cbebdf4f2c69d7d5e56fa487be27add2e3ad508aefd"
+      },
+      "configs/qwen3_8b/app2app/swa_stage1.yaml": {
+        "bytes": 884,
+        "sha256": "79e704a2ea4705f9e79087c6c8129f2cb096f3a04b3a40268fb5038c7063a828"
+      },
+      "configs/qwen3_8b/app2app/swa_stage2.yaml": {
+        "bytes": 935,
+        "sha256": "aec103ea4e58f0e1640e81f32d28152676fb63d40be664d6395a17a2f7a4bc4d"
+      },
+      "configs/qwen3_8b/app2app/taylor_hybrid_ar_selection.json": {
+        "bytes": 496,
+        "sha256": "b8a5af6992d8f52065755f727ffff3b6f6a4546e4f52bcdc7423f734e8794e8e"
+      },
+      "configs/qwen3_8b/app2app/taylor_hybrid_ar_stage1.yaml": {
+        "bytes": 961,
+        "sha256": "e739842ad61d06e68e5a61f8850f2b0d6b2bbbec38d9400834166a239a4d157c"
+      },
+      "configs/qwen3_8b/app2app/taylor_hybrid_ar_stage2.yaml": {
+        "bytes": 949,
+        "sha256": "990de2355e0ac20698787f5c86b8657b763a4dc30077651a15be7be990b9a3e5"
+      },
+      "configs/qwen3_8b/app2app/taylor_stage1.yaml": {
+        "bytes": 832,
+        "sha256": "6b4cb264b037af684a658d03322dd26617ac0577cf785c6dabd5cf935b3ef721"
+      },
+      "configs/qwen3_8b/app2app/taylor_stage2.yaml": {
+        "bytes": 897,
+        "sha256": "243708de7199fb9efeb7fd28194cd140c861c1dadecac5a00bc9e565e1530f00"
+      },
+      "convert/convert_from_llama3.2.py": {
+        "bytes": 13029,
+        "sha256": "0f845c2d623478308157a5cae153d9ab6dcf3c5aea5af93792204e5e60457e1b"
+      },
+      "convert/convert_from_qwen2.5.py": {
+        "bytes": 14535,
+        "sha256": "a3af380c08468e6e1f787c23bfc54b9893e7757844ca32efc6592f36bb7f47b3"
+      },
+      "convert/convert_from_qwen3.py": {
+        "bytes": 13557,
+        "sha256": "5b4fd32ced152931b0cb116cd90f0c502fa5cd0df8d7db600514ad6dbc617fff"
+      },
+      "eval/__init__.py": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "eval/collect_results.py": {
+        "bytes": 5247,
+        "sha256": "d0892ad9f66d2a264dbb8cf7ff5a0ac60c611c618954db015eae433580177f11"
+      },
+      "eval/harness.py": {
+        "bytes": 11937,
+        "sha256": "b3cf325f9f3d0e51eed87c54351f4d4bc3b074b65b269f80a4c396b02776986e"
+      },
+      "eval/ppl_eval.py": {
+        "bytes": 6815,
+        "sha256": "47d1b8bc09b6d2be32ae5900eb6e37cc4ee1ee9b3788940a234dd8590914561d"
+      },
+      "scripts/ar_layer_selection.py": {
+        "bytes": 8309,
+        "sha256": "a643ac261611547b00c8349a992ab0b92b013fe1eeec6ad2311e4a9cddf92ac7"
+      },
+      "scripts/capture_app2app_environment.py": {
+        "bytes": 1599,
+        "sha256": "ffcd49b5081ff4efb148f2cf270d692e2624b8e7d8a6cef01f117819e4813c82"
+      },
+      "scripts/collect_app2app_results.py": {
+        "bytes": 14155,
+        "sha256": "c9328ff5ae561bc4f8a13fc160249588e3758e39734eb6b68b61d3d24847372a"
+      },
+      "scripts/convert_stage1.py": {
+        "bytes": 6388,
+        "sha256": "abcca788de8e555bb368bb210f31270c0dc2e51529d46aa2e9e9dfc63f4f49f1"
+      },
+      "scripts/create_code_manifest.py": {
+        "bytes": 1610,
+        "sha256": "24be083b2be8fd78c633775b8b6b302e2f165bb3064ecc9bbf3a795f7630dc48"
+      },
+      "scripts/eval_benchmarks.sh": {
+        "bytes": 3539,
+        "sha256": "31a461fa7d8bfce1d9f5795f7cf7601715fc17fb9ea6a78cd2bc8dd7b88e2880"
+      },
+      "scripts/eval_ruler.sh": {
+        "bytes": 3335,
+        "sha256": "333dd76f232eb7890e30da9e1cc303663fb6f0404baf1ddd19779d49d648810d"
+      },
+      "scripts/greedy_layer_selection.py": {
+        "bytes": 12912,
+        "sha256": "37b125410dd704e67da47d404820bb663e1636404640d64e6a0a86174a5d5dbf"
+      },
+      "scripts/inspect_student_checkpoint.py": {
+        "bytes": 2735,
+        "sha256": "0ad31d7e34563d5967c61bc24c37842d3585a957e5a7ce4828d17e9b87b46757"
+      },
+      "scripts/prep_stage1_data.py": {
+        "bytes": 1491,
+        "sha256": "ca879c5b905fe910a8c7360d2b06e885721e113ccc4076b06d31f3a16dc657c7"
+      },
+      "scripts/prepare_app2app_data.py": {
+        "bytes": 6118,
+        "sha256": "b27cdaf46891c0f24bf728131db2d9b4b5eb28894d746599bb9205fc08216388"
+      },
+      "scripts/preprocess_data.py": {
+        "bytes": 4788,
+        "sha256": "1cc00b405e3d6c6dba5b00656c19d23ea7755feb9f53785127aaff38bcde1fdd"
+      },
+      "scripts/quick_ppl_eval.py": {
+        "bytes": 4951,
+        "sha256": "9ab111b491edb2c78d99e5054a5dd4bc001fbb0ea44ec445ed005f3e919a3f52"
+      },
+      "scripts/ruler_eval_patched.py": {
+        "bytes": 3647,
+        "sha256": "bf83eb693300f0358cffd896a65d9b2b69717bf64d4575d71d070a127c6c419d"
+      },
+      "scripts/sft.py": {
+        "bytes": 6028,
+        "sha256": "be3a9cafb43819e9a9b18a848e652fabec381d5b2841c93b9166174b18ec65d4"
+      },
+      "scripts/train.py": {
+        "bytes": 12712,
+        "sha256": "3f6cd70f7f98315b59ec608f63fdb4d2d6f38b574650600ba483f5ddf6f1b25b"
+      },
+      "scripts/train_stage1.py": {
+        "bytes": 16346,
+        "sha256": "ac20df1810a03c1e9872ee73f42b026663c53b6e7dfae74dc35179c60f4cf77b"
+      },
+      "scripts/verify_app2app_training.py": {
+        "bytes": 3272,
+        "sha256": "73957d866c0a0ae97046f014dfa9d287a1e8d7018e52497bd917001a15089dce"
+      },
+      "scripts/verify_model_artifact.py": {
+        "bytes": 2767,
+        "sha256": "d465f3ef10ca07cb65e56a39d5696518bc8ca4d8d0f38b567eb1c4e142a51cdb"
+      },
+      "src/__init__.py": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "src/data.py": {
+        "bytes": 870,
+        "sha256": "9207f1fe8e3020a24291063e9acdaf6e5811f6c969cf7f7fda2a0a1f9a64c161"
+      },
+      "src/distill_model/__init__.py": {
+        "bytes": 354,
+        "sha256": "4ab0fc7a442032fd6e6be6e2664428a9292d8d7d4ece936dec9616242576443b"
+      },
+      "src/distill_model/config_distilled_student.py": {
+        "bytes": 3272,
+        "sha256": "fb981e20e4b15b822ab6ebb1230a28631f865936546e51694311f348348d8530"
+      },
+      "src/distill_model/custom_gdn.py": {
+        "bytes": 10868,
+        "sha256": "ebfd1caf26aeddddc182c43cc307d19313fceb1769cd8a4f2706c6dc65cde96a"
+      },
+      "src/distill_model/modeling_distilled_student.py": {
+        "bytes": 21872,
+        "sha256": "5988f75ce0a2b7db73bd26184da5ab339dc9f2d3fd24c047e97c5442094f5567"
+      },
+      "src/distill_model/student_layers.py": {
+        "bytes": 31293,
+        "sha256": "99464a6880d77ea97b96190971babab47f1454a69c1629869c23833c061bb4f7"
+      },
+      "src/hf_trainer.py": {
+        "bytes": 845,
+        "sha256": "633b6851570892d727a5ec9db65fd8e9654e4c9160364a74ee135b542d8a2ded"
+      },
+      "src/init_ckpt_calibrated.py": {
+        "bytes": 59760,
+        "sha256": "449fa97e5cbc2a3dceec489fcf15ff94ff6eea4bd1326f878375770ed3eecbb2"
+      },
+      "src/init_ckpt_from_teacher.py": {
+        "bytes": 5104,
+        "sha256": "d232ff4eccf10a389149ec55000430bfed24f0554f24236219d66c8eb7687287"
+      },
+      "tests/test_swa_sink.py": {
+        "bytes": 6037,
+        "sha256": "cfe73cb6ba3764a7f0c0c3d291d806eae148ea04faf0e013ee69e2439b9679dd"
+      }
+    },
+    "repo": "/shared/charlie/taylor-app2app/repo"
+  },
+  "invalidated_attempts": [
+    "Single-node 8-GPU submissions remained pending due cluster fragmentation; no optimizer step ran.",
+    "The first 4x2 launch hit a busy CUDA device on h100-087 before distributed initialization; no optimizer step ran.",
+    "The second 4x2 launch reached the first forward but shared partial-node GPU visibility caused OOM; no optimizer step completed.",
+    "The accepted training waited for and used one exclusive 8xH100 node.",
+    "The first short-task evaluation completed the five-task core set, then MMLU batch 8 OOMed on a shared GPU. The accepted MMLU rerun used batch 1 with the same task examples and scoring protocol.",
+    "The first RULER Job landed one shard on h100-087 and produced no accepted results. The accepted Job excluded that node and reran all 13 tasks."
+  ],
+  "outcome": {
+    "hybrid_vs_all_gdn_100m": {
+      "macro_points": 4.580863909071898,
+      "ruler_points": 30.680512820512813
+    },
+    "hybrid_vs_swa_0m": {
+      "macro_points_swa_lead": 1.9331608132945544,
+      "ruler_points_hybrid_lead": 25.576666666666657
+    },
+    "hybrid_vs_swa_100m": {
+      "hybrid_task_wins": 3,
+      "macro_points": 0.21926876516727978,
+      "ruler_points": 28.27641025641025,
+      "swa_task_wins": 3
+    }
+  },
+  "result_files": {
+    "/shared/charlie/taylor-app2app/results/100m/taylor-hybrid-ar/core/__shared__charlie__taylor-app2app__checkpoints__taylor-hybrid-ar__stage2__final/results_2026-09-09T05-31-33.168055.json": {
+      "bytes": 18078,
+      "sha256": "0cf9d8fef35133a22ee8bb7c2da67990c61c1ea6772ff68a61039fb4fffd8cc9"
+    },
+    "/shared/charlie/taylor-app2app/results/100m/taylor-hybrid-ar/mmlu/__shared__charlie__taylor-app2app__checkpoints__taylor-hybrid-ar__stage2__final/results_2026-09-09T07-44-10.790816.json": {
+      "bytes": 134533,
+      "sha256": "95f2471d434f1874c17638bea30de05c4b162789b445d0214b6a609c358086f9"
+    },
+    "/shared/charlie/taylor-app2app/results/100m/taylor-hybrid-ar/ppl/results.json": {
+      "bytes": 312,
+      "sha256": "766137e3ed2fd5f95a3d2bc08f483c45ee7a2ee738f7f7f48f476fb9f97a436b"
+    },
+    "/shared/charlie/taylor-app2app/results/100m/taylor-hybrid-ar/ruler-shards/niah_multikey_1/__shared__charlie__taylor-app2app__checkpoints__taylor-hybrid-ar__stage2__final/results_2026-09-09T08-31-01.903851.json": {
+      "bytes": 12132,
+      "sha256": "b9bda6006940d675352ef5ef68b1a4498ee1003b778ffbccf4b8d34bf827bb6e"
+    },
+    "/shared/charlie/taylor-app2app/results/100m/taylor-hybrid-ar/ruler-shards/niah_multikey_2/__shared__charlie__taylor-app2app__checkpoints__taylor-hybrid-ar__stage2__final/results_2026-09-09T08-11-42.313531.json": {
+      "bytes": 12105,
+      "sha256": "ad52535527eab1de2f57c9e2ed2d630371894dba1cb9994e638af6c9a0c19c55"
+    },
+    "/shared/charlie/taylor-app2app/results/100m/taylor-hybrid-ar/ruler-shards/niah_multikey_3/__shared__charlie__taylor-app2app__checkpoints__taylor-hybrid-ar__stage2__final/results_2026-09-09T08-11-19.480193.json": {
+      "bytes": 12103,
+      "sha256": "2062bd2af0815f7dd3bbec0c32d5e13433ce9c96ab0ddbb4dcc9dee17fbe1183"
+    },
+    "/shared/charlie/taylor-app2app/results/100m/taylor-hybrid-ar/ruler-shards/niah_multiquery/__shared__charlie__taylor-app2app__checkpoints__taylor-hybrid-ar__stage2__final/results_2026-09-09T08-34-29.050730.json": {
+      "bytes": 12134,
+      "sha256": "47b297fbffa80d97b509067fbe5bfca2065f8a977344376a3162f7803ddc6ea8"
+    },
+    "/shared/charlie/taylor-app2app/results/100m/taylor-hybrid-ar/ruler-shards/niah_multivalue/__shared__charlie__taylor-app2app__checkpoints__taylor-hybrid-ar__stage2__final/results_2026-09-09T08-15-43.544799.json": {
+      "bytes": 12132,
+      "sha256": "c1177458b4f99811a718828f2a2d504660f1bb8281623a14d243442ec53e13cf"
+    },
+    "/shared/charlie/taylor-app2app/results/100m/taylor-hybrid-ar/ruler-shards/niah_single_1/__shared__charlie__taylor-app2app__checkpoints__taylor-hybrid-ar__stage2__final/results_2026-09-09T08-32-26.644779.json": {
+      "bytes": 12085,
+      "sha256": "37aa70ce0bc567a036eb138fa8b63258ede164eb801c102e098af8e54c7f1b33"
+    },
+    "/shared/charlie/taylor-app2app/results/100m/taylor-hybrid-ar/ruler-shards/niah_single_2/__shared__charlie__taylor-app2app__checkpoints__taylor-hybrid-ar__stage2__final/results_2026-09-09T08-10-12.283875.json": {
+      "bytes": 12084,
+      "sha256": "3f49744fc705d4c0ce25db39ebd651116e8f2c2eead615b022b894aafc7fca64"
+    },
+    "/shared/charlie/taylor-app2app/results/100m/taylor-hybrid-ar/ruler-shards/niah_single_3/__shared__charlie__taylor-app2app__checkpoints__taylor-hybrid-ar__stage2__final/results_2026-09-09T08-16-56.893155.json": {
+      "bytes": 12081,
+      "sha256": "451805c38c734704659250bece9a4ed68ca503f16c6365d11a553837cc4ddff6"
+    },
+    "/shared/charlie/taylor-app2app/results/100m/taylor-hybrid-ar/ruler-shards/ruler_cwe/__shared__charlie__taylor-app2app__checkpoints__taylor-hybrid-ar__stage2__final/results_2026-09-09T08-23-32.102321.json": {
+      "bytes": 11945,
+      "sha256": "487520db40782188a8ac2e53531deb08430f038b7fae2f53d505847de85eaa1a"
+    },
+    "/shared/charlie/taylor-app2app/results/100m/taylor-hybrid-ar/ruler-shards/ruler_fwe/__shared__charlie__taylor-app2app__checkpoints__taylor-hybrid-ar__stage2__final/results_2026-09-09T07-44-26.740675.json": {
+      "bytes": 11952,
+      "sha256": "6bf6412c58532756e28ff1eb5130c6547d077a5a021d2cc5a62d09194dd96522"
+    },
+    "/shared/charlie/taylor-app2app/results/100m/taylor-hybrid-ar/ruler-shards/ruler_qa_hotpot/__shared__charlie__taylor-app2app__checkpoints__taylor-hybrid-ar__stage2__final/results_2026-09-09T07-44-09.167012.json": {
+      "bytes": 11666,
+      "sha256": "f84e14d4d2674463cdb6137019e5e24ca6ccb5b88692df0dd94cf38e1b726a65"
+    },
+    "/shared/charlie/taylor-app2app/results/100m/taylor-hybrid-ar/ruler-shards/ruler_qa_squad/__shared__charlie__taylor-app2app__checkpoints__taylor-hybrid-ar__stage2__final/results_2026-09-09T07-47-47.707686.json": {
+      "bytes": 11666,
+      "sha256": "44c7e6ba230afe2f91345561fa4671459be7d015664902477f8490d56f856ef3"
+    },
+    "/shared/charlie/taylor-app2app/results/100m/taylor-hybrid-ar/ruler-shards/ruler_vt/__shared__charlie__taylor-app2app__checkpoints__taylor-hybrid-ar__stage2__final/results_2026-09-09T07-39-10.690619.json": {
+      "bytes": 11987,
+      "sha256": "4a8841ae4c4173d511b243d4d44939d3bc306feecb3a66831318c7317f3f4397"
+    }
+  },
+  "results": {
+    "swa_0m": {
+      "ruler_4k": {
+        "macro": 0.07224358974358973,
+        "tasks": {
+          "niah_multikey_1": 0.034,
+          "niah_multikey_2": 0.0,
+          "niah_multikey_3": 0.0,
+          "niah_multiquery": 0.0,
+          "niah_multivalue": 0.0215,
+          "niah_single_1": 0.0,
+          "niah_single_2": 0.024,
+          "niah_single_3": 0.0,
+          "ruler_cwe": 0.23399999999999993,
+          "ruler_fwe": 0.16333333333333316,
+          "ruler_qa_hotpot": 0.24,
+          "ruler_qa_squad": 0.22233333333333336,
+          "ruler_vt": 0.0
+        }
+      },
+      "six_task_macro": 0.7118069441890837,
+      "tasks": {
+        "arc_challenge": 0.5639931740614335,
+        "arc_easy": 0.8076599326599326,
+        "hellaswag": 0.7410874327823143,
+        "mmlu": 0.7028913260219342,
+        "piqa": 0.7780195865070729,
+        "winogrande": 0.6771902131018153
+      },
+      "wikitext2_ppl": 16.40604019165039
+    },
+    "swa_100m": {
+      "ruler_4k": {
+        "macro": 0.045246153846153846,
+        "tasks": {
+          "niah_multikey_1": 0.034,
+          "niah_multikey_2": 0.0,
+          "niah_multikey_3": 0.0,
+          "niah_multiquery": 0.0,
+          "niah_multivalue": 0.0215,
+          "niah_single_1": 0.0,
+          "niah_single_2": 0.024,
+          "niah_single_3": 0.0,
+          "ruler_cwe": 0.05920000000000003,
+          "ruler_fwe": 0.049999999999999954,
+          "ruler_qa_hotpot": 0.204,
+          "ruler_qa_squad": 0.19550000000000003,
+          "ruler_vt": 0.0
+        }
+      },
+      "six_task_macro": 0.6902826484044654,
+      "tasks": {
+        "arc_challenge": 0.5537542662116041,
+        "arc_easy": 0.8047138047138047,
+        "hellaswag": 0.7166899024098785,
+        "mmlu": 0.6056117362199117,
+        "piqa": 0.7758433079434167,
+        "winogrande": 0.6850828729281768
+      },
+      "wikitext2_ppl": 16.533418655395508
+    },
+    "taylor_all_gdn_100m": {
+      "ruler_4k": {
+        "macro": 0.021205128205128206,
+        "tasks": {
+          "niah_multikey_1": 0.002,
+          "niah_multikey_2": 0.0,
+          "niah_multikey_3": 0.0,
+          "niah_multiquery": 0.0005,
+          "niah_multivalue": 0.0005,
+          "niah_single_1": 0.002,
+          "niah_single_2": 0.0,
+          "niah_single_3": 0.0,
+          "ruler_cwe": 0.004000000000000001,
+          "ruler_fwe": 0.0,
+          "ruler_qa_hotpot": 0.124,
+          "ruler_qa_squad": 0.14266666666666666,
+          "ruler_vt": 0.0
+        }
+      },
+      "six_task_macro": 0.6466666969654192,
+      "tasks": {
+        "arc_challenge": 0.5281569965870307,
+        "arc_easy": 0.7773569023569024,
+        "hellaswag": 0.7018522206731727,
+        "mmlu": 0.4788491667853582,
+        "piqa": 0.7742110990206746,
+        "winogrande": 0.6195737963693765
+      },
+      "wikitext2_ppl": 27.21177101135254
+    },
+    "taylor_hybrid_ar_100m": {
+      "ruler_4k": {
+        "macro": 0.32801025641025633,
+        "tasks": {
+          "niah_multikey_1": 0.284,
+          "niah_multikey_2": 0.068,
+          "niah_multikey_3": 0.004,
+          "niah_multiquery": 0.4615,
+          "niah_multivalue": 0.373,
+          "niah_single_1": 0.984,
+          "niah_single_2": 0.702,
+          "niah_single_3": 0.246,
+          "ruler_cwe": 0.45519999999999894,
+          "ruler_fwe": 0.04199999999999998,
+          "ruler_qa_hotpot": 0.214,
+          "ruler_qa_squad": 0.29283333333333333,
+          "ruler_vt": 0.13760000000000025
+        }
+      },
+      "six_task_macro": 0.6924753360561382,
+      "tasks": {
+        "arc_challenge": 0.5546075085324232,
+        "arc_easy": 0.7925084175084175,
+        "hellaswag": 0.7176857199761004,
+        "mmlu": 0.6467027488961686,
+        "piqa": 0.7693144722524483,
+        "winogrande": 0.6740331491712708
+      },
+      "wikitext2_ppl": 11.018001556396484
+    }
+  },
+  "selection": {
+    "converted_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      7,
+      8,
+      9,
+      10,
+      11,
+      13,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      23,
+      25,
+      26,
+      28,
+      29,
+      30,
+      31,
+      32,
+      35
+    ],
+    "policy": "AR (LM-PPL)",
+    "ranking_source": "results/zeroshot_qwen3_8b_75pct/ar_lmppl.json",
+    "ratio": {
+      "gdn": 3,
+      "softmax": 1
+    },
+    "retained_full_attention_layers": [
+      0,
+      6,
+      12,
+      14,
+      22,
+      24,
+      27,
+      33,
+      34
+    ]
+  },
+  "status": "validated",
+  "teacher": "Qwen/Qwen3-8B",
+  "teacher_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+  "training": {
+    "effective_batch_size": {
+      "stage1": 40,
+      "stage2": 40
+    },
+    "sequence_length": {
+      "stage1": 1000,
+      "stage2": 1000
+    },
+    "stage1_steps": 1250,
+    "stage1_tokens": 50000000,
+    "stage2_steps": 1250,
+    "stage2_tokens": 50000000,
+    "total_recovery_training_tokens": 100000000,
+    "train_settings": {
+      "stage1": {
+        "batch_size": 40,
+        "lr": 0.001,
+        "lr_attn": 0.001,
+        "lr_scheduler_type": "cosine",
+        "micro_batch_size": 1,
+        "seed": 42,
+        "target_tokens": 50000000,
+        "train_seq_len": 1000
+      },
+      "stage2": {
+        "batch_size": 40,
+        "lr": 7e-06,
+        "lr_attn": 0.0001,
+        "lr_scheduler_type": "constant",
+        "micro_batch_size": 1,
+        "seed": 42,
+        "target_tokens": 50000000,
+        "train_seq_len": 1000
+      }
+    },
+    "world_size": {
+      "stage1": 8,
+      "stage2": 8
+    }
+  },
+  "uncertainty": {
+    "difference_independent_se": 0.005682314373525367,
+    "hybrid_macro_independent_se": 0.004030732604155593,
+    "note": "Simple independence approximation from per-task lm-eval standard errors; a paired bootstrap would be preferable.",
+    "swa_macro_independent_se": 0.004005232991146714
+  }
+}

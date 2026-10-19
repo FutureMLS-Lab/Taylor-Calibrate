@@ -424,3 +424,309 @@ class SlidingWindowAttentionStudentV1(nn.Module):
             if getattr(self.attn, name).bias is not None and getattr(teacher_attn, name).bias is not None:
                 getattr(self.attn, name).bias.copy_(getattr(teacher_attn, name).bias)
 
+
+def build_swa_sink_mask(
+    seq_len: int,
+    window_size: int,
+    num_sink_tokens: int,
+    device: torch.device | str | None = None,
+) -> torch.Tensor:
+    """Return the causal SWA mask with a fixed prefix sink.
+
+    ``window_size`` is the total number of visible positions: the first
+    ``num_sink_tokens`` keys plus the latest
+    ``window_size - num_sink_tokens`` local keys.
+    """
+    if window_size <= 0:
+        raise ValueError(f"window_size must be positive, got {window_size}")
+    if num_sink_tokens < 0 or num_sink_tokens >= window_size:
+        raise ValueError(
+            "num_sink_tokens must satisfy 0 <= num_sink_tokens < window_size, "
+            f"got {num_sink_tokens} and {window_size}"
+        )
+
+    query = torch.arange(seq_len, device=device)[:, None]
+    key = torch.arange(seq_len, device=device)[None, :]
+    causal = key <= query
+    local_width = window_size - num_sink_tokens
+    local = key >= (query - local_width + 1)
+    sink = key < num_sink_tokens
+    return causal & (local | sink)
+
+
+class SlidingWindowSinkAttentionStudentV1(nn.Module):
+    """SWA with four persistent prefix sinks and an exact shared softmax.
+
+    For a total window ``w`` and ``s`` sinks, positions ``i >= w`` attend to
+    keys ``[0, s)`` and the latest ``w-s`` causal keys.  The two disjoint
+    groups are evaluated with FlashAttention and merged using their returned
+    log-sum-exp normalizers, avoiding a dense ``T x T`` attention matrix.
+
+    Training uses ``use_cache=False``.  Generation retains the full KV history
+    for correctness and selects the sink/local union at each decode step.
+    Sink-aware cache eviction is intentionally deferred because the app-to-app
+    comparison makes no serving-speed or memory claim.
+    """
+
+    def __init__(self, config, layer_idx: int):
+        super().__init__()
+        self.layer_idx = layer_idx
+        self.window_size = int(config.window_size)
+        self.num_sink_tokens = int(getattr(config, "num_sink_tokens", 0))
+        if self.num_sink_tokens <= 0:
+            raise ValueError("swa_sink_v1 requires num_sink_tokens > 0")
+        build_swa_sink_mask(
+            seq_len=1,
+            window_size=self.window_size,
+            num_sink_tokens=self.num_sink_tokens,
+        )
+
+        self.attn = Attention(
+            hidden_size=config.hidden_size,
+            num_heads=config.num_heads,
+            num_kv_heads=config.num_kv_heads,
+            qkv_bias=config.qkv_bias,
+            qk_norm=config.qk_norm,
+            window_size=self.window_size,
+            rope_theta=config.rope_theta,
+            max_position_embeddings=config.max_position_embeddings,
+            layer_idx=layer_idx,
+        )
+
+    @staticmethod
+    def _normalize_lse(lse: torch.Tensor, q_len: int) -> torch.Tensor:
+        """Convert FlashAttention LSE to ``[batch, query, heads, 1]``."""
+        if lse.ndim != 3:
+            raise RuntimeError(f"Unexpected FlashAttention LSE shape: {tuple(lse.shape)}")
+        if lse.shape[-1] == q_len:
+            # flash-attn returns [batch, heads, query]
+            lse = lse.transpose(1, 2)
+        elif lse.shape[1] != q_len:
+            raise RuntimeError(f"Unexpected FlashAttention LSE shape: {tuple(lse.shape)}")
+        return lse.unsqueeze(-1)
+
+    @staticmethod
+    def _flash_with_lse(
+        q: torch.Tensor,
+        k: torch.Tensor,
+        v: torch.Tensor,
+        *,
+        causal: bool,
+        window_size: tuple[int, int] = (-1, -1),
+    ) -> tuple[torch.Tensor, torch.Tensor]:
+        from flash_attn import flash_attn_func
+
+        result = flash_attn_func(
+            q,
+            k,
+            v,
+            dropout_p=0.0,
+            causal=causal,
+            window_size=window_size,
+            return_attn_probs=True,
+        )
+        if not isinstance(result, tuple) or len(result) < 2:
+            raise RuntimeError(
+                "Installed flash-attn must support return_attn_probs=True "
+                "and return (output, softmax_lse, ...)"
+            )
+        return result[0], result[1]
+
+    def _sink_window_attention(
+        self,
+        q: torch.Tensor,
+        k: torch.Tensor,
+        v: torch.Tensor,
+    ) -> torch.Tensor:
+        from flash_attn import flash_attn_func
+
+        q_len = q.shape[1]
+        if q_len <= self.window_size:
+            return flash_attn_func(q, k, v, dropout_p=0.0, causal=True)
+
+        prefix_len = self.window_size
+        prefix = flash_attn_func(
+            q[:, :prefix_len],
+            k[:, :prefix_len],
+            v[:, :prefix_len],
+            dropout_p=0.0,
+            causal=True,
+        )
+
+        q_suffix = q[:, prefix_len:]
+        local_width = self.window_size - self.num_sink_tokens
+        local_out, local_lse = self._flash_with_lse(
+            q_suffix,
+            k,
+            v,
+            causal=True,
+            window_size=(local_width - 1, 0),
+        )
+        sink_out, sink_lse = self._flash_with_lse(
+            q_suffix,
+            k[:, :self.num_sink_tokens],
+            v[:, :self.num_sink_tokens],
+            causal=False,
+        )
+
+        suffix_len = q_suffix.shape[1]
+        local_lse = self._normalize_lse(local_lse, suffix_len)
+        sink_lse = self._normalize_lse(sink_lse, suffix_len)
+        total_lse = torch.logaddexp(local_lse, sink_lse)
+        local_weight = torch.exp(local_lse - total_lse).to(local_out.dtype)
+        sink_weight = torch.exp(sink_lse - total_lse).to(sink_out.dtype)
+        suffix = local_weight * local_out + sink_weight * sink_out
+        return torch.cat((prefix, suffix), dim=1)
+
+    def _project_qkv(
+        self,
+        hidden_states: torch.Tensor,
+        seqlen_offset: int = 0,
+    ) -> tuple[torch.Tensor, torch.Tensor, torch.Tensor]:
+        q_len = hidden_states.shape[1]
+        q = rearrange(
+            self.attn.q_proj(hidden_states),
+            "... (h d) -> ... h d",
+            d=self.attn.head_dim,
+        )
+        k = rearrange(
+            self.attn.k_proj(hidden_states),
+            "... (h d) -> ... h d",
+            d=self.attn.head_dim,
+        )
+        v = rearrange(
+            self.attn.v_proj(hidden_states),
+            "... (h d) -> ... h d",
+            d=self.attn.head_dim,
+        )
+        if self.attn.qk_norm:
+            q, k = self.attn.q_norm(q), self.attn.k_norm(k)
+
+        max_seqlen = max(
+            q_len + seqlen_offset,
+            self.attn.max_position_embeddings or q_len,
+        )
+        q, k = self.attn.rotary(
+            q,
+            k,
+            seqlen_offset=seqlen_offset,
+            max_seqlen=max_seqlen,
+            cu_seqlens=None,
+        )
+        return q, k, v
+
+    def _forward_unpadded(self, hidden_states: torch.Tensor) -> torch.Tensor:
+        batch_size, q_len, _ = hidden_states.shape
+        q, k, v = self._project_qkv(hidden_states)
+        output = self._sink_window_attention(q, k, v)
+        output = output.reshape(batch_size, q_len, -1)
+        return self.attn.o_proj(output)
+
+    def _forward_with_cache(self, hidden_states, past_key_values):
+        from flash_attn import flash_attn_func
+
+        batch_size, q_len, _ = hidden_states.shape
+        seqlen_offset = past_key_values.get_seq_length(self.layer_idx)
+        if seqlen_offset and q_len != 1:
+            raise NotImplementedError(
+                "swa_sink_v1 cache supports a full prefill followed by single-token decode"
+            )
+
+        q, k, v = self._project_qkv(hidden_states, seqlen_offset=seqlen_offset)
+        state = past_key_values.update(
+            attn_state=(k.flatten(-2, -1), v.flatten(-2, -1)),
+            layer_idx=self.layer_idx,
+            offset=q_len,
+            # Preserve the full history for quality-only evaluation. A serving
+            # implementation should evict to sinks + local tokens.
+            cache_kwargs={"window_size": None},
+        )["attn_state"]
+        cached_k, cached_v = state
+        cached_k = rearrange(cached_k, "... (h d) -> ... h d", d=self.attn.head_dim)
+        cached_v = rearrange(cached_v, "... (h d) -> ... h d", d=self.attn.head_dim)
+
+        if seqlen_offset == 0:
+            output = self._sink_window_attention(q, cached_k, cached_v)
+        else:
+            if cached_k.shape[1] > self.window_size:
+                local_width = self.window_size - self.num_sink_tokens
+                cached_k = torch.cat(
+                    (cached_k[:, :self.num_sink_tokens], cached_k[:, -local_width:]),
+                    dim=1,
+                )
+                cached_v = torch.cat(
+                    (cached_v[:, :self.num_sink_tokens], cached_v[:, -local_width:]),
+                    dim=1,
+                )
+            output = flash_attn_func(
+                q,
+                cached_k,
+                cached_v,
+                dropout_p=0.0,
+                causal=False,
+            )
+
+        output = output.reshape(batch_size, q_len, -1)
+        return self.attn.o_proj(output)
+
+    def forward(
+        self,
+        hidden_states,
+        attention_mask=None,
+        past_key_values=None,
+        use_cache=False,
+        output_attentions=False,
+        **kwargs,
+    ):
+        if kwargs.get("cu_seqlens") is not None:
+            raise NotImplementedError("Packed sequences are not supported by swa_sink_v1")
+        if attention_mask is not None and attention_mask.ndim != 2:
+            raise ValueError("attention_mask must have shape [batch, sequence]")
+
+        if use_cache:
+            if past_key_values is None:
+                raise ValueError("use_cache=True requires an initialized FLA cache")
+            if attention_mask is not None and not bool(torch.all(attention_mask)):
+                raise NotImplementedError(
+                    "swa_sink_v1 cached generation does not support padded batches"
+                )
+            output = self._forward_with_cache(hidden_states, past_key_values)
+        elif attention_mask is None or bool(torch.all(attention_mask)):
+            output = self._forward_unpadded(hidden_states)
+        else:
+            # Evaluation may left-pad variable-length examples.  Process each
+            # contiguous valid span independently; Stage-1/2 fixed blocks use
+            # the fast all-valid path above.
+            output = torch.zeros_like(hidden_states)
+            for batch_idx in range(hidden_states.shape[0]):
+                valid = torch.nonzero(attention_mask[batch_idx], as_tuple=False).flatten()
+                if valid.numel() == 0:
+                    continue
+                start, stop = int(valid[0]), int(valid[-1]) + 1
+                expected = torch.arange(start, stop, device=valid.device)
+                if not torch.equal(valid, expected):
+                    raise ValueError("swa_sink_v1 requires contiguous padding masks")
+                sample = self._forward_unpadded(hidden_states[batch_idx:batch_idx + 1, start:stop])
+                output[batch_idx:batch_idx + 1, start:stop] = sample
+
+        return output, None if not output_attentions else None, past_key_values
+
+    @torch.no_grad()
+    def init_from_teacher(self, teacher_attn):
+        for name in ["q_proj", "k_proj", "v_proj", "o_proj"]:
+            student_proj = getattr(self.attn, name)
+            teacher_proj = getattr(teacher_attn, name)
+            student_proj.weight.copy_(teacher_proj.weight)
+            if student_proj.bias is not None and teacher_proj.bias is not None:
+                student_proj.bias.copy_(teacher_proj.bias)
+        for name in ["q_norm", "k_norm"]:
+            if hasattr(self.attn, name) and hasattr(teacher_attn, name):
+                student_norm = getattr(self.attn, name)
+                teacher_norm = getattr(teacher_attn, name)
+                student_norm.weight.copy_(teacher_norm.weight)
+                if (
+                    getattr(student_norm, "bias", None) is not None
+                    and getattr(teacher_norm, "bias", None) is not None
+                ):
+                    student_norm.bias.copy_(teacher_norm.bias)
+

@@ -16,6 +16,8 @@ from distill_model.modeling_distilled_student import StudentForCausalLM
 AutoConfig.register('student', StudentConfig, exist_ok=True)
 AutoModelForCausalLM.register(StudentConfig, StudentForCausalLM, exist_ok=True)
 
+WIKITEXT_REVISION = "b08601e04326c79dfdd32d625aee71d232d685c3"
+
 
 def load_student(ckpt_path, device='cuda'):
     config_path = os.path.join(ckpt_path, "config.json")
@@ -47,7 +49,12 @@ def load_student(ckpt_path, device='cuda'):
 
 @torch.no_grad()
 def evaluate_ppl(model, tokenizer, seqlen=2048, device='cuda'):
-    ds = load_dataset('wikitext', 'wikitext-2-raw-v1', split='test')
+    ds = load_dataset(
+        'wikitext',
+        'wikitext-2-raw-v1',
+        split='test',
+        revision=WIKITEXT_REVISION,
+    )
     text = "\n\n".join(ds['text'])
     encodings = tokenizer(text, return_tensors='pt')
     input_ids = encodings.input_ids.to(device)
@@ -92,6 +99,7 @@ def main():
     parser.add_argument("--tokenizer", default=None)
     parser.add_argument("--seqlen", type=int, default=2048)
     parser.add_argument("--device", default="cuda:0")
+    parser.add_argument("--output", default=None)
     args = parser.parse_args()
 
     tok_path = args.tokenizer or args.ckpt
@@ -110,6 +118,24 @@ def main():
     print(f"\n{'='*50}")
     print(f"Wikitext2 PPL = {ppl:.2f}")
     print(f"{'='*50}")
+    if args.output:
+        os.makedirs(os.path.dirname(os.path.abspath(args.output)), exist_ok=True)
+        with open(args.output, "w") as handle:
+            json.dump(
+                {
+                    "checkpoint": args.ckpt,
+                    "dataset": "Salesforce/wikitext",
+                    "dataset_revision": WIKITEXT_REVISION,
+                    "config": "wikitext-2-raw-v1",
+                    "split": "test",
+                    "sequence_length": args.seqlen,
+                    "perplexity": ppl,
+                },
+                handle,
+                indent=2,
+                sort_keys=True,
+            )
+            handle.write("\n")
 
 
 if __name__ == "__main__":

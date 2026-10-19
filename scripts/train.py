@@ -220,9 +220,23 @@ def main(cfg):
     target_tokens = cfg.train.get('target_tokens', None)
 
     if target_tokens:
-        max_steps = max(1, int(target_tokens // (effective_batch * seq_len)))
+        tokens_per_step = effective_batch * seq_len
+        max_steps = max(1, int(target_tokens // tokens_per_step))
+        if target_tokens % tokens_per_step:
+            logger.warning(
+                f"target_tokens={target_tokens:,} is not divisible by "
+                f"effective_batch*seq_len={tokens_per_step:,}; training "
+                f"{max_steps:,} steps ({max_steps * tokens_per_step:,} tokens)"
+            )
     else:
         max_steps = cfg.train.get('max_steps', 10000)
+    planned_tokens = max_steps * effective_batch * seq_len
+    required_examples = max_steps * effective_batch
+    if len(train_loader.dataset) < required_examples:
+        raise ValueError(
+            f"Dataset has {len(train_loader.dataset):,} examples but the exact-token "
+            f"run requires {required_examples:,}"
+        )
 
     logger.info(f"world_size={world_size}, micro_batch={cfg.train.micro_batch_size}, "
                 f"grad_accum={g_accum}, effective_batch={effective_batch}")
@@ -253,6 +267,9 @@ def main(cfg):
         learning_rate=cfg.train.lr,
         lr_scheduler_type=cfg.train.lr_scheduler_type,
         warmup_steps=cfg.train.get('warmup_steps', 0),
+        max_grad_norm=cfg.train.get('max_grad_norm', 1.0),
+        seed=cfg.train.get('seed', 42),
+        data_seed=cfg.train.get('seed', 42),
     )
 
     optimizer = get_optimizer(student, cfg)
@@ -278,6 +295,32 @@ def main(cfg):
         logger.info(f"Saving final model to {final_dir}")
         trainer.save_model(final_dir)
         tokenizer.save_pretrained(final_dir)
+        completed_tokens = trainer.state.global_step * effective_batch * seq_len
+        if completed_tokens != planned_tokens:
+            raise RuntimeError(
+                f"Completed {completed_tokens:,} tokens; expected {planned_tokens:,}"
+            )
+        with open(os.path.join(final_dir, "training_manifest.json"), "w") as handle:
+            json.dump(
+                {
+                    "stage": 2,
+                    "seed": int(cfg.train.get('seed', 42)),
+                    "world_size": world_size,
+                    "micro_batch_size": int(cfg.train.micro_batch_size),
+                    "gradient_accumulation_steps": g_accum,
+                    "effective_batch_size": effective_batch,
+                    "sequence_length": int(seq_len),
+                    "global_steps": int(trainer.state.global_step),
+                    "tokens_per_step": effective_batch * seq_len,
+                    "completed_tokens": completed_tokens,
+                    "target_tokens": int(target_tokens) if target_tokens else None,
+                    "config": OmegaConf.to_container(cfg, resolve=True),
+                },
+                handle,
+                indent=2,
+                sort_keys=True,
+            )
+            handle.write("\n")
 
 
 if __name__ == "__main__":

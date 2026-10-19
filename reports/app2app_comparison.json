@@ -1,0 +1,1414 @@
+{
+  "accounting": {
+    "swa": {
+      "calibration": {
+        "gpu_hours": 0.0,
+        "seconds": 0.0,
+        "total_local_steps": 0,
+        "unique_tokens": 0
+      },
+      "recovery_training_tokens": 100000000,
+      "stage1_trainable_parameters": 1509958656,
+      "stage2_trainable_parameters": 8190735360,
+      "total_parameters": 8190735360
+    },
+    "taylor": {
+      "calibration": {
+        "converted_layers": 36,
+        "dataset": "Salesforce/wikitext",
+        "gpu_count": 1,
+        "gpu_hours": 0.048926223940345355,
+        "local_steps_per_converted_layer": 300,
+        "revision": "b08601e04326c79dfdd32d625aee71d232d685c3",
+        "samples": 4,
+        "seconds": 176.13440618524328,
+        "sequence_length": 256,
+        "split": "test",
+        "total_local_steps": 10800,
+        "unique_tokens": 1024
+      },
+      "recovery_training_tokens": 100000000,
+      "stage1_trainable_parameters": 3029342976,
+      "stage2_trainable_parameters": 9710119680,
+      "total_parameters": 9710119680
+    }
+  },
+  "checkpoints": {
+    "0b": {
+      "swa": {
+        "artifact_files": {
+          "config.json": {
+            "bytes": 1082,
+            "sha256": "7afee5d665a1a7fa87ed1f5848aafb521296d21c967bc6dc7ec78fd8bc955d8a"
+          },
+          "model-00001-of-00004.safetensors": {
+            "bytes": 4902278952,
+            "sha256": "296bad7334be8e59cb96490a7cbb199194a439bbe2b26eeef1c925f9929a076c"
+          },
+          "model-00002-of-00004.safetensors": {
+            "bytes": 4915966408,
+            "sha256": "188bb6534d930779933446201f82f0fdc073e18882b8639e3e7f05bd3fce84d7"
+          },
+          "model-00003-of-00004.safetensors": {
+            "bytes": 4983065776,
+            "sha256": "6cdd42b99c826148c1b465c3c4e498aefa0ae536988c65a919e0b4602212ee9e"
+          },
+          "model-00004-of-00004.safetensors": {
+            "bytes": 1580222424,
+            "sha256": "e377d73958591e56527ab5e0c1a7586436910e52436ffbd6e0e89d1391af5bc4"
+          },
+          "model.safetensors.index.json": {
+            "bytes": 32120,
+            "sha256": "fcaa11971fcff40a5c2cdad340285e7da0b9e28122a485b2a6c9b51b76b6a47e"
+          }
+        },
+        "parameters": {
+          "by_group": {
+            "attention": 1509958656,
+            "embedding_and_lm_head": 1244659712,
+            "mlp": 5435817984,
+            "norm_and_other": 299008
+          },
+          "checkpoint_tensors": 399,
+          "total": 8190735360
+        },
+        "path": "/shared/charlie/taylor-app2app/checkpoints/swa/0b-fixed-qk-norm"
+      },
+      "taylor": {
+        "artifact_files": {
+          "config.json": {
+            "bytes": 1078,
+            "sha256": "746f39a533d9e80ef50acef11cf89f675030a90e1a51010b12c591f8f3922ed1"
+          },
+          "model-00001-of-00004.safetensors": {
+            "bytes": 4906434736,
+            "sha256": "475203a036980c726b692434458752978478685590e26f7f3e87971959fb411e"
+          },
+          "model-00002-of-00004.safetensors": {
+            "bytes": 4972025920,
+            "sha256": "0ade64d34bb1824c88101edb490c28e4285cff3fc9c5bf1f67de19e6db9c6b33"
+          },
+          "model-00003-of-00004.safetensors": {
+            "bytes": 4904374832,
+            "sha256": "9cfddb648ce30c9bcf3c04cbd992e3ad4dc8ea5b22b7f6dc08dd44f24df4d523"
+          },
+          "model-00004-of-00004.safetensors": {
+            "bytes": 4637465152,
+            "sha256": "129e61c424aa94312c3ea3b5ffe8e39ad75d2d93131a84fb5bac5dd075ceabd7"
+          },
+          "model.safetensors.index.json": {
+            "bytes": 41728,
+            "sha256": "7216c8a1b612204ec02035084a49b992297cd2f2e56d6bcb186e12876ca7e2e3"
+          }
+        },
+        "parameters": {
+          "by_group": {
+            "attention": 3029342976,
+            "embedding_and_lm_head": 1244659712,
+            "mlp": 5435817984,
+            "norm_and_other": 299008
+          },
+          "checkpoint_tensors": 543,
+          "total": 9710119680
+        },
+        "path": "/shared/charlie/taylor-app2app/checkpoints/taylor/0b"
+      }
+    },
+    "100m": {
+      "swa": {
+        "artifact_files": {
+          "config.json": {
+            "bytes": 1107,
+            "sha256": "b1f42b6c8dddbf400daf72370783d8dd181428e6e97b5295154adb6871bf1159"
+          },
+          "model-00001-of-00004.safetensors": {
+            "bytes": 4902274088,
+            "sha256": "49feff4c20ba4ba965a3042800f531ce50c3ce4593a7908cac1d3590f3ac4493"
+          },
+          "model-00002-of-00004.safetensors": {
+            "bytes": 4915960056,
+            "sha256": "70795963977fa9a10fee91689259f8e6c6a91b3f365a3bf0f0c1b442e2a9ee08"
+          },
+          "model-00003-of-00004.safetensors": {
+            "bytes": 4983059928,
+            "sha256": "159fd7624c18c22c74058963106262458a3b957ad6531abcbf07730fc8b90781"
+          },
+          "model-00004-of-00004.safetensors": {
+            "bytes": 1580221944,
+            "sha256": "5f922b9a852c336f79ab9883c5956d082823edbd710c0b6a918ff0f584db2d64"
+          },
+          "model.safetensors.index.json": {
+            "bytes": 32120,
+            "sha256": "08bc704538e36b4fec2f50aba12f7800cd3fecb2f70ce347f79e19511f2bb561"
+          }
+        },
+        "parameters": {
+          "by_group": {
+            "attention": 1509958656,
+            "embedding_and_lm_head": 1244659712,
+            "mlp": 5435817984,
+            "norm_and_other": 299008
+          },
+          "checkpoint_tensors": 399,
+          "total": 8190735360
+        },
+        "path": "/shared/charlie/taylor-app2app/checkpoints/swa/stage2/final"
+      },
+      "taylor": {
+        "artifact_files": {
+          "config.json": {
+            "bytes": 1104,
+            "sha256": "0dc0a4606f42275cfe456c7ee08e3c107afd627bd5cbef1993e902b99ea84cf0"
+          },
+          "model-00001-of-00004.safetensors": {
+            "bytes": 4906434344,
+            "sha256": "141112d7ca8112aee34f51085c867c7759e5c97d6aaff4feb986958e4a7c94b4"
+          },
+          "model-00002-of-00004.safetensors": {
+            "bytes": 4972025360,
+            "sha256": "5a54c10defff6812c8b52b4ca83c492d56babb0eda7b23265bb43b96742da76e"
+          },
+          "model-00003-of-00004.safetensors": {
+            "bytes": 4904374328,
+            "sha256": "04947ab848f441d1ba2d88502244af1876dd040c10efc0cf020bfd501f46406e"
+          },
+          "model-00004-of-00004.safetensors": {
+            "bytes": 4637464808,
+            "sha256": "f829fe7d72ac2915ac26305efbbbbb31c7dff561fea02a129babd036620a025b"
+          },
+          "model.safetensors.index.json": {
+            "bytes": 41728,
+            "sha256": "a92c4be9e968b7bbb1e491177e663226a3473b4b8805ce1bda9167f6324c65aa"
+          }
+        },
+        "parameters": {
+          "by_group": {
+            "attention": 3029342976,
+            "embedding_and_lm_head": 1244659712,
+            "mlp": 5435817984,
+            "norm_and_other": 299008
+          },
+          "checkpoint_tensors": 543,
+          "total": 9710119680
+        },
+        "path": "/shared/charlie/taylor-app2app/checkpoints/taylor/stage2/final"
+      }
+    }
+  },
+  "code_manifests": {
+    "swa": {
+      "files": {
+        "configs/deepspeed/stage_1.json": {
+          "bytes": 317,
+          "sha256": "d5ddb91c7e863656f7c37eaa742fc066c6708122c924395d65b4047db7df5b00"
+        },
+        "configs/deepspeed/stage_2.json": {
+          "bytes": 317,
+          "sha256": "8cc607b715fe4868fecc26c371f8e33ed9bebf9938bf3968b5f21f888008e4b5"
+        },
+        "configs/deepspeed/stage_2_offload.json": {
+          "bytes": 399,
+          "sha256": "22d7d205778235efd59d12c46d0cec58d0600aa256a6e8e7147c34ad9d0fd90c"
+        },
+        "configs/k8s/app2app-convert.yaml": {
+          "bytes": 2034,
+          "sha256": "542545b84cceb8bd4d615a3498d36f9b7749b16e42b9c7a20a5b93fe14e42391"
+        },
+        "configs/k8s/app2app-eval-0b-swa.yaml": {
+          "bytes": 2663,
+          "sha256": "ce77573229f392b63b446713b2e7750d4b3daa1e187d24ade56f70ff84ac6456"
+        },
+        "configs/k8s/app2app-eval-0b-taylor.yaml": {
+          "bytes": 2653,
+          "sha256": "1c5ba4dbe15f8cd44bf4b00aade254095e6b949899f2328de7c0bd610362c2bc"
+        },
+        "configs/k8s/app2app-init-swa.yaml": {
+          "bytes": 2197,
+          "sha256": "63d5bfdba3a131866f568826a00b5c47141f7e094d13444d8817e82dd276ffa1"
+        },
+        "configs/k8s/app2app-init-taylor.yaml": {
+          "bytes": 2463,
+          "sha256": "8b49430eb0d553b86ba25ee784a1551cf9807f47389533a75cbd42350bafef9c"
+        },
+        "configs/k8s/app2app-prep.yaml": {
+          "bytes": 1545,
+          "sha256": "bf8c261243d3d0eba11f7f608db4e9ad9601fef7f125eee14f847dcf367d9269"
+        },
+        "configs/k8s/app2app-ruler-0b-swa-sharded.yaml": {
+          "bytes": 3084,
+          "sha256": "6d0927ba33c4e18df9295c50bf2b3dad81f93088ab4ba597379967b5a81a1e3f"
+        },
+        "configs/k8s/app2app-ruler-0b-swa.yaml": {
+          "bytes": 2061,
+          "sha256": "c0d143412df2fb6ccef53c385b289e7bb4db7cf645c4c14d27a96b2c26106858"
+        },
+        "configs/k8s/app2app-ruler-0b-taylor-sharded.yaml": {
+          "bytes": 3077,
+          "sha256": "9c9ea671ee5f54aa7bbe2764483793be1e607e8027da06fa2fdef29e1b3e3800"
+        },
+        "configs/k8s/app2app-ruler-0b-taylor.yaml": {
+          "bytes": 2051,
+          "sha256": "9f495863c6cd0d3f84b352f227618c93b2904df3e883793f0aca5870f2803463"
+        },
+        "configs/k8s/app2app-smoke.yaml": {
+          "bytes": 1478,
+          "sha256": "3cd97e5c0b7bfdf1b0fd1200ef835d15319200b58569cf3131da6a73a8a33fbc"
+        },
+        "configs/k8s/app2app-train-swa.yaml": {
+          "bytes": 4755,
+          "sha256": "d148846dac52571fbfb42b63088534716c52ff1d4ff5c115aa8ddbae407e2805"
+        },
+        "configs/k8s/app2app-train-taylor.yaml": {
+          "bytes": 4812,
+          "sha256": "d69a5d98edcf263cc93192d10a3c1d381fbeb1282d714fcfab22feb49e2b4b12"
+        },
+        "configs/qwen2_1.5b/ar_baseline_stage1.yaml": {
+          "bytes": 511,
+          "sha256": "ace412be0303061703d8c33ad6791008519094fa3e8ca6d6c1835844c688f841"
+        },
+        "configs/qwen2_1.5b/ar_baseline_stage2.yaml": {
+          "bytes": 629,
+          "sha256": "c7398887c6c1ed94c1532e8a94226fc04bbbde1107def0b516c5bb4a2a9a2d93"
+        },
+        "configs/qwen2_1.5b/ar_calibrate_stage1.yaml": {
+          "bytes": 591,
+          "sha256": "f5c840bdea9a88ab3229af8b22eddbddd4d980d3f924dce507ffb8247274365a"
+        },
+        "configs/qwen2_1.5b/ar_calibrate_stage2.yaml": {
+          "bytes": 631,
+          "sha256": "d503d482a3a53b4eef0da1fb08c43aa02cb4909701967dc2e1e7e59167fa17ae"
+        },
+        "configs/qwen2_1.5b/ga_s2_baseline_stage1.yaml": {
+          "bytes": 514,
+          "sha256": "51811d9d6e628438852c2e6a7427a99a3896a19afbcd0d761fe428f5dfbee4c4"
+        },
+        "configs/qwen2_1.5b/ga_s2_baseline_stage2.yaml": {
+          "bytes": 635,
+          "sha256": "95c9a62fc55efa6a2d39c253bde2d2cb3b187a0a6771db853bd2aabbcbeacffa"
+        },
+        "configs/qwen2_1.5b/ga_s2_calibrate_stage1.yaml": {
+          "bytes": 597,
+          "sha256": "9289af15f1a980c450a6715d96f44923b2e424a96af075112155a80a47593a13"
+        },
+        "configs/qwen2_1.5b/ga_s2_calibrate_stage2.yaml": {
+          "bytes": 637,
+          "sha256": "e30fc1f7ad2950729743ad95e50c17f605dac7c1dcb2675eb9fc36edf52dd6ac"
+        },
+        "configs/qwen2_1.5b/qwen2_1_5b_gdn_v4.yaml": {
+          "bytes": 330,
+          "sha256": "c6d7b7629beb7689357d37e15d9ec4dd53ae200d65ef4aa1a7db7d4d4dcba68a"
+        },
+        "configs/qwen2_1.5b/uniform_baseline_stage1.yaml": {
+          "bytes": 508,
+          "sha256": "b0eaf436e51eded55888cd9efcdb0b4905cc17385cc06975c5cd78a44feab38b"
+        },
+        "configs/qwen2_1.5b/uniform_baseline_stage2.yaml": {
+          "bytes": 622,
+          "sha256": "6bb52387174f70da024394c37e72dbf202be1181f96b8db82cc1fa4b182d0c7c"
+        },
+        "configs/qwen2_1.5b/uniform_calibrate_stage1.yaml": {
+          "bytes": 584,
+          "sha256": "cb05ddc4db001c2df83a5fc115de3168be492ae79deb113ede01ffa2b2b18ede"
+        },
+        "configs/qwen2_1.5b/uniform_calibrate_stage2.yaml": {
+          "bytes": 624,
+          "sha256": "5cf7dc63083866b0a2fd4cbebdf4f2c69d7d5e56fa487be27add2e3ad508aefd"
+        },
+        "configs/qwen3_8b/app2app/swa_stage1.yaml": {
+          "bytes": 884,
+          "sha256": "79e704a2ea4705f9e79087c6c8129f2cb096f3a04b3a40268fb5038c7063a828"
+        },
+        "configs/qwen3_8b/app2app/swa_stage2.yaml": {
+          "bytes": 935,
+          "sha256": "aec103ea4e58f0e1640e81f32d28152676fb63d40be664d6395a17a2f7a4bc4d"
+        },
+        "configs/qwen3_8b/app2app/taylor_stage1.yaml": {
+          "bytes": 832,
+          "sha256": "6b4cb264b037af684a658d03322dd26617ac0577cf785c6dabd5cf935b3ef721"
+        },
+        "configs/qwen3_8b/app2app/taylor_stage2.yaml": {
+          "bytes": 897,
+          "sha256": "243708de7199fb9efeb7fd28194cd140c861c1dadecac5a00bc9e565e1530f00"
+        },
+        "convert/convert_from_llama3.2.py": {
+          "bytes": 13029,
+          "sha256": "0f845c2d623478308157a5cae153d9ab6dcf3c5aea5af93792204e5e60457e1b"
+        },
+        "convert/convert_from_qwen2.5.py": {
+          "bytes": 14535,
+          "sha256": "a3af380c08468e6e1f787c23bfc54b9893e7757844ca32efc6592f36bb7f47b3"
+        },
+        "convert/convert_from_qwen3.py": {
+          "bytes": 13557,
+          "sha256": "5b4fd32ced152931b0cb116cd90f0c502fa5cd0df8d7db600514ad6dbc617fff"
+        },
+        "eval/__init__.py": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "eval/collect_results.py": {
+          "bytes": 5247,
+          "sha256": "d0892ad9f66d2a264dbb8cf7ff5a0ac60c611c618954db015eae433580177f11"
+        },
+        "eval/harness.py": {
+          "bytes": 11937,
+          "sha256": "b3cf325f9f3d0e51eed87c54351f4d4bc3b074b65b269f80a4c396b02776986e"
+        },
+        "eval/ppl_eval.py": {
+          "bytes": 6815,
+          "sha256": "47d1b8bc09b6d2be32ae5900eb6e37cc4ee1ee9b3788940a234dd8590914561d"
+        },
+        "scripts/ar_layer_selection.py": {
+          "bytes": 8309,
+          "sha256": "a643ac261611547b00c8349a992ab0b92b013fe1eeec6ad2311e4a9cddf92ac7"
+        },
+        "scripts/capture_app2app_environment.py": {
+          "bytes": 1599,
+          "sha256": "ffcd49b5081ff4efb148f2cf270d692e2624b8e7d8a6cef01f117819e4813c82"
+        },
+        "scripts/convert_stage1.py": {
+          "bytes": 6388,
+          "sha256": "abcca788de8e555bb368bb210f31270c0dc2e51529d46aa2e9e9dfc63f4f49f1"
+        },
+        "scripts/create_code_manifest.py": {
+          "bytes": 1610,
+          "sha256": "24be083b2be8fd78c633775b8b6b302e2f165bb3064ecc9bbf3a795f7630dc48"
+        },
+        "scripts/eval_benchmarks.sh": {
+          "bytes": 3539,
+          "sha256": "31a461fa7d8bfce1d9f5795f7cf7601715fc17fb9ea6a78cd2bc8dd7b88e2880"
+        },
+        "scripts/eval_ruler.sh": {
+          "bytes": 3335,
+          "sha256": "333dd76f232eb7890e30da9e1cc303663fb6f0404baf1ddd19779d49d648810d"
+        },
+        "scripts/greedy_layer_selection.py": {
+          "bytes": 12912,
+          "sha256": "37b125410dd704e67da47d404820bb663e1636404640d64e6a0a86174a5d5dbf"
+        },
+        "scripts/inspect_student_checkpoint.py": {
+          "bytes": 2735,
+          "sha256": "0ad31d7e34563d5967c61bc24c37842d3585a957e5a7ce4828d17e9b87b46757"
+        },
+        "scripts/prep_stage1_data.py": {
+          "bytes": 1491,
+          "sha256": "ca879c5b905fe910a8c7360d2b06e885721e113ccc4076b06d31f3a16dc657c7"
+        },
+        "scripts/prepare_app2app_data.py": {
+          "bytes": 6118,
+          "sha256": "b27cdaf46891c0f24bf728131db2d9b4b5eb28894d746599bb9205fc08216388"
+        },
+        "scripts/preprocess_data.py": {
+          "bytes": 4788,
+          "sha256": "1cc00b405e3d6c6dba5b00656c19d23ea7755feb9f53785127aaff38bcde1fdd"
+        },
+        "scripts/quick_ppl_eval.py": {
+          "bytes": 4951,
+          "sha256": "9ab111b491edb2c78d99e5054a5dd4bc001fbb0ea44ec445ed005f3e919a3f52"
+        },
+        "scripts/ruler_eval_patched.py": {
+          "bytes": 3647,
+          "sha256": "bf83eb693300f0358cffd896a65d9b2b69717bf64d4575d71d070a127c6c419d"
+        },
+        "scripts/sft.py": {
+          "bytes": 6028,
+          "sha256": "be3a9cafb43819e9a9b18a848e652fabec381d5b2841c93b9166174b18ec65d4"
+        },
+        "scripts/train.py": {
+          "bytes": 12712,
+          "sha256": "3f6cd70f7f98315b59ec608f63fdb4d2d6f38b574650600ba483f5ddf6f1b25b"
+        },
+        "scripts/train_stage1.py": {
+          "bytes": 16346,
+          "sha256": "ac20df1810a03c1e9872ee73f42b026663c53b6e7dfae74dc35179c60f4cf77b"
+        },
+        "scripts/verify_app2app_training.py": {
+          "bytes": 3272,
+          "sha256": "73957d866c0a0ae97046f014dfa9d287a1e8d7018e52497bd917001a15089dce"
+        },
+        "scripts/verify_model_artifact.py": {
+          "bytes": 2767,
+          "sha256": "d465f3ef10ca07cb65e56a39d5696518bc8ca4d8d0f38b567eb1c4e142a51cdb"
+        },
+        "src/__init__.py": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "src/data.py": {
+          "bytes": 870,
+          "sha256": "9207f1fe8e3020a24291063e9acdaf6e5811f6c969cf7f7fda2a0a1f9a64c161"
+        },
+        "src/distill_model/__init__.py": {
+          "bytes": 354,
+          "sha256": "4ab0fc7a442032fd6e6be6e2664428a9292d8d7d4ece936dec9616242576443b"
+        },
+        "src/distill_model/config_distilled_student.py": {
+          "bytes": 3272,
+          "sha256": "fb981e20e4b15b822ab6ebb1230a28631f865936546e51694311f348348d8530"
+        },
+        "src/distill_model/custom_gdn.py": {
+          "bytes": 10868,
+          "sha256": "ebfd1caf26aeddddc182c43cc307d19313fceb1769cd8a4f2706c6dc65cde96a"
+        },
+        "src/distill_model/modeling_distilled_student.py": {
+          "bytes": 21872,
+          "sha256": "5988f75ce0a2b7db73bd26184da5ab339dc9f2d3fd24c047e97c5442094f5567"
+        },
+        "src/distill_model/student_layers.py": {
+          "bytes": 31293,
+          "sha256": "99464a6880d77ea97b96190971babab47f1454a69c1629869c23833c061bb4f7"
+        },
+        "src/hf_trainer.py": {
+          "bytes": 845,
+          "sha256": "633b6851570892d727a5ec9db65fd8e9654e4c9160364a74ee135b542d8a2ded"
+        },
+        "src/init_ckpt_calibrated.py": {
+          "bytes": 59760,
+          "sha256": "449fa97e5cbc2a3dceec489fcf15ff94ff6eea4bd1326f878375770ed3eecbb2"
+        },
+        "src/init_ckpt_from_teacher.py": {
+          "bytes": 5104,
+          "sha256": "d232ff4eccf10a389149ec55000430bfed24f0554f24236219d66c8eb7687287"
+        },
+        "tests/test_swa_sink.py": {
+          "bytes": 6037,
+          "sha256": "cfe73cb6ba3764a7f0c0c3d291d806eae148ea04faf0e013ee69e2439b9679dd"
+        }
+      },
+      "repo": "/shared/charlie/taylor-app2app/repo"
+    },
+    "taylor": {
+      "files": {
+        "configs/deepspeed/stage_1.json": {
+          "bytes": 317,
+          "sha256": "d5ddb91c7e863656f7c37eaa742fc066c6708122c924395d65b4047db7df5b00"
+        },
+        "configs/deepspeed/stage_2.json": {
+          "bytes": 317,
+          "sha256": "8cc607b715fe4868fecc26c371f8e33ed9bebf9938bf3968b5f21f888008e4b5"
+        },
+        "configs/deepspeed/stage_2_offload.json": {
+          "bytes": 399,
+          "sha256": "22d7d205778235efd59d12c46d0cec58d0600aa256a6e8e7147c34ad9d0fd90c"
+        },
+        "configs/k8s/app2app-convert.yaml": {
+          "bytes": 2034,
+          "sha256": "542545b84cceb8bd4d615a3498d36f9b7749b16e42b9c7a20a5b93fe14e42391"
+        },
+        "configs/k8s/app2app-eval-0b-swa.yaml": {
+          "bytes": 2663,
+          "sha256": "ce77573229f392b63b446713b2e7750d4b3daa1e187d24ade56f70ff84ac6456"
+        },
+        "configs/k8s/app2app-eval-0b-taylor.yaml": {
+          "bytes": 2653,
+          "sha256": "1c5ba4dbe15f8cd44bf4b00aade254095e6b949899f2328de7c0bd610362c2bc"
+        },
+        "configs/k8s/app2app-init-swa.yaml": {
+          "bytes": 2197,
+          "sha256": "63d5bfdba3a131866f568826a00b5c47141f7e094d13444d8817e82dd276ffa1"
+        },
+        "configs/k8s/app2app-init-taylor.yaml": {
+          "bytes": 2463,
+          "sha256": "8b49430eb0d553b86ba25ee784a1551cf9807f47389533a75cbd42350bafef9c"
+        },
+        "configs/k8s/app2app-prep.yaml": {
+          "bytes": 1545,
+          "sha256": "bf8c261243d3d0eba11f7f608db4e9ad9601fef7f125eee14f847dcf367d9269"
+        },
+        "configs/k8s/app2app-ruler-0b-swa-sharded.yaml": {
+          "bytes": 3084,
+          "sha256": "6d0927ba33c4e18df9295c50bf2b3dad81f93088ab4ba597379967b5a81a1e3f"
+        },
+        "configs/k8s/app2app-ruler-0b-swa.yaml": {
+          "bytes": 2061,
+          "sha256": "c0d143412df2fb6ccef53c385b289e7bb4db7cf645c4c14d27a96b2c26106858"
+        },
+        "configs/k8s/app2app-ruler-0b-taylor-sharded.yaml": {
+          "bytes": 3077,
+          "sha256": "9c9ea671ee5f54aa7bbe2764483793be1e607e8027da06fa2fdef29e1b3e3800"
+        },
+        "configs/k8s/app2app-ruler-0b-taylor.yaml": {
+          "bytes": 2051,
+          "sha256": "9f495863c6cd0d3f84b352f227618c93b2904df3e883793f0aca5870f2803463"
+        },
+        "configs/k8s/app2app-smoke.yaml": {
+          "bytes": 1478,
+          "sha256": "3cd97e5c0b7bfdf1b0fd1200ef835d15319200b58569cf3131da6a73a8a33fbc"
+        },
+        "configs/k8s/app2app-train-swa.yaml": {
+          "bytes": 4755,
+          "sha256": "d148846dac52571fbfb42b63088534716c52ff1d4ff5c115aa8ddbae407e2805"
+        },
+        "configs/k8s/app2app-train-taylor.yaml": {
+          "bytes": 4812,
+          "sha256": "d69a5d98edcf263cc93192d10a3c1d381fbeb1282d714fcfab22feb49e2b4b12"
+        },
+        "configs/qwen2_1.5b/ar_baseline_stage1.yaml": {
+          "bytes": 511,
+          "sha256": "ace412be0303061703d8c33ad6791008519094fa3e8ca6d6c1835844c688f841"
+        },
+        "configs/qwen2_1.5b/ar_baseline_stage2.yaml": {
+          "bytes": 629,
+          "sha256": "c7398887c6c1ed94c1532e8a94226fc04bbbde1107def0b516c5bb4a2a9a2d93"
+        },
+        "configs/qwen2_1.5b/ar_calibrate_stage1.yaml": {
+          "bytes": 591,
+          "sha256": "f5c840bdea9a88ab3229af8b22eddbddd4d980d3f924dce507ffb8247274365a"
+        },
+        "configs/qwen2_1.5b/ar_calibrate_stage2.yaml": {
+          "bytes": 631,
+          "sha256": "d503d482a3a53b4eef0da1fb08c43aa02cb4909701967dc2e1e7e59167fa17ae"
+        },
+        "configs/qwen2_1.5b/ga_s2_baseline_stage1.yaml": {
+          "bytes": 514,
+          "sha256": "51811d9d6e628438852c2e6a7427a99a3896a19afbcd0d761fe428f5dfbee4c4"
+        },
+        "configs/qwen2_1.5b/ga_s2_baseline_stage2.yaml": {
+          "bytes": 635,
+          "sha256": "95c9a62fc55efa6a2d39c253bde2d2cb3b187a0a6771db853bd2aabbcbeacffa"
+        },
+        "configs/qwen2_1.5b/ga_s2_calibrate_stage1.yaml": {
+          "bytes": 597,
+          "sha256": "9289af15f1a980c450a6715d96f44923b2e424a96af075112155a80a47593a13"
+        },
+        "configs/qwen2_1.5b/ga_s2_calibrate_stage2.yaml": {
+          "bytes": 637,
+          "sha256": "e30fc1f7ad2950729743ad95e50c17f605dac7c1dcb2675eb9fc36edf52dd6ac"
+        },
+        "configs/qwen2_1.5b/qwen2_1_5b_gdn_v4.yaml": {
+          "bytes": 330,
+          "sha256": "c6d7b7629beb7689357d37e15d9ec4dd53ae200d65ef4aa1a7db7d4d4dcba68a"
+        },
+        "configs/qwen2_1.5b/uniform_baseline_stage1.yaml": {
+          "bytes": 508,
+          "sha256": "b0eaf436e51eded55888cd9efcdb0b4905cc17385cc06975c5cd78a44feab38b"
+        },
+        "configs/qwen2_1.5b/uniform_baseline_stage2.yaml": {
+          "bytes": 622,
+          "sha256": "6bb52387174f70da024394c37e72dbf202be1181f96b8db82cc1fa4b182d0c7c"
+        },
+        "configs/qwen2_1.5b/uniform_calibrate_stage1.yaml": {
+          "bytes": 584,
+          "sha256": "cb05ddc4db001c2df83a5fc115de3168be492ae79deb113ede01ffa2b2b18ede"
+        },
+        "configs/qwen2_1.5b/uniform_calibrate_stage2.yaml": {
+          "bytes": 624,
+          "sha256": "5cf7dc63083866b0a2fd4cbebdf4f2c69d7d5e56fa487be27add2e3ad508aefd"
+        },
+        "configs/qwen3_8b/app2app/swa_stage1.yaml": {
+          "bytes": 884,
+          "sha256": "79e704a2ea4705f9e79087c6c8129f2cb096f3a04b3a40268fb5038c7063a828"
+        },
+        "configs/qwen3_8b/app2app/swa_stage2.yaml": {
+          "bytes": 935,
+          "sha256": "aec103ea4e58f0e1640e81f32d28152676fb63d40be664d6395a17a2f7a4bc4d"
+        },
+        "configs/qwen3_8b/app2app/taylor_stage1.yaml": {
+          "bytes": 832,
+          "sha256": "6b4cb264b037af684a658d03322dd26617ac0577cf785c6dabd5cf935b3ef721"
+        },
+        "configs/qwen3_8b/app2app/taylor_stage2.yaml": {
+          "bytes": 897,
+          "sha256": "243708de7199fb9efeb7fd28194cd140c861c1dadecac5a00bc9e565e1530f00"
+        },
+        "convert/convert_from_llama3.2.py": {
+          "bytes": 13029,
+          "sha256": "0f845c2d623478308157a5cae153d9ab6dcf3c5aea5af93792204e5e60457e1b"
+        },
+        "convert/convert_from_qwen2.5.py": {
+          "bytes": 14535,
+          "sha256": "a3af380c08468e6e1f787c23bfc54b9893e7757844ca32efc6592f36bb7f47b3"
+        },
+        "convert/convert_from_qwen3.py": {
+          "bytes": 13557,
+          "sha256": "5b4fd32ced152931b0cb116cd90f0c502fa5cd0df8d7db600514ad6dbc617fff"
+        },
+        "eval/__init__.py": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "eval/collect_results.py": {
+          "bytes": 5247,
+          "sha256": "d0892ad9f66d2a264dbb8cf7ff5a0ac60c611c618954db015eae433580177f11"
+        },
+        "eval/harness.py": {
+          "bytes": 11937,
+          "sha256": "b3cf325f9f3d0e51eed87c54351f4d4bc3b074b65b269f80a4c396b02776986e"
+        },
+        "eval/ppl_eval.py": {
+          "bytes": 6815,
+          "sha256": "47d1b8bc09b6d2be32ae5900eb6e37cc4ee1ee9b3788940a234dd8590914561d"
+        },
+        "scripts/ar_layer_selection.py": {
+          "bytes": 8309,
+          "sha256": "a643ac261611547b00c8349a992ab0b92b013fe1eeec6ad2311e4a9cddf92ac7"
+        },
+        "scripts/capture_app2app_environment.py": {
+          "bytes": 1599,
+          "sha256": "ffcd49b5081ff4efb148f2cf270d692e2624b8e7d8a6cef01f117819e4813c82"
+        },
+        "scripts/convert_stage1.py": {
+          "bytes": 6388,
+          "sha256": "abcca788de8e555bb368bb210f31270c0dc2e51529d46aa2e9e9dfc63f4f49f1"
+        },
+        "scripts/create_code_manifest.py": {
+          "bytes": 1610,
+          "sha256": "24be083b2be8fd78c633775b8b6b302e2f165bb3064ecc9bbf3a795f7630dc48"
+        },
+        "scripts/eval_benchmarks.sh": {
+          "bytes": 3539,
+          "sha256": "31a461fa7d8bfce1d9f5795f7cf7601715fc17fb9ea6a78cd2bc8dd7b88e2880"
+        },
+        "scripts/eval_ruler.sh": {
+          "bytes": 3335,
+          "sha256": "333dd76f232eb7890e30da9e1cc303663fb6f0404baf1ddd19779d49d648810d"
+        },
+        "scripts/greedy_layer_selection.py": {
+          "bytes": 12912,
+          "sha256": "37b125410dd704e67da47d404820bb663e1636404640d64e6a0a86174a5d5dbf"
+        },
+        "scripts/inspect_student_checkpoint.py": {
+          "bytes": 2735,
+          "sha256": "0ad31d7e34563d5967c61bc24c37842d3585a957e5a7ce4828d17e9b87b46757"
+        },
+        "scripts/prep_stage1_data.py": {
+          "bytes": 1491,
+          "sha256": "ca879c5b905fe910a8c7360d2b06e885721e113ccc4076b06d31f3a16dc657c7"
+        },
+        "scripts/prepare_app2app_data.py": {
+          "bytes": 6118,
+          "sha256": "b27cdaf46891c0f24bf728131db2d9b4b5eb28894d746599bb9205fc08216388"
+        },
+        "scripts/preprocess_data.py": {
+          "bytes": 4788,
+          "sha256": "1cc00b405e3d6c6dba5b00656c19d23ea7755feb9f53785127aaff38bcde1fdd"
+        },
+        "scripts/quick_ppl_eval.py": {
+          "bytes": 4951,
+          "sha256": "9ab111b491edb2c78d99e5054a5dd4bc001fbb0ea44ec445ed005f3e919a3f52"
+        },
+        "scripts/ruler_eval_patched.py": {
+          "bytes": 3647,
+          "sha256": "bf83eb693300f0358cffd896a65d9b2b69717bf64d4575d71d070a127c6c419d"
+        },
+        "scripts/sft.py": {
+          "bytes": 6028,
+          "sha256": "be3a9cafb43819e9a9b18a848e652fabec381d5b2841c93b9166174b18ec65d4"
+        },
+        "scripts/train.py": {
+          "bytes": 12712,
+          "sha256": "3f6cd70f7f98315b59ec608f63fdb4d2d6f38b574650600ba483f5ddf6f1b25b"
+        },
+        "scripts/train_stage1.py": {
+          "bytes": 16346,
+          "sha256": "ac20df1810a03c1e9872ee73f42b026663c53b6e7dfae74dc35179c60f4cf77b"
+        },
+        "scripts/verify_app2app_training.py": {
+          "bytes": 3272,
+          "sha256": "73957d866c0a0ae97046f014dfa9d287a1e8d7018e52497bd917001a15089dce"
+        },
+        "scripts/verify_model_artifact.py": {
+          "bytes": 2767,
+          "sha256": "d465f3ef10ca07cb65e56a39d5696518bc8ca4d8d0f38b567eb1c4e142a51cdb"
+        },
+        "src/__init__.py": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "src/data.py": {
+          "bytes": 870,
+          "sha256": "9207f1fe8e3020a24291063e9acdaf6e5811f6c969cf7f7fda2a0a1f9a64c161"
+        },
+        "src/distill_model/__init__.py": {
+          "bytes": 354,
+          "sha256": "4ab0fc7a442032fd6e6be6e2664428a9292d8d7d4ece936dec9616242576443b"
+        },
+        "src/distill_model/config_distilled_student.py": {
+          "bytes": 3272,
+          "sha256": "fb981e20e4b15b822ab6ebb1230a28631f865936546e51694311f348348d8530"
+        },
+        "src/distill_model/custom_gdn.py": {
+          "bytes": 10868,
+          "sha256": "ebfd1caf26aeddddc182c43cc307d19313fceb1769cd8a4f2706c6dc65cde96a"
+        },
+        "src/distill_model/modeling_distilled_student.py": {
+          "bytes": 21872,
+          "sha256": "5988f75ce0a2b7db73bd26184da5ab339dc9f2d3fd24c047e97c5442094f5567"
+        },
+        "src/distill_model/student_layers.py": {
+          "bytes": 31293,
+          "sha256": "99464a6880d77ea97b96190971babab47f1454a69c1629869c23833c061bb4f7"
+        },
+        "src/hf_trainer.py": {
+          "bytes": 845,
+          "sha256": "633b6851570892d727a5ec9db65fd8e9654e4c9160364a74ee135b542d8a2ded"
+        },
+        "src/init_ckpt_calibrated.py": {
+          "bytes": 59760,
+          "sha256": "449fa97e5cbc2a3dceec489fcf15ff94ff6eea4bd1326f878375770ed3eecbb2"
+        },
+        "src/init_ckpt_from_teacher.py": {
+          "bytes": 5104,
+          "sha256": "d232ff4eccf10a389149ec55000430bfed24f0554f24236219d66c8eb7687287"
+        },
+        "tests/test_swa_sink.py": {
+          "bytes": 6037,
+          "sha256": "cfe73cb6ba3764a7f0c0c3d291d806eae148ea04faf0e013ee69e2439b9679dd"
+        }
+      },
+      "repo": "/shared/charlie/taylor-app2app/repo"
+    }
+  },
+  "data": {
+    "base_corpus": {
+      "sha256_uint32_le": "1c5907501578b2e2cd29d28100072df1dde38ba6a0cd82f90e3ac5e38c8a8bc1",
+      "tokens": 9710407
+    },
+    "dataset": {
+      "examples": 51760,
+      "fingerprint": "b5119ab07d625c5d",
+      "name": "yahma/alpaca-cleaned",
+      "revision": "12567cabf869d7c92e573c7c783905fc160e9639",
+      "split": "train"
+    },
+    "format_version": "stanford-alpaca-v1+eos",
+    "stages": {
+      "stage1": {
+        "examples": 50000,
+        "sequence_length": 1000,
+        "sha256_uint32_le": "15fbf165046647bff80d1d8b38f9bfaae8bb848484523f86eb277c4170bf6032",
+        "start": 0,
+        "stop": 50000000,
+        "tokens": 50000000
+      },
+      "stage2": {
+        "examples": 50000,
+        "sequence_length": 1000,
+        "sha256_uint32_le": "6287905734beed2c927533af895914947096258d7e6698ddf7160fecb6507bd4",
+        "start": 50000000,
+        "stop": 100000000,
+        "tokens": 50000000
+      }
+    },
+    "stream": {
+      "remainder_tokens": 2895930,
+      "repetitions": 10,
+      "sha256_uint32_le": "6bec134dc8392fb40b0966f7b457e89026241669ee6a91ea25a4a05f6342c3af",
+      "tokens": 100000000
+    },
+    "tokenizer": {
+      "eos_token_id": 151645,
+      "name": "Qwen/Qwen3-8B",
+      "revision": "b968826d9c46dd6066d109eabc6255188de91218"
+    }
+  },
+  "environments": {
+    "swa": {
+      "accelerate": "1.13.0",
+      "cuda": "12.6",
+      "cudnn": 90501,
+      "deepspeed": "0.18.9",
+      "fla": "0.5.0",
+      "flash_attn": "2.7.4.post1",
+      "gpu_count": 8,
+      "gpus": [
+        {
+          "index": 0,
+          "name": "NVIDIA H100 80GB HBM3",
+          "total_memory_bytes": 85019328512
+        },
+        {
+          "index": 1,
+          "name": "NVIDIA H100 80GB HBM3",
+          "total_memory_bytes": 85019328512
+        },
+        {
+          "index": 2,
+          "name": "NVIDIA H100 80GB HBM3",
+          "total_memory_bytes": 85019328512
+        },
+        {
+          "index": 3,
+          "name": "NVIDIA H100 80GB HBM3",
+          "total_memory_bytes": 85019328512
+        },
+        {
+          "index": 4,
+          "name": "NVIDIA H100 80GB HBM3",
+          "total_memory_bytes": 85019328512
+        },
+        {
+          "index": 5,
+          "name": "NVIDIA H100 80GB HBM3",
+          "total_memory_bytes": 85019328512
+        },
+        {
+          "index": 6,
+          "name": "NVIDIA H100 80GB HBM3",
+          "total_memory_bytes": 85019328512
+        },
+        {
+          "index": 7,
+          "name": "NVIDIA H100 80GB HBM3",
+          "total_memory_bytes": 85019328512
+        }
+      ],
+      "method": "swa",
+      "python": "3.11.15",
+      "torch": "2.7.1+cu126",
+      "transformers": "4.57.6"
+    },
+    "taylor": {
+      "accelerate": "1.13.0",
+      "cuda": "12.6",
+      "cudnn": 90501,
+      "deepspeed": "0.18.9",
+      "fla": "0.5.0",
+      "flash_attn": "2.7.4.post1",
+      "gpu_count": 8,
+      "gpus": [
+        {
+          "index": 0,
+          "name": "NVIDIA H100 80GB HBM3",
+          "total_memory_bytes": 85019328512
+        },
+        {
+          "index": 1,
+          "name": "NVIDIA H100 80GB HBM3",
+          "total_memory_bytes": 85019328512
+        },
+        {
+          "index": 2,
+          "name": "NVIDIA H100 80GB HBM3",
+          "total_memory_bytes": 85019328512
+        },
+        {
+          "index": 3,
+          "name": "NVIDIA H100 80GB HBM3",
+          "total_memory_bytes": 85019328512
+        },
+        {
+          "index": 4,
+          "name": "NVIDIA H100 80GB HBM3",
+          "total_memory_bytes": 85019328512
+        },
+        {
+          "index": 5,
+          "name": "NVIDIA H100 80GB HBM3",
+          "total_memory_bytes": 85019328512
+        },
+        {
+          "index": 6,
+          "name": "NVIDIA H100 80GB HBM3",
+          "total_memory_bytes": 85019328512
+        },
+        {
+          "index": 7,
+          "name": "NVIDIA H100 80GB HBM3",
+          "total_memory_bytes": 85019328512
+        }
+      ],
+      "method": "taylor",
+      "python": "3.11.15",
+      "torch": "2.7.1+cu126",
+      "transformers": "4.57.6"
+    }
+  },
+  "invalidated_attempts": [
+    "The first SWA 0B checkpoint omitted learned Qwen3 q_norm/k_norm weights. Its PPL 697.84 and associated short-task results were invalidated; a regression test and exact weight check were added before rebuilding.",
+    "Initial RULER setup failed because lm-eval 0.4.11 referenced an unavailable CMU HTTP URL. It was replaced with upstream's immutable, byte-compatible Hugging Face mirror.",
+    "Serial full-group RULER was stopped after 5% when measured runtime exceeded its deadline. The accepted run evaluates all 13 official tasks with all 500 examples via indexed shards.",
+    "Two 8-GPU training pods were resubmitted with lower scheduler memory reservations while still pending; no optimizer step ran in those scheduling-only attempts."
+  ],
+  "result_files": {
+    "/shared/charlie/taylor-app2app/results/0b/swa-fixed-qk-norm/core/__shared__charlie__taylor-app2app__checkpoints__swa__0b-fixed-qk-norm/results_2026-09-03T09-18-00.244349.json": {
+      "bytes": 18007,
+      "sha256": "4a6ed3231e44cc3962618bb702cdf262781134ca4ba9875908800aa8bc0efee3"
+    },
+    "/shared/charlie/taylor-app2app/results/0b/swa-fixed-qk-norm/mmlu/__shared__charlie__taylor-app2app__checkpoints__swa__0b-fixed-qk-norm/results_2026-09-03T09-39-29.811509.json": {
+      "bytes": 134020,
+      "sha256": "85e71e96e4700adfac0ce66ecae82cd1de26aeb4b64c05b48f474b001b22a0aa"
+    },
+    "/shared/charlie/taylor-app2app/results/0b/swa-fixed-qk-norm/ppl/results.json": {
+      "bytes": 302,
+      "sha256": "6728d5278873f655523f22eff0996f9ce83f7cca6e9bff7c295b353b85d0cf3c"
+    },
+    "/shared/charlie/taylor-app2app/results/0b/swa-fixed-qk-norm/ruler-shards/niah_multikey_1/__shared__charlie__taylor-app2app__checkpoints__swa__0b-fixed-qk-norm/results_2026-09-03T14-43-39.704328.json": {
+      "bytes": 12095,
+      "sha256": "1c230978a6ad9505e2e94b5b2d5bb2bf34f44cd688f730e52f83dd7f8df6b5ba"
+    },
+    "/shared/charlie/taylor-app2app/results/0b/swa-fixed-qk-norm/ruler-shards/niah_multikey_2/__shared__charlie__taylor-app2app__checkpoints__swa__0b-fixed-qk-norm/results_2026-09-03T14-57-28.925592.json": {
+      "bytes": 12067,
+      "sha256": "8f52b1e2d621d39edf6974cd771d6e261029e792579675acd28e59bd708221d6"
+    },
+    "/shared/charlie/taylor-app2app/results/0b/swa-fixed-qk-norm/ruler-shards/niah_multikey_3/__shared__charlie__taylor-app2app__checkpoints__swa__0b-fixed-qk-norm/results_2026-09-03T14-49-00.225259.json": {
+      "bytes": 12068,
+      "sha256": "73ce16d3588b3b783773bf6d3c72ff61a9ffc9cb3cd1de43596a978f0ef43e3c"
+    },
+    "/shared/charlie/taylor-app2app/results/0b/swa-fixed-qk-norm/ruler-shards/niah_multiquery/__shared__charlie__taylor-app2app__checkpoints__swa__0b-fixed-qk-norm/results_2026-09-03T14-43-55.223506.json": {
+      "bytes": 12094,
+      "sha256": "116bed6d610b60912e022b02b324ccc4b14178bbee1e16792086da292a6641be"
+    },
+    "/shared/charlie/taylor-app2app/results/0b/swa-fixed-qk-norm/ruler-shards/niah_multivalue/__shared__charlie__taylor-app2app__checkpoints__swa__0b-fixed-qk-norm/results_2026-09-03T14-45-00.267141.json": {
+      "bytes": 12100,
+      "sha256": "5a5a6e524690e4813a6a2e10aad4a2377844b4acfbf1f2722cc98f96f4c42b13"
+    },
+    "/shared/charlie/taylor-app2app/results/0b/swa-fixed-qk-norm/ruler-shards/niah_single_1/__shared__charlie__taylor-app2app__checkpoints__swa__0b-fixed-qk-norm/results_2026-09-03T14-48-39.723317.json": {
+      "bytes": 12049,
+      "sha256": "17b7db16ab501b26bd5ba4b477cb3cca2016765f67190dad9b83048bcee7284b"
+    },
+    "/shared/charlie/taylor-app2app/results/0b/swa-fixed-qk-norm/ruler-shards/niah_single_2/__shared__charlie__taylor-app2app__checkpoints__swa__0b-fixed-qk-norm/results_2026-09-03T14-33-32.285556.json": {
+      "bytes": 12046,
+      "sha256": "3f277a05a57667d34f069a1d792abb688954e3856e8abb25a4a5c86beaccf877"
+    },
+    "/shared/charlie/taylor-app2app/results/0b/swa-fixed-qk-norm/ruler-shards/niah_single_3/__shared__charlie__taylor-app2app__checkpoints__swa__0b-fixed-qk-norm/results_2026-09-03T14-43-41.434856.json": {
+      "bytes": 12045,
+      "sha256": "e6b0fe3cd9b3d4ece43e9b03d3aaf4c5ae2efc72bec70ac05e2159bc8469a1c2"
+    },
+    "/shared/charlie/taylor-app2app/results/0b/swa-fixed-qk-norm/ruler-shards/ruler_cwe/__shared__charlie__taylor-app2app__checkpoints__swa__0b-fixed-qk-norm/results_2026-09-03T14-41-36.388039.json": {
+      "bytes": 11913,
+      "sha256": "7298ba735816bc35c09161f8db4f1bf9068d9a7c7d0eb42c4729f97aa38d32c3"
+    },
+    "/shared/charlie/taylor-app2app/results/0b/swa-fixed-qk-norm/ruler-shards/ruler_fwe/__shared__charlie__taylor-app2app__checkpoints__swa__0b-fixed-qk-norm/results_2026-09-03T14-24-00.434918.json": {
+      "bytes": 11918,
+      "sha256": "41e764632439568f491022938ee2d66c64baf0951922dcf6a535fa41fb29579a"
+    },
+    "/shared/charlie/taylor-app2app/results/0b/swa-fixed-qk-norm/ruler-shards/ruler_qa_hotpot/__shared__charlie__taylor-app2app__checkpoints__swa__0b-fixed-qk-norm/results_2026-09-03T14-37-59.486566.json": {
+      "bytes": 11631,
+      "sha256": "80a2a2f5d7723fe055cd88fc266c782a3c49959481b05d5b81dfcda9da000890"
+    },
+    "/shared/charlie/taylor-app2app/results/0b/swa-fixed-qk-norm/ruler-shards/ruler_qa_squad/__shared__charlie__taylor-app2app__checkpoints__swa__0b-fixed-qk-norm/results_2026-09-03T14-13-39.472440.json": {
+      "bytes": 11628,
+      "sha256": "18d817efbdf3373759143b6b0c06eb948b23b821b871a60ca68bd1dc3c20bca2"
+    },
+    "/shared/charlie/taylor-app2app/results/0b/swa-fixed-qk-norm/ruler-shards/ruler_vt/__shared__charlie__taylor-app2app__checkpoints__swa__0b-fixed-qk-norm/results_2026-09-03T14-24-09.376519.json": {
+      "bytes": 11939,
+      "sha256": "f7d0a4de5a92fab2d19a5d0cf0203b5f3331cc337afa7f90ad01b392585b5f04"
+    },
+    "/shared/charlie/taylor-app2app/results/0b/taylor/core/__shared__charlie__taylor-app2app__checkpoints__taylor__0b/results_2026-09-03T08-36-52.600377.json": {
+      "bytes": 17924,
+      "sha256": "d6cba507cf418adc82d928e7a4ca8edbf765f48a16106e89e4b88ece715bbe2b"
+    },
+    "/shared/charlie/taylor-app2app/results/0b/taylor/mmlu/__shared__charlie__taylor-app2app__checkpoints__taylor__0b/results_2026-09-03T08-50-01.134639.json": {
+      "bytes": 133388,
+      "sha256": "fb36c2d2bcb35eb5508afef4aaf3f887283ffaefeac00add5e058d87e1920a6c"
+    },
+    "/shared/charlie/taylor-app2app/results/0b/taylor/ppl/results.json": {
+      "bytes": 290,
+      "sha256": "1fec99b881597f292a14a64769a2b23b8c3c379a19e74ae03e26d2d37d5dc3c0"
+    },
+    "/shared/charlie/taylor-app2app/results/0b/taylor/ruler-shards/niah_multikey_1/__shared__charlie__taylor-app2app__checkpoints__taylor__0b/results_2026-09-03T14-37-07.993333.json": {
+      "bytes": 12052,
+      "sha256": "52a926823ba7e2504d2708301f1d8096a681d2551f3c4137768da57ecb67a335"
+    },
+    "/shared/charlie/taylor-app2app/results/0b/taylor/ruler-shards/niah_multikey_2/__shared__charlie__taylor-app2app__checkpoints__taylor__0b/results_2026-09-03T14-37-17.078830.json": {
+      "bytes": 12024,
+      "sha256": "6a63d5459afa348f708e41d3ed7d57714a8df3af6f56941a60540169f47d354d"
+    },
+    "/shared/charlie/taylor-app2app/results/0b/taylor/ruler-shards/niah_multikey_3/__shared__charlie__taylor-app2app__checkpoints__taylor__0b/results_2026-09-03T14-37-53.925676.json": {
+      "bytes": 12024,
+      "sha256": "9d41fcf04a711eb880fb4859cf66a43d27e8149e660b05f5a493afd084cd2b7f"
+    },
+    "/shared/charlie/taylor-app2app/results/0b/taylor/ruler-shards/niah_multiquery/__shared__charlie__taylor-app2app__checkpoints__taylor__0b/results_2026-09-03T14-35-14.764062.json": {
+      "bytes": 12053,
+      "sha256": "36cd357cfbbf886088f3530081373dc650c66cb222b6485becd483636b6f3868"
+    },
+    "/shared/charlie/taylor-app2app/results/0b/taylor/ruler-shards/niah_multivalue/__shared__charlie__taylor-app2app__checkpoints__taylor__0b/results_2026-09-03T14-37-48.468461.json": {
+      "bytes": 12053,
+      "sha256": "0b721fa95e011424ea7afe462dfa375148bb952a3e7427e917a9b51ec5b69327"
+    },
+    "/shared/charlie/taylor-app2app/results/0b/taylor/ruler-shards/niah_single_1/__shared__charlie__taylor-app2app__checkpoints__taylor__0b/results_2026-09-03T14-37-07.972720.json": {
+      "bytes": 12006,
+      "sha256": "674c6685130fec827665864636f862884a4776c22bb89b21d377995b137cdd63"
+    },
+    "/shared/charlie/taylor-app2app/results/0b/taylor/ruler-shards/niah_single_2/__shared__charlie__taylor-app2app__checkpoints__taylor__0b/results_2026-09-03T14-37-43.614252.json": {
+      "bytes": 12004,
+      "sha256": "5fe8cf9c1ef894fe00ecdafdbf0074e87eabd094ca070087fe83b7f4e4914379"
+    },
+    "/shared/charlie/taylor-app2app/results/0b/taylor/ruler-shards/niah_single_3/__shared__charlie__taylor-app2app__checkpoints__taylor__0b/results_2026-09-03T14-35-57.631269.json": {
+      "bytes": 11998,
+      "sha256": "39aedba104cf5a119e1ce2a47b4d7fe4ca5dc3bef504ee0a75d41c3c85a85164"
+    },
+    "/shared/charlie/taylor-app2app/results/0b/taylor/ruler-shards/ruler_cwe/__shared__charlie__taylor-app2app__checkpoints__taylor__0b/results_2026-09-03T14-36-07.201802.json": {
+      "bytes": 11874,
+      "sha256": "c5058c996d18960979d9aa971642d4008a87e4b8d1174d40675c8890698d7f7e"
+    },
+    "/shared/charlie/taylor-app2app/results/0b/taylor/ruler-shards/ruler_fwe/__shared__charlie__taylor-app2app__checkpoints__taylor__0b/results_2026-09-03T14-11-18.638811.json": {
+      "bytes": 11857,
+      "sha256": "1287e9a60b183f3f4be3e1a33730f0abf2f16f45cae586b136b69da2249e5f9c"
+    },
+    "/shared/charlie/taylor-app2app/results/0b/taylor/ruler-shards/ruler_qa_hotpot/__shared__charlie__taylor-app2app__checkpoints__taylor__0b/results_2026-09-03T14-04-46.948589.json": {
+      "bytes": 11587,
+      "sha256": "5af55595a17d5f4624ae1a09fb03465b32f0166aea4d4e8cbecc8ebe5157946b"
+    },
+    "/shared/charlie/taylor-app2app/results/0b/taylor/ruler-shards/ruler_qa_squad/__shared__charlie__taylor-app2app__checkpoints__taylor__0b/results_2026-09-03T14-04-46.317694.json": {
+      "bytes": 11588,
+      "sha256": "39b36a9abfe5c44cf184f8b344a8ae4e3a9cd07cc8629e70eb87a661e1f0c6ed"
+    },
+    "/shared/charlie/taylor-app2app/results/0b/taylor/ruler-shards/ruler_vt/__shared__charlie__taylor-app2app__checkpoints__taylor__0b/results_2026-09-03T14-04-07.883184.json": {
+      "bytes": 11896,
+      "sha256": "fd0f18f1b1b123dde8dafab04728d64653e5b9cafba5a1dcf5dcaaa1c14b2335"
+    },
+    "/shared/charlie/taylor-app2app/results/100m/swa/core/__shared__charlie__taylor-app2app__checkpoints__swa__stage2__final/results_2026-09-03T17-33-24.452663.json": {
+      "bytes": 17970,
+      "sha256": "b6b99abbe352ff12c8b87378a896687b3cdaa54642bdfa3e86d4064ebc0e1297"
+    },
+    "/shared/charlie/taylor-app2app/results/100m/swa/mmlu/__shared__charlie__taylor-app2app__checkpoints__swa__stage2__final/results_2026-09-03T17-54-18.174821.json": {
+      "bytes": 133804,
+      "sha256": "86dcbf66b7209c8944e270e42e2071f31d13f76938df7096cb785284734b0ef2"
+    },
+    "/shared/charlie/taylor-app2app/results/100m/swa/ppl/results.json": {
+      "bytes": 299,
+      "sha256": "99cb151044719ec26944c33d5c10868f6ef2160a8d8cf6c665ffe80d82e49f84"
+    },
+    "/shared/charlie/taylor-app2app/results/100m/swa/ruler-shards/niah_multikey_1/__shared__charlie__taylor-app2app__checkpoints__swa__stage2__final/results_2026-09-03T18-09-56.258310.json": {
+      "bytes": 12078,
+      "sha256": "21a7800ee00974d2dfd0e70c5702f2a7f7adac5f90600ac8a9e1e75b82b6dbbb"
+    },
+    "/shared/charlie/taylor-app2app/results/100m/swa/ruler-shards/niah_multikey_2/__shared__charlie__taylor-app2app__checkpoints__swa__stage2__final/results_2026-09-03T18-10-42.447201.json": {
+      "bytes": 12051,
+      "sha256": "c5de5ba5be349008f758ccc54bfd6237fed6cb19b0c532bef4806ad0b379f691"
+    },
+    "/shared/charlie/taylor-app2app/results/100m/swa/ruler-shards/niah_multikey_3/__shared__charlie__taylor-app2app__checkpoints__swa__stage2__final/results_2026-09-03T18-10-56.167350.json": {
+      "bytes": 12048,
+      "sha256": "0908f118d0d73fc8938b64c53637ec9442ea011516b159de4ec81c8e72b2babb"
+    },
+    "/shared/charlie/taylor-app2app/results/100m/swa/ruler-shards/niah_multiquery/__shared__charlie__taylor-app2app__checkpoints__swa__stage2__final/results_2026-09-03T18-11-27.774068.json": {
+      "bytes": 12079,
+      "sha256": "d8e61928dec16fb8c7b592d1803c4bcee1b2c6fd987dc15394ed63efedce6c87"
+    },
+    "/shared/charlie/taylor-app2app/results/100m/swa/ruler-shards/niah_multivalue/__shared__charlie__taylor-app2app__checkpoints__swa__stage2__final/results_2026-09-03T18-11-11.864354.json": {
+      "bytes": 12082,
+      "sha256": "40e78460bd39348cba63d6f057eb45cbf6d853a7ce29591dbd1682bbb5adb857"
+    },
+    "/shared/charlie/taylor-app2app/results/100m/swa/ruler-shards/niah_single_1/__shared__charlie__taylor-app2app__checkpoints__swa__stage2__final/results_2026-09-03T18-10-14.281448.json": {
+      "bytes": 12032,
+      "sha256": "ce100ce9930fd22f7a5e0615be0d2f8f1a5d729ff335995c3a7fcfd65ba21435"
+    },
+    "/shared/charlie/taylor-app2app/results/100m/swa/ruler-shards/niah_single_2/__shared__charlie__taylor-app2app__checkpoints__swa__stage2__final/results_2026-09-03T18-12-08.914188.json": {
+      "bytes": 12032,
+      "sha256": "8d5b88fef28e47580d4b812646117e97520110d8e21be153d51a8d9bd139a38e"
+    },
+    "/shared/charlie/taylor-app2app/results/100m/swa/ruler-shards/niah_single_3/__shared__charlie__taylor-app2app__checkpoints__swa__stage2__final/results_2026-09-03T18-11-22.626843.json": {
+      "bytes": 12027,
+      "sha256": "5b400686e80bfde22feb455982603d21e58c737cd93d1e2085cb1888bdc1ea1a"
+    },
+    "/shared/charlie/taylor-app2app/results/100m/swa/ruler-shards/ruler_cwe/__shared__charlie__taylor-app2app__checkpoints__swa__stage2__final/results_2026-09-03T18-04-14.028529.json": {
+      "bytes": 11898,
+      "sha256": "a82337de81b895ecea73892a1a94483779ec56d12f678db7102a1b722daff26a"
+    },
+    "/shared/charlie/taylor-app2app/results/100m/swa/ruler-shards/ruler_fwe/__shared__charlie__taylor-app2app__checkpoints__swa__stage2__final/results_2026-09-03T17-45-55.121556.json": {
+      "bytes": 11901,
+      "sha256": "c7e2a75ce6059994b1b52bf6f72ed8185125cb6aaba0a77ed8b6c6c1adf7bb2e"
+    },
+    "/shared/charlie/taylor-app2app/results/100m/swa/ruler-shards/ruler_qa_hotpot/__shared__charlie__taylor-app2app__checkpoints__swa__stage2__final/results_2026-09-03T17-40-10.553917.json": {
+      "bytes": 11614,
+      "sha256": "352e5973993a2e59d552010ac80c68f864e17d481e578ea2e04942dd661247f1"
+    },
+    "/shared/charlie/taylor-app2app/results/100m/swa/ruler-shards/ruler_qa_squad/__shared__charlie__taylor-app2app__checkpoints__swa__stage2__final/results_2026-09-03T17-38-34.591185.json": {
+      "bytes": 11613,
+      "sha256": "cb795e6808158bea03e7b47ba971f918d32c44fbd9f65dc89448b0fcaad2460d"
+    },
+    "/shared/charlie/taylor-app2app/results/100m/swa/ruler-shards/ruler_vt/__shared__charlie__taylor-app2app__checkpoints__swa__stage2__final/results_2026-09-03T17-37-31.778971.json": {
+      "bytes": 11920,
+      "sha256": "899952f12733c69627065f0fcc09499eea6f31165657c49578c7d2ac234dbf89"
+    },
+    "/shared/charlie/taylor-app2app/results/100m/taylor/core/__shared__charlie__taylor-app2app__checkpoints__taylor__stage2__final/results_2026-09-03T17-32-50.093585.json": {
+      "bytes": 17995,
+      "sha256": "18f71959d058263e47597c1cafcac8e04eff90b01f7c9bef67b5a916b2c3cfe0"
+    },
+    "/shared/charlie/taylor-app2app/results/100m/taylor/mmlu/__shared__charlie__taylor-app2app__checkpoints__taylor__stage2__final/results_2026-09-03T17-44-25.318797.json": {
+      "bytes": 133996,
+      "sha256": "3f45599f05af7e9eca18f1debbef6c12f0bf4bf0ca6ac3bd2d65e7ab13306050"
+    },
+    "/shared/charlie/taylor-app2app/results/100m/taylor/ppl/results.json": {
+      "bytes": 301,
+      "sha256": "475b12874cec7b697655ba41b33a1a2589a7ef587b7eaa57c8bc71880738d1d9"
+    },
+    "/shared/charlie/taylor-app2app/results/100m/taylor/ruler-shards/niah_multikey_1/__shared__charlie__taylor-app2app__checkpoints__taylor__stage2__final/results_2026-09-03T18-12-49.374866.json": {
+      "bytes": 12091,
+      "sha256": "490e91460c25f027a01a89faafaceb8812e56fd7923b977d41ae0182e7ba46b4"
+    },
+    "/shared/charlie/taylor-app2app/results/100m/taylor/ruler-shards/niah_multikey_2/__shared__charlie__taylor-app2app__checkpoints__taylor__stage2__final/results_2026-09-03T18-13-16.046064.json": {
+      "bytes": 12063,
+      "sha256": "3cb3e7a6f3bf27601c1ad69405c9e2454f45ba2428534d65bc08406e43f998c9"
+    },
+    "/shared/charlie/taylor-app2app/results/100m/taylor/ruler-shards/niah_multikey_3/__shared__charlie__taylor-app2app__checkpoints__taylor__stage2__final/results_2026-09-03T18-13-25.055641.json": {
+      "bytes": 12062,
+      "sha256": "046b95edb1e3dd6b59ade750acae0199d906c60c1a3da5eca5b8426dc30d2c8a"
+    },
+    "/shared/charlie/taylor-app2app/results/100m/taylor/ruler-shards/niah_multiquery/__shared__charlie__taylor-app2app__checkpoints__taylor__stage2__final/results_2026-09-03T18-13-24.874874.json": {
+      "bytes": 12094,
+      "sha256": "112376787ec98945e9c3e679640c7347776400cae8bb869d132dc0c15861363d"
+    },
+    "/shared/charlie/taylor-app2app/results/100m/taylor/ruler-shards/niah_multivalue/__shared__charlie__taylor-app2app__checkpoints__taylor__stage2__final/results_2026-09-03T18-13-10.328979.json": {
+      "bytes": 12094,
+      "sha256": "047244c4f8eca7f3da2b7fb4d1dd78e9345b6f6e380dd7f05ce17128ac874e6f"
+    },
+    "/shared/charlie/taylor-app2app/results/100m/taylor/ruler-shards/niah_single_1/__shared__charlie__taylor-app2app__checkpoints__taylor__stage2__final/results_2026-09-03T18-12-31.643448.json": {
+      "bytes": 12046,
+      "sha256": "1a85e57f1912d1c87aacd6c5ae9e72b3ae12cd06238641ecb887a8cabda65e29"
+    },
+    "/shared/charlie/taylor-app2app/results/100m/taylor/ruler-shards/niah_single_2/__shared__charlie__taylor-app2app__checkpoints__taylor__stage2__final/results_2026-09-03T18-12-49.354513.json": {
+      "bytes": 12042,
+      "sha256": "fcd53b2a0b1558f9667dc04723d3d855786c9c1bc88468806399e8a5949c2a10"
+    },
+    "/shared/charlie/taylor-app2app/results/100m/taylor/ruler-shards/niah_single_3/__shared__charlie__taylor-app2app__checkpoints__taylor__stage2__final/results_2026-09-03T18-12-49.360951.json": {
+      "bytes": 12040,
+      "sha256": "e9eb75366509af943a55fb00cbdaff29127ee95c4daf3fbd00cc3bd081a1135e"
+    },
+    "/shared/charlie/taylor-app2app/results/100m/taylor/ruler-shards/ruler_cwe/__shared__charlie__taylor-app2app__checkpoints__taylor__stage2__final/results_2026-09-03T18-09-11.719757.json": {
+      "bytes": 11911,
+      "sha256": "a527a2bae18e589a009f8e6f3581cfcc600f897ad2a56fcb1ec834e29615a1b0"
+    },
+    "/shared/charlie/taylor-app2app/results/100m/taylor/ruler-shards/ruler_fwe/__shared__charlie__taylor-app2app__checkpoints__taylor__stage2__final/results_2026-09-03T17-45-40.230825.json": {
+      "bytes": 11895,
+      "sha256": "f5dff5a30887bcda1699022a00597cd6e2906b34154aeda0bf6ac175b3c8fdef"
+    },
+    "/shared/charlie/taylor-app2app/results/100m/taylor/ruler-shards/ruler_qa_hotpot/__shared__charlie__taylor-app2app__checkpoints__taylor__stage2__final/results_2026-09-03T17-39-32.396773.json": {
+      "bytes": 11623,
+      "sha256": "2cca9f0dcb5f7119f4379701a5184575a5dc7c5f76f2d86bc4ea245f7f62346a"
+    },
+    "/shared/charlie/taylor-app2app/results/100m/taylor/ruler-shards/ruler_qa_squad/__shared__charlie__taylor-app2app__checkpoints__taylor__stage2__final/results_2026-09-03T17-39-08.057668.json": {
+      "bytes": 11624,
+      "sha256": "92c0ac68da5673bf06c8530dcfca125ec1c5bcbd9fb8a4264516ad57379d3311"
+    },
+    "/shared/charlie/taylor-app2app/results/100m/taylor/ruler-shards/ruler_vt/__shared__charlie__taylor-app2app__checkpoints__taylor__stage2__final/results_2026-09-03T17-38-52.126631.json": {
+      "bytes": 11935,
+      "sha256": "d06d77befc4e96f58a99818a7e4ea0fc075254e20e282ce5fdc2c73da75df0bf"
+    }
+  },
+  "results": {
+    "0b": {
+      "swa": {
+        "ruler_4k": {
+          "macro": 0.07224358974358973,
+          "tasks": {
+            "niah_multikey_1": 0.034,
+            "niah_multikey_2": 0.0,
+            "niah_multikey_3": 0.0,
+            "niah_multiquery": 0.0,
+            "niah_multivalue": 0.0215,
+            "niah_single_1": 0.0,
+            "niah_single_2": 0.024,
+            "niah_single_3": 0.0,
+            "ruler_cwe": 0.23399999999999993,
+            "ruler_fwe": 0.16333333333333316,
+            "ruler_qa_hotpot": 0.24,
+            "ruler_qa_squad": 0.22233333333333336,
+            "ruler_vt": 0.0
+          }
+        },
+        "six_task_macro": 0.7118069441890837,
+        "tasks": {
+          "arc_challenge": 0.5639931740614335,
+          "arc_easy": 0.8076599326599326,
+          "hellaswag": 0.7410874327823143,
+          "mmlu": 0.7028913260219342,
+          "piqa": 0.7780195865070729,
+          "winogrande": 0.6771902131018153
+        },
+        "wikitext2_ppl": 16.40604019165039
+      },
+      "taylor": {
+        "ruler_4k": {
+          "macro": 0.0008358974358974358,
+          "tasks": {
+            "niah_multikey_1": 0.0,
+            "niah_multikey_2": 0.0,
+            "niah_multikey_3": 0.0,
+            "niah_multiquery": 0.0,
+            "niah_multivalue": 0.0,
+            "niah_single_1": 0.0,
+            "niah_single_2": 0.0,
+            "niah_single_3": 0.0,
+            "ruler_cwe": 0.0021999999999999997,
+            "ruler_fwe": 0.0,
+            "ruler_qa_hotpot": 0.002,
+            "ruler_qa_squad": 0.006666666666666666,
+            "ruler_vt": 0.0
+          }
+        },
+        "six_task_macro": 0.3435890946509926,
+        "tasks": {
+          "arc_challenge": 0.25341296928327645,
+          "arc_easy": 0.27946127946127947,
+          "hellaswag": 0.261202947619996,
+          "mmlu": 0.2357214072069506,
+          "piqa": 0.5250272034820457,
+          "winogrande": 0.5067087608524072
+        },
+        "wikitext2_ppl": 5571.39892578125
+      }
+    },
+    "100m": {
+      "swa": {
+        "ruler_4k": {
+          "macro": 0.045246153846153846,
+          "tasks": {
+            "niah_multikey_1": 0.034,
+            "niah_multikey_2": 0.0,
+            "niah_multikey_3": 0.0,
+            "niah_multiquery": 0.0,
+            "niah_multivalue": 0.0215,
+            "niah_single_1": 0.0,
+            "niah_single_2": 0.024,
+            "niah_single_3": 0.0,
+            "ruler_cwe": 0.05920000000000003,
+            "ruler_fwe": 0.049999999999999954,
+            "ruler_qa_hotpot": 0.204,
+            "ruler_qa_squad": 0.19550000000000003,
+            "ruler_vt": 0.0
+          }
+        },
+        "six_task_macro": 0.6902826484044654,
+        "tasks": {
+          "arc_challenge": 0.5537542662116041,
+          "arc_easy": 0.8047138047138047,
+          "hellaswag": 0.7166899024098785,
+          "mmlu": 0.6056117362199117,
+          "piqa": 0.7758433079434167,
+          "winogrande": 0.6850828729281768
+        },
+        "wikitext2_ppl": 16.533418655395508
+      },
+      "taylor": {
+        "ruler_4k": {
+          "macro": 0.021205128205128206,
+          "tasks": {
+            "niah_multikey_1": 0.002,
+            "niah_multikey_2": 0.0,
+            "niah_multikey_3": 0.0,
+            "niah_multiquery": 0.0005,
+            "niah_multivalue": 0.0005,
+            "niah_single_1": 0.002,
+            "niah_single_2": 0.0,
+            "niah_single_3": 0.0,
+            "ruler_cwe": 0.004000000000000001,
+            "ruler_fwe": 0.0,
+            "ruler_qa_hotpot": 0.124,
+            "ruler_qa_squad": 0.14266666666666666,
+            "ruler_vt": 0.0
+          }
+        },
+        "six_task_macro": 0.6466666969654192,
+        "tasks": {
+          "arc_challenge": 0.5281569965870307,
+          "arc_easy": 0.7773569023569024,
+          "hellaswag": 0.7018522206731727,
+          "mmlu": 0.4788491667853582,
+          "piqa": 0.7742110990206746,
+          "winogrande": 0.6195737963693765
+        },
+        "wikitext2_ppl": 27.21177101135254
+      }
+    }
+  },
+  "status": "validated",
+  "teacher": "Qwen/Qwen3-8B",
+  "teacher_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+  "training": {
+    "swa": {
+      "effective_batch_size": {
+        "stage1": 40,
+        "stage2": 40
+      },
+      "sequence_length": {
+        "stage1": 1000,
+        "stage2": 1000
+      },
+      "stage1_steps": 1250,
+      "stage1_tokens": 50000000,
+      "stage2_steps": 1250,
+      "stage2_tokens": 50000000,
+      "total_recovery_training_tokens": 100000000,
+      "train_settings": {
+        "stage1": {
+          "batch_size": 40,
+          "lr": 0.001,
+          "lr_attn": 0.001,
+          "lr_scheduler_type": "cosine",
+          "micro_batch_size": 1,
+          "seed": 42,
+          "target_tokens": 50000000,
+          "train_seq_len": 1000
+        },
+        "stage2": {
+          "batch_size": 40,
+          "lr": 7e-06,
+          "lr_attn": 0.0001,
+          "lr_scheduler_type": "constant",
+          "micro_batch_size": 1,
+          "seed": 42,
+          "target_tokens": 50000000,
+          "train_seq_len": 1000
+        }
+      },
+      "world_size": {
+        "stage1": 8,
+        "stage2": 8
+      }
+    },
+    "taylor": {
+      "effective_batch_size": {
+        "stage1": 40,
+        "stage2": 40
+      },
+      "sequence_length": {
+        "stage1": 1000,
+        "stage2": 1000
+      },
+      "stage1_steps": 1250,
+      "stage1_tokens": 50000000,
+      "stage2_steps": 1250,
+      "stage2_tokens": 50000000,
+      "total_recovery_training_tokens": 100000000,
+      "train_settings": {
+        "stage1": {
+          "batch_size": 40,
+          "lr": 0.001,
+          "lr_attn": 0.001,
+          "lr_scheduler_type": "cosine",
+          "micro_batch_size": 1,
+          "seed": 42,
+          "target_tokens": 50000000,
+          "train_seq_len": 1000
+        },
+        "stage2": {
+          "batch_size": 40,
+          "lr": 7e-06,
+          "lr_attn": 0.0001,
+          "lr_scheduler_type": "constant",
+          "micro_batch_size": 1,
+          "seed": 42,
+          "target_tokens": 50000000,
+          "train_seq_len": 1000
+        }
+      },
+      "world_size": {
+        "stage1": 8,
+        "stage2": 8
+      }
+    }
+  },
+  "winner": {
+    "0b": {
+      "macro": "SWA",
+      "macro_margin": 0.36821784953809117,
+      "ppl": "SWA",
+      "ruler": "SWA",
+      "ruler_margin": 0.0714076923076923,
+      "swa_task_wins": 6,
+      "taylor_task_wins": 0
+    },
+    "100m": {
+      "macro": "SWA",
+      "macro_margin": 0.043615951439046174,
+      "ppl": "SWA",
+      "ruler": "SWA",
+      "ruler_margin": 0.02404102564102564,
+      "swa_task_wins": 6,
+      "taylor_task_wins": 0
+    }
+  }
+}

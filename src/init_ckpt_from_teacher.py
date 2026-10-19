@@ -1,6 +1,8 @@
 import argparse
 import gc
+import json
 import os
+import time
 import yaml
 
 import fla  # noqa: F401
@@ -44,6 +46,11 @@ def build_student_from_teacher(cfg):
     config_dict["name"] = "student"
     config_dict["student_name"] = student_name
     config_dict["keep_full_attention_layers"] = list(keep_layers)
+    for key in ("window_size", "num_sink_tokens", "force_window_on_all_layers"):
+        if key in cfg["student_model"]:
+            config_dict[key] = cfg["student_model"][key]
+    if student_name == "swa_sink_v1":
+        config_dict["use_cache"] = False
     student_config = StudentConfig(**config_dict)
 
     dtype = torch.bfloat16
@@ -79,6 +86,7 @@ def build_student_from_teacher(cfg):
 
 
 def main():
+    total_start = time.perf_counter()
     parser = argparse.ArgumentParser(description="Initialize a student/hybrid checkpoint from a converted teacher without training.")
     parser.add_argument("--cfg", required=True, help="Path to stage1/stage2 yaml config.")
     parser.add_argument("--output", default=None, help="Where to save the initialized HF checkpoint.")
@@ -93,6 +101,25 @@ def main():
 
     model.save_pretrained(output_dir, safe_serialization=True)
     tokenizer.save_pretrained(output_dir)
+    with open(os.path.join(output_dir, "initialization_manifest.json"), "w") as handle:
+        json.dump(
+            {
+                "method": cfg["student_model"]["name"],
+                "strategy": "projection_copy",
+                "recovery_training_tokens": 0,
+                "calibration": {
+                    "unique_tokens": 0,
+                    "total_local_steps": 0,
+                    "seconds": 0.0,
+                    "gpu_hours": 0.0,
+                },
+                "total_initialization_seconds": time.perf_counter() - total_start,
+            },
+            handle,
+            indent=2,
+            sort_keys=True,
+        )
+        handle.write("\n")
     print(f"Saved initialized checkpoint to: {output_dir}")
 
 

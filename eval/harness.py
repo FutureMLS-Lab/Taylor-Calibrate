@@ -14,6 +14,7 @@ from torch import nn
 from lm_eval.__main__ import cli_evaluate
 from lm_eval.api.registry import register_model
 from lm_eval.models.huggingface import HFLM
+from lm_eval.models.utils_hf import stop_sequences_criteria
 
 from distill_model.config_distilled_student import StudentConfig
 from distill_model.modeling_distilled_student import StudentModel, StudentForCausalLM
@@ -231,6 +232,39 @@ def _patch_qwen2_with_second_order(
 class FlashLinearAttentionLMWrapper(HFLM):
     def __init__(self, **kwargs) -> FlashLinearAttentionLMWrapper:
         super().__init__(**kwargs)
+
+
+@register_model("fla_no_cache")
+class FlashLinearAttentionNoCacheLMWrapper(FlashLinearAttentionLMWrapper):
+    """Generation wrapper for quality-only evaluation without KV caching."""
+
+    def _model_generate(self, context, max_length: int, stop: list[str], **generation_kwargs):
+        generation_kwargs.pop("use_cache", None)
+        generation_kwargs["temperature"] = generation_kwargs.get("temperature", 0.0)
+        do_sample = generation_kwargs.get("do_sample")
+        if generation_kwargs["temperature"] == 0.0 and do_sample is None:
+            generation_kwargs["do_sample"] = do_sample = False
+        if do_sample is False and generation_kwargs.get("temperature") == 0.0:
+            generation_kwargs.pop("temperature", None)
+        stopping_criteria = stop_sequences_criteria(
+            self.tokenizer,
+            stop,
+            context.shape[1],
+            context.shape[0],
+        )
+        with torch.autocast(
+            device_type=self.device.type,
+            dtype=self.mixed_precision_dtype,
+            enabled=self.mixed_precision_dtype is not None,
+        ):
+            return self.model.generate(
+                input_ids=context,
+                max_length=max_length,
+                stopping_criteria=stopping_criteria,
+                pad_token_id=self.tokenizer.pad_token_id,
+                use_cache=False,
+                **generation_kwargs,
+            )
 
 
 @register_model("qwen2_second_order")

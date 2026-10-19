@@ -1,0 +1,375 @@
+{
+  "accounting": {
+    "swa": {
+      "stage1_trainable_parameters": 1132468992,
+      "stage2_trainable_parameters": 8190735360,
+      "total_parameters": 8190735360
+    },
+    "taylor": {
+      "stage1_trainable_parameters": 2272007232,
+      "stage2_trainable_parameters": 9330273600,
+      "total_parameters": 9330273600
+    }
+  },
+  "checkpoints": {
+    "swa": {
+      "artifact_files": {
+        "config.json": {
+          "bytes": 1179,
+          "sha256": "1a7073bdaaad673e15124309fb4e68ae7a20c58f05a05de32ac8b93a12642af7"
+        },
+        "model-00001-of-00004.safetensors": {
+          "bytes": 4902274032,
+          "sha256": "ce7b16f319fe5ddba8ef106f956df171e673f1fd325f71c4731646231b321b63"
+        },
+        "model-00002-of-00004.safetensors": {
+          "bytes": 4915959968,
+          "sha256": "323214dbbc87cbdf6747ceea66e027acf845fa4d369d456415b71380d7c6bb3e"
+        },
+        "model-00003-of-00004.safetensors": {
+          "bytes": 4983059808,
+          "sha256": "03a2326ec69be15981df9047b569691a2e780355bc8d47589ae09e436a6a25ca"
+        },
+        "model-00004-of-00004.safetensors": {
+          "bytes": 1580221944,
+          "sha256": "685a4c3c5bed8ffab6fdeb54e01e209389c59f7b61aa879ec1cb8c338b028df5"
+        },
+        "model.safetensors.index.json": {
+          "bytes": 31850,
+          "sha256": "ddfd53168444765db6c50573fafd4bfe6e8f9c10141dae0cdae3ce7c9ac95c5a"
+        }
+      },
+      "parameters": {
+        "by_group": {
+          "attention": 1509958656,
+          "embedding_and_lm_head": 1244659712,
+          "mlp": 5435817984,
+          "norm_and_other": 299008
+        },
+        "checkpoint_tensors": 399,
+        "total": 8190735360
+      },
+      "path": "/shared/charlie/taylor-app2app/checkpoints/swa-hybrid-ar/stage2/final"
+    },
+    "taylor": {
+      "artifact_files": {
+        "config.json": {
+          "bytes": 1176,
+          "sha256": "a76baa6bd104b861b843527424f7cafd48e50e26d30d5a590aff8d0bd2829965"
+        },
+        "model-00001-of-00004.safetensors": {
+          "bytes": 4973028096,
+          "sha256": "bd38c7ac63e1c3714f1e2c2c06cc33442cfd1b049cc81196fc93d2d213c184f5"
+        },
+        "model-00002-of-00004.safetensors": {
+          "bytes": 4970975952,
+          "sha256": "c8b75a403ebdff576143a44ba8bbedf9bbf3c5ccd0364a54ac0bca9019494a5f"
+        },
+        "model-00003-of-00004.safetensors": {
+          "bytes": 4987238000,
+          "sha256": "e889b91298e035715d2405d9275982c423eaf248429d9ed40e9407a588c00161"
+        },
+        "model-00004-of-00004.safetensors": {
+          "bytes": 3729360792,
+          "sha256": "20ebabf082ab4e34d41c6b99fa018e332ab5f10ba6dad12de752b07172cc5763"
+        },
+        "model.safetensors.index.json": {
+          "bytes": 39054,
+          "sha256": "a2fe7fd51ea1d85b3de5f06962936ad05560148ffcd3a7446680e5b6f3beb760"
+        }
+      },
+      "parameters": {
+        "by_group": {
+          "attention": 2649496896,
+          "embedding_and_lm_head": 1244659712,
+          "mlp": 5435817984,
+          "norm_and_other": 299008
+        },
+        "checkpoint_tensors": 507,
+        "total": 9330273600
+      },
+      "path": "/shared/charlie/taylor-app2app/checkpoints/taylor-hybrid-ar/stage2/final"
+    }
+  },
+  "outcome": {
+    "swa_short_lead_points": 0.4296336656384847,
+    "task_wins": {
+      "swa": [
+        "arc_challenge",
+        "arc_easy",
+        "piqa",
+        "winogrande"
+      ],
+      "taylor": [
+        "mmlu",
+        "hellaswag"
+      ]
+    },
+    "taylor_ppl_reduction_percent": 30.623931199994814,
+    "taylor_ruler_lead_points": 28.08717948717948,
+    "taylor_ruler_ratio": 6.958442123585726
+  },
+  "result_files": {
+    "/shared/charlie/taylor-app2app/results/100m/swa-hybrid-ar/core/__shared__charlie__taylor-app2app__checkpoints__swa-hybrid-ar__stage2__final/results_2026-09-12T17-22-06.692853.json": {
+      "bytes": 18054,
+      "sha256": "bcfb48631d54c90f0fb3781beeb0dc816a1360fd95d0cd1d9b788329e2a8b8e7"
+    },
+    "/shared/charlie/taylor-app2app/results/100m/swa-hybrid-ar/mmlu/__shared__charlie__taylor-app2app__checkpoints__swa-hybrid-ar__stage2__final/results_2026-09-12T17-40-05.010165.json": {
+      "bytes": 134378,
+      "sha256": "b599375f21291129b9a905a6082216a845cd564a13afaaebad0a837ff62c54c1"
+    },
+    "/shared/charlie/taylor-app2app/results/100m/swa-hybrid-ar/ppl/results.json": {
+      "bytes": 309,
+      "sha256": "7b705ff140f47f99704b79f02dcfdcf8eb4afdbf6eaac90b0e8d86c6397860d8"
+    },
+    "/shared/charlie/taylor-app2app/results/100m/swa-hybrid-ar/ruler-shards/niah_multikey_1/__shared__charlie__taylor-app2app__checkpoints__swa-hybrid-ar__stage2__final/results_2026-09-12T17-29-32.624195.json": {
+      "bytes": 12121,
+      "sha256": "cc8700a829ed5a53be3fd4dce2016d504857eb503cd832fcc2882207368222d0"
+    },
+    "/shared/charlie/taylor-app2app/results/100m/swa-hybrid-ar/ruler-shards/niah_multikey_2/__shared__charlie__taylor-app2app__checkpoints__swa-hybrid-ar__stage2__final/results_2026-09-12T17-30-00.315393.json": {
+      "bytes": 12090,
+      "sha256": "baf24bb5813fde0e80a6e0d93d4f6ce078f9b7a684051298e530daa3fe5ced32"
+    },
+    "/shared/charlie/taylor-app2app/results/100m/swa-hybrid-ar/ruler-shards/niah_multikey_3/__shared__charlie__taylor-app2app__checkpoints__swa-hybrid-ar__stage2__final/results_2026-09-12T17-30-23.013960.json": {
+      "bytes": 12090,
+      "sha256": "62403c1555f0ee3f8cbef1d0b34645a5075242436e8156293f28307f48dca85b"
+    },
+    "/shared/charlie/taylor-app2app/results/100m/swa-hybrid-ar/ruler-shards/niah_multiquery/__shared__charlie__taylor-app2app__checkpoints__swa-hybrid-ar__stage2__final/results_2026-09-12T17-29-52.945502.json": {
+      "bytes": 12115,
+      "sha256": "e52da2bfac05e097c353abb715ecbaf168cea17dc6200952228487b40ffed447"
+    },
+    "/shared/charlie/taylor-app2app/results/100m/swa-hybrid-ar/ruler-shards/niah_multivalue/__shared__charlie__taylor-app2app__checkpoints__swa-hybrid-ar__stage2__final/results_2026-09-12T17-31-14.983762.json": {
+      "bytes": 12122,
+      "sha256": "fff5d7a774c77fa29c79f25a3cb802fb7b9e60160e334715517ab9219f20eb76"
+    },
+    "/shared/charlie/taylor-app2app/results/100m/swa-hybrid-ar/ruler-shards/niah_single_1/__shared__charlie__taylor-app2app__checkpoints__swa-hybrid-ar__stage2__final/results_2026-09-12T17-30-01.938993.json": {
+      "bytes": 12074,
+      "sha256": "a53f5884a8a7230a4b14b334bfdc17ebe7f9e3825c372f761750eb0f4c08b952"
+    },
+    "/shared/charlie/taylor-app2app/results/100m/swa-hybrid-ar/ruler-shards/niah_single_2/__shared__charlie__taylor-app2app__checkpoints__swa-hybrid-ar__stage2__final/results_2026-09-12T17-31-19.557331.json": {
+      "bytes": 12072,
+      "sha256": "402bc1d4dca57d622e8d206ee8a6993f2dfd6f380a0a331999e7805b9eec49d3"
+    },
+    "/shared/charlie/taylor-app2app/results/100m/swa-hybrid-ar/ruler-shards/niah_single_3/__shared__charlie__taylor-app2app__checkpoints__swa-hybrid-ar__stage2__final/results_2026-09-12T17-30-20.066857.json": {
+      "bytes": 12067,
+      "sha256": "be63380d8dd152fae33cf67a260c9122bce090d637521309ea743f1cbb9e0b14"
+    },
+    "/shared/charlie/taylor-app2app/results/100m/swa-hybrid-ar/ruler-shards/ruler_cwe/__shared__charlie__taylor-app2app__checkpoints__swa-hybrid-ar__stage2__final/results_2026-09-12T17-02-39.291819.json": {
+      "bytes": 11937,
+      "sha256": "38dfdadaed3f6f51d463313600f9438980f0c3e27292c1299e7e1d37bc713c83"
+    },
+    "/shared/charlie/taylor-app2app/results/100m/swa-hybrid-ar/ruler-shards/ruler_fwe/__shared__charlie__taylor-app2app__checkpoints__swa-hybrid-ar__stage2__final/results_2026-09-12T17-04-08.339127.json": {
+      "bytes": 11936,
+      "sha256": "92ad7e8d47b6d9ad99f7f9eb6878caab59dac467992ce2b59e984ba50a5e1967"
+    },
+    "/shared/charlie/taylor-app2app/results/100m/swa-hybrid-ar/ruler-shards/ruler_qa_hotpot/__shared__charlie__taylor-app2app__checkpoints__swa-hybrid-ar__stage2__final/results_2026-09-12T17-00-47.795215.json": {
+      "bytes": 11654,
+      "sha256": "c5d4498e49b62962b6146bc34f743d493d234e49a20559a1e682cd6aca6237b8"
+    },
+    "/shared/charlie/taylor-app2app/results/100m/swa-hybrid-ar/ruler-shards/ruler_qa_squad/__shared__charlie__taylor-app2app__checkpoints__swa-hybrid-ar__stage2__final/results_2026-09-12T16-59-34.350609.json": {
+      "bytes": 11652,
+      "sha256": "23d277648dc07e6e75596a36b215a9ad24d407197d11d72023c05015d682623d"
+    },
+    "/shared/charlie/taylor-app2app/results/100m/swa-hybrid-ar/ruler-shards/ruler_vt/__shared__charlie__taylor-app2app__checkpoints__swa-hybrid-ar__stage2__final/results_2026-09-12T16-57-37.607822.json": {
+      "bytes": 11960,
+      "sha256": "d6f09f2c505cd1b7bc711479461e6f12269869835e15935dca4c0ad96907fdf3"
+    }
+  },
+  "results": {
+    "swa_hybrid_ar_100m": {
+      "ruler_4k": {
+        "macro": 0.04713846153846153,
+        "tasks": {
+          "niah_multikey_1": 0.034,
+          "niah_multikey_2": 0.0,
+          "niah_multikey_3": 0.0,
+          "niah_multiquery": 0.0,
+          "niah_multivalue": 0.0215,
+          "niah_single_1": 0.004,
+          "niah_single_2": 0.024,
+          "niah_single_3": 0.0,
+          "ruler_cwe": 0.016800000000000002,
+          "ruler_fwe": 0.15933333333333322,
+          "ruler_qa_hotpot": 0.178,
+          "ruler_qa_squad": 0.1751666666666667,
+          "ruler_vt": 0.0
+        }
+      },
+      "six_task_macro": 0.696771672712523,
+      "tasks": {
+        "arc_challenge": 0.5656996587030717,
+        "arc_easy": 0.8143939393939394,
+        "hellaswag": 0.7168890659231228,
+        "mmlu": 0.617931918530124,
+        "piqa": 0.7774755168661589,
+        "winogrande": 0.6882399368587214
+      },
+      "wikitext2_ppl": 15.881559371948242
+    },
+    "taylor_hybrid_ar_100m": {
+      "ruler_4k": {
+        "macro": 0.32801025641025633,
+        "tasks": {
+          "niah_multikey_1": 0.284,
+          "niah_multikey_2": 0.068,
+          "niah_multikey_3": 0.004,
+          "niah_multiquery": 0.4615,
+          "niah_multivalue": 0.373,
+          "niah_single_1": 0.984,
+          "niah_single_2": 0.702,
+          "niah_single_3": 0.246,
+          "ruler_cwe": 0.45519999999999894,
+          "ruler_fwe": 0.04199999999999998,
+          "ruler_qa_hotpot": 0.214,
+          "ruler_qa_squad": 0.29283333333333333,
+          "ruler_vt": 0.13760000000000025
+        }
+      },
+      "six_task_macro": 0.6924753360561382,
+      "tasks": {
+        "arc_challenge": 0.5546075085324232,
+        "arc_easy": 0.7925084175084175,
+        "hellaswag": 0.7176857199761004,
+        "mmlu": 0.6467027488961686,
+        "piqa": 0.7693144722524483,
+        "winogrande": 0.6740331491712708
+      },
+      "wikitext2_ppl": 11.018001556396484
+    }
+  },
+  "selection": {
+    "converted_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      7,
+      8,
+      9,
+      10,
+      11,
+      13,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      23,
+      25,
+      26,
+      28,
+      29,
+      30,
+      31,
+      32,
+      35
+    ],
+    "retained_full_attention_layers": [
+      0,
+      6,
+      12,
+      14,
+      22,
+      24,
+      27,
+      33,
+      34
+    ]
+  },
+  "status": "validated",
+  "teacher": "Qwen/Qwen3-8B",
+  "teacher_revision": "b968826d9c46dd6066d109eabc6255188de91218",
+  "training": {
+    "swa": {
+      "effective_batch_size": {
+        "stage1": 40,
+        "stage2": 40
+      },
+      "sequence_length": {
+        "stage1": 1000,
+        "stage2": 1000
+      },
+      "stage1_steps": 1250,
+      "stage1_tokens": 50000000,
+      "stage2_steps": 1250,
+      "stage2_tokens": 50000000,
+      "total_recovery_training_tokens": 100000000,
+      "train_settings": {
+        "stage1": {
+          "batch_size": 40,
+          "lr": 0.001,
+          "lr_attn": 0.001,
+          "lr_scheduler_type": "cosine",
+          "micro_batch_size": 1,
+          "seed": 42,
+          "target_tokens": 50000000,
+          "train_seq_len": 1000
+        },
+        "stage2": {
+          "batch_size": 40,
+          "lr": 7e-06,
+          "lr_attn": 0.0001,
+          "lr_scheduler_type": "constant",
+          "micro_batch_size": 1,
+          "seed": 42,
+          "target_tokens": 50000000,
+          "train_seq_len": 1000
+        }
+      },
+      "world_size": {
+        "stage1": 8,
+        "stage2": 8
+      }
+    },
+    "taylor": {
+      "effective_batch_size": {
+        "stage1": 40,
+        "stage2": 40
+      },
+      "sequence_length": {
+        "stage1": 1000,
+        "stage2": 1000
+      },
+      "stage1_steps": 1250,
+      "stage1_tokens": 50000000,
+      "stage2_steps": 1250,
+      "stage2_tokens": 50000000,
+      "total_recovery_training_tokens": 100000000,
+      "train_settings": {
+        "stage1": {
+          "batch_size": 40,
+          "lr": 0.001,
+          "lr_attn": 0.001,
+          "lr_scheduler_type": "cosine",
+          "micro_batch_size": 1,
+          "seed": 42,
+          "target_tokens": 50000000,
+          "train_seq_len": 1000
+        },
+        "stage2": {
+          "batch_size": 40,
+          "lr": 7e-06,
+          "lr_attn": 0.0001,
+          "lr_scheduler_type": "constant",
+          "micro_batch_size": 1,
+          "seed": 42,
+          "target_tokens": 50000000,
+          "train_seq_len": 1000
+        }
+      },
+      "world_size": {
+        "stage1": 8,
+        "stage2": 8
+      }
+    }
+  },
+  "uncertainty": {
+    "difference_independent_se": 0.005669052074845059,
+    "note": "Independence approximation from lm-eval per-task standard errors.",
+    "swa_macro_independent_se": 0.003986395126063413,
+    "taylor_macro_independent_se": 0.004030732604155593
+  }
+}

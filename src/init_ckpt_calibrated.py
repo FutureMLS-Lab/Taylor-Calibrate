@@ -22,8 +22,10 @@ Variants:
 """
 
 import argparse
+import json
 import math
 import os
+import time
 import yaml
 
 import fla  # noqa: F401
@@ -51,6 +53,8 @@ STRATEGIES = [
     "taylor_calibrate",
     "alignment_only",
 ]
+
+WIKITEXT_REVISION = "b08601e04326c79dfdd32d625aee71d232d685c3"
 
 
 def apply_zero_gate(student, keep_layers):
@@ -177,7 +181,12 @@ def apply_zero_calibrate(student, keep_layers, hf_model, tokenizer, device):
 
 def _get_calibration_data(tokenizer, device, seqlen=256, num_samples=4):
     from datasets import load_dataset
-    ds = load_dataset("wikitext", "wikitext-2-raw-v1", split="test")
+    ds = load_dataset(
+        "wikitext",
+        "wikitext-2-raw-v1",
+        split="test",
+        revision=WIKITEXT_REVISION,
+    )
     full_text = "\n\n".join(t for t in ds["text"] if t.strip())
     enc = tokenizer(full_text, return_tensors="pt", truncation=False)
     all_ids = enc["input_ids"][0]
@@ -1327,6 +1336,7 @@ def apply_alignment_only(student, hf_model, tokenizer, cfg, device,
 
 
 def main():
+    total_start = time.perf_counter()
     parser = argparse.ArgumentParser()
     parser.add_argument("--cfg", required=True)
     parser.add_argument("--strategy", choices=STRATEGIES, default="zero_gate")
@@ -1346,6 +1356,7 @@ def main():
     print("Building student from FLA teacher...")
     student = build_student_from_teacher(cfg)
     student = student.eval()
+    calibration_seconds = 0.0
 
     if args.strategy == "zero_gate":
         apply_zero_gate(student, keep_layers)
@@ -1397,7 +1408,9 @@ def main():
         }
         if args.strategy not in ("taylor_calibrate", "alignment_only"):
             student.to(device)
+        calibration_start = time.perf_counter()
         dispatch[args.strategy](student, hf_model, tokenizer_hf, cfg, device)
+        calibration_seconds = time.perf_counter() - calibration_start
         del hf_model
         torch.cuda.empty_cache()
 
@@ -1406,6 +1419,37 @@ def main():
     student.save_pretrained(output_dir, safe_serialization=True)
     tokenizer = AutoTokenizer.from_pretrained(cfg["teacher_model"]["name"])
     tokenizer.save_pretrained(output_dir)
+    converted_layers = len(student.model.layers) - len(keep_layers)
+    local_steps = 300 if args.strategy == "taylor_calibrate" else 0
+    with open(os.path.join(output_dir, "initialization_manifest.json"), "w") as handle:
+        json.dump(
+            {
+                "method": cfg["student_model"]["name"],
+                "strategy": args.strategy,
+                "recovery_training_tokens": 0,
+                "calibration": {
+                    "dataset": "Salesforce/wikitext",
+                    "revision": WIKITEXT_REVISION,
+                    "split": "test",
+                    "unique_tokens": 4 * 256,
+                    "sequence_length": 256,
+                    "samples": 4,
+                    "local_steps_per_converted_layer": local_steps,
+                    "converted_layers": converted_layers,
+                    "total_local_steps": local_steps * converted_layers,
+                    "seconds": calibration_seconds,
+                    "gpu_count": 1 if torch.cuda.is_available() else 0,
+                    "gpu_hours": (
+                        calibration_seconds / 3600 if torch.cuda.is_available() else 0
+                    ),
+                },
+                "total_initialization_seconds": time.perf_counter() - total_start,
+            },
+            handle,
+            indent=2,
+            sort_keys=True,
+        )
+        handle.write("\n")
     print("Done!")
 
 
