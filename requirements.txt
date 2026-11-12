@@ -1,10 +1,18 @@
+# Pinned to the versions used for the paper's three-seed reruns (PyTorch 2.x from the
+# NGC PyTorch 26.09 container); the PyPI name of `fla` is flash-linear-attention.
 torch>=2.1.0
-transformers>=4.40.0
-datasets
-accelerate
-deepspeed
-safetensors
-omegaconf
+transformers==4.57.6
+accelerate==1.13.0
+datasets==4.7.0
+deepspeed==0.19.8
+flash-linear-attention==0.5.0
+fla-core==0.5.0
+einops==0.8.2
+lm-eval[ruler]==0.4.11
+omegaconf==2.3.1
+safetensors==0.8.0
+tokenizers==0.22.2
+huggingface_hub==0.36.2
+nltk==3.10.4
 pyyaml
-fla
-lm-eval==0.4.11
+pytest

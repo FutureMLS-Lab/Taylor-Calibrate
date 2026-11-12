@@ -25,7 +25,7 @@ import torch.nn as nn
 import torch.distributed as dist
 from omegaconf import OmegaConf
 from transformers import (
-    AutoConfig, AutoTokenizer, AutoModelForCausalLM, TrainingArguments, Trainer
+    AutoConfig, AutoTokenizer, AutoModelForCausalLM, TrainingArguments, Trainer, set_seed
 )
 
 import fla  # noqa: F401
@@ -220,7 +220,9 @@ def build_stage1_model(cfg):
             for sf in shard_files:
                 ckpt_sd.update(load_file(sf))
         else:
-            logger.warning(f"  Checkpoint not found: {ckpt_path}, using init_from_teacher")
+            raise FileNotFoundError(
+                f"student_init_ckpt is set but neither {ckpt_path} nor {index_path} exists"
+            )
         if ckpt_sd is not None:
             loaded = 0
             for idx, layer_mod in enumerate(model.model.layers):
@@ -265,6 +267,7 @@ def main(cfg):
     tokenizer.pad_token_id = tokenizer.eos_token_id
 
     logger.info("==== Stage 1 (MSE Hidden-State Alignment) ====")
+    set_seed(int(cfg.train.get('seed', 42)))
     model = build_stage1_model(cfg)
 
     from data import get_dataloader

@@ -49,7 +49,7 @@
         "checkpoint_tensors": 399,
         "total": 8190735360
       },
-      "path": "/shared/charlie/taylor-app2app/checkpoints/swa-hybrid-ar/stage2/final"
+      "path": "<app2app-root>/checkpoints/swa-hybrid-ar/stage2/final"
     },
     "taylor": {
       "artifact_files": {
@@ -88,7 +88,7 @@
         "checkpoint_tensors": 507,
         "total": 9330273600
       },
-      "path": "/shared/charlie/taylor-app2app/checkpoints/taylor-hybrid-ar/stage2/final"
+      "path": "<app2app-root>/checkpoints/taylor-hybrid-ar/stage2/final"
     }
   },
   "outcome": {
@@ -110,67 +110,67 @@
     "taylor_ruler_ratio": 6.958442123585726
   },
   "result_files": {
-    "/shared/charlie/taylor-app2app/results/100m/swa-hybrid-ar/core/__shared__charlie__taylor-app2app__checkpoints__swa-hybrid-ar__stage2__final/results_2026-09-12T17-22-06.692853.json": {
+    "<app2app-root>/results/100m/swa-hybrid-ar/core/__app2app-root__checkpoints__swa-hybrid-ar__stage2__final/results_2026-09-12T17-22-06.692853.json": {
       "bytes": 18054,
       "sha256": "bcfb48631d54c90f0fb3781beeb0dc816a1360fd95d0cd1d9b788329e2a8b8e7"
     },
-    "/shared/charlie/taylor-app2app/results/100m/swa-hybrid-ar/mmlu/__shared__charlie__taylor-app2app__checkpoints__swa-hybrid-ar__stage2__final/results_2026-09-12T17-40-05.010165.json": {
+    "<app2app-root>/results/100m/swa-hybrid-ar/mmlu/__app2app-root__checkpoints__swa-hybrid-ar__stage2__final/results_2026-09-12T17-40-05.010165.json": {
       "bytes": 134378,
       "sha256": "b599375f21291129b9a905a6082216a845cd564a13afaaebad0a837ff62c54c1"
     },
-    "/shared/charlie/taylor-app2app/results/100m/swa-hybrid-ar/ppl/results.json": {
+    "<app2app-root>/results/100m/swa-hybrid-ar/ppl/results.json": {
       "bytes": 309,
       "sha256": "7b705ff140f47f99704b79f02dcfdcf8eb4afdbf6eaac90b0e8d86c6397860d8"
     },
-    "/shared/charlie/taylor-app2app/results/100m/swa-hybrid-ar/ruler-shards/niah_multikey_1/__shared__charlie__taylor-app2app__checkpoints__swa-hybrid-ar__stage2__final/results_2026-09-12T17-29-32.624195.json": {
+    "<app2app-root>/results/100m/swa-hybrid-ar/ruler-shards/niah_multikey_1/__app2app-root__checkpoints__swa-hybrid-ar__stage2__final/results_2026-09-12T17-29-32.624195.json": {
       "bytes": 12121,
       "sha256": "cc8700a829ed5a53be3fd4dce2016d504857eb503cd832fcc2882207368222d0"
     },
-    "/shared/charlie/taylor-app2app/results/100m/swa-hybrid-ar/ruler-shards/niah_multikey_2/__shared__charlie__taylor-app2app__checkpoints__swa-hybrid-ar__stage2__final/results_2026-09-12T17-30-00.315393.json": {
+    "<app2app-root>/results/100m/swa-hybrid-ar/ruler-shards/niah_multikey_2/__app2app-root__checkpoints__swa-hybrid-ar__stage2__final/results_2026-09-12T17-30-00.315393.json": {
       "bytes": 12090,
       "sha256": "baf24bb5813fde0e80a6e0d93d4f6ce078f9b7a684051298e530daa3fe5ced32"
     },
-    "/shared/charlie/taylor-app2app/results/100m/swa-hybrid-ar/ruler-shards/niah_multikey_3/__shared__charlie__taylor-app2app__checkpoints__swa-hybrid-ar__stage2__final/results_2026-09-12T17-30-23.013960.json": {
+    "<app2app-root>/results/100m/swa-hybrid-ar/ruler-shards/niah_multikey_3/__app2app-root__checkpoints__swa-hybrid-ar__stage2__final/results_2026-09-12T17-30-23.013960.json": {
       "bytes": 12090,
       "sha256": "62403c1555f0ee3f8cbef1d0b34645a5075242436e8156293f28307f48dca85b"
     },
-    "/shared/charlie/taylor-app2app/results/100m/swa-hybrid-ar/ruler-shards/niah_multiquery/__shared__charlie__taylor-app2app__checkpoints__swa-hybrid-ar__stage2__final/results_2026-09-12T17-29-52.945502.json": {
+    "<app2app-root>/results/100m/swa-hybrid-ar/ruler-shards/niah_multiquery/__app2app-root__checkpoints__swa-hybrid-ar__stage2__final/results_2026-09-12T17-29-52.945502.json": {
       "bytes": 12115,
       "sha256": "e52da2bfac05e097c353abb715ecbaf168cea17dc6200952228487b40ffed447"
     },
-    "/shared/charlie/taylor-app2app/results/100m/swa-hybrid-ar/ruler-shards/niah_multivalue/__shared__charlie__taylor-app2app__checkpoints__swa-hybrid-ar__stage2__final/results_2026-09-12T17-31-14.983762.json": {
+    "<app2app-root>/results/100m/swa-hybrid-ar/ruler-shards/niah_multivalue/__app2app-root__checkpoints__swa-hybrid-ar__stage2__final/results_2026-09-12T17-31-14.983762.json": {
       "bytes": 12122,
       "sha256": "fff5d7a774c77fa29c79f25a3cb802fb7b9e60160e334715517ab9219f20eb76"
     },
-    "/shared/charlie/taylor-app2app/results/100m/swa-hybrid-ar/ruler-shards/niah_single_1/__shared__charlie__taylor-app2app__checkpoints__swa-hybrid-ar__stage2__final/results_2026-09-12T17-30-01.938993.json": {
+    "<app2app-root>/results/100m/swa-hybrid-ar/ruler-shards/niah_single_1/__app2app-root__checkpoints__swa-hybrid-ar__stage2__final/results_2026-09-12T17-30-01.938993.json": {
       "bytes": 12074,
       "sha256": "a53f5884a8a7230a4b14b334bfdc17ebe7f9e3825c372f761750eb0f4c08b952"
     },
-    "/shared/charlie/taylor-app2app/results/100m/swa-hybrid-ar/ruler-shards/niah_single_2/__shared__charlie__taylor-app2app__checkpoints__swa-hybrid-ar__stage2__final/results_2026-09-12T17-31-19.557331.json": {
+    "<app2app-root>/results/100m/swa-hybrid-ar/ruler-shards/niah_single_2/__app2app-root__checkpoints__swa-hybrid-ar__stage2__final/results_2026-09-12T17-31-19.557331.json": {
       "bytes": 12072,
       "sha256": "402bc1d4dca57d622e8d206ee8a6993f2dfd6f380a0a331999e7805b9eec49d3"
     },
-    "/shared/charlie/taylor-app2app/results/100m/swa-hybrid-ar/ruler-shards/niah_single_3/__shared__charlie__taylor-app2app__checkpoints__swa-hybrid-ar__stage2__final/results_2026-09-12T17-30-20.066857.json": {
+    "<app2app-root>/results/100m/swa-hybrid-ar/ruler-shards/niah_single_3/__app2app-root__checkpoints__swa-hybrid-ar__stage2__final/results_2026-09-12T17-30-20.066857.json": {
       "bytes": 12067,
       "sha256": "be63380d8dd152fae33cf67a260c9122bce090d637521309ea743f1cbb9e0b14"
     },
-    "/shared/charlie/taylor-app2app/results/100m/swa-hybrid-ar/ruler-shards/ruler_cwe/__shared__charlie__taylor-app2app__checkpoints__swa-hybrid-ar__stage2__final/results_2026-09-12T17-02-39.291819.json": {
+    "<app2app-root>/results/100m/swa-hybrid-ar/ruler-shards/ruler_cwe/__app2app-root__checkpoints__swa-hybrid-ar__stage2__final/results_2026-09-12T17-02-39.291819.json": {
       "bytes": 11937,
       "sha256": "38dfdadaed3f6f51d463313600f9438980f0c3e27292c1299e7e1d37bc713c83"
     },
-    "/shared/charlie/taylor-app2app/results/100m/swa-hybrid-ar/ruler-shards/ruler_fwe/__shared__charlie__taylor-app2app__checkpoints__swa-hybrid-ar__stage2__final/results_2026-09-12T17-04-08.339127.json": {
+    "<app2app-root>/results/100m/swa-hybrid-ar/ruler-shards/ruler_fwe/__app2app-root__checkpoints__swa-hybrid-ar__stage2__final/results_2026-09-12T17-04-08.339127.json": {
       "bytes": 11936,
       "sha256": "92ad7e8d47b6d9ad99f7f9eb6878caab59dac467992ce2b59e984ba50a5e1967"
     },
-    "/shared/charlie/taylor-app2app/results/100m/swa-hybrid-ar/ruler-shards/ruler_qa_hotpot/__shared__charlie__taylor-app2app__checkpoints__swa-hybrid-ar__stage2__final/results_2026-09-12T17-00-47.795215.json": {
+    "<app2app-root>/results/100m/swa-hybrid-ar/ruler-shards/ruler_qa_hotpot/__app2app-root__checkpoints__swa-hybrid-ar__stage2__final/results_2026-09-12T17-00-47.795215.json": {
       "bytes": 11654,
       "sha256": "c5d4498e49b62962b6146bc34f743d493d234e49a20559a1e682cd6aca6237b8"
     },
-    "/shared/charlie/taylor-app2app/results/100m/swa-hybrid-ar/ruler-shards/ruler_qa_squad/__shared__charlie__taylor-app2app__checkpoints__swa-hybrid-ar__stage2__final/results_2026-09-12T16-59-34.350609.json": {
+    "<app2app-root>/results/100m/swa-hybrid-ar/ruler-shards/ruler_qa_squad/__app2app-root__checkpoints__swa-hybrid-ar__stage2__final/results_2026-09-12T16-59-34.350609.json": {
       "bytes": 11652,
       "sha256": "23d277648dc07e6e75596a36b215a9ad24d407197d11d72023c05015d682623d"
     },
-    "/shared/charlie/taylor-app2app/results/100m/swa-hybrid-ar/ruler-shards/ruler_vt/__shared__charlie__taylor-app2app__checkpoints__swa-hybrid-ar__stage2__final/results_2026-09-12T16-57-37.607822.json": {
+    "<app2app-root>/results/100m/swa-hybrid-ar/ruler-shards/ruler_vt/__app2app-root__checkpoints__swa-hybrid-ar__stage2__final/results_2026-09-12T16-57-37.607822.json": {
       "bytes": 11960,
       "sha256": "d6f09f2c505cd1b7bc711479461e6f12269869835e15935dca4c0ad96907fdf3"
     }

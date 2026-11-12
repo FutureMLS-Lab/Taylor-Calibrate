@@ -72,7 +72,7 @@
           "checkpoint_tensors": 399,
           "total": 8190735360
         },
-        "path": "/shared/charlie/taylor-app2app/checkpoints/swa/0b-fixed-qk-norm"
+        "path": "<app2app-root>/checkpoints/swa/0b-fixed-qk-norm"
       },
       "taylor": {
         "artifact_files": {
@@ -111,7 +111,7 @@
           "checkpoint_tensors": 543,
           "total": 9710119680
         },
-        "path": "/shared/charlie/taylor-app2app/checkpoints/taylor/0b"
+        "path": "<app2app-root>/checkpoints/taylor/0b"
       }
     },
     "100m": {
@@ -152,7 +152,7 @@
           "checkpoint_tensors": 399,
           "total": 8190735360
         },
-        "path": "/shared/charlie/taylor-app2app/checkpoints/swa/stage2/final"
+        "path": "<app2app-root>/checkpoints/swa/stage2/final"
       },
       "taylor": {
         "artifact_files": {
@@ -191,7 +191,7 @@
           "checkpoint_tensors": 543,
           "total": 9710119680
         },
-        "path": "/shared/charlie/taylor-app2app/checkpoints/taylor/stage2/final"
+        "path": "<app2app-root>/checkpoints/taylor/stage2/final"
       }
     }
   },
@@ -475,7 +475,7 @@
           "sha256": "cfe73cb6ba3764a7f0c0c3d291d806eae148ea04faf0e013ee69e2439b9679dd"
         }
       },
-      "repo": "/shared/charlie/taylor-app2app/repo"
+      "repo": "<app2app-root>/repo"
     },
     "taylor": {
       "files": {
@@ -756,7 +756,7 @@
           "sha256": "cfe73cb6ba3764a7f0c0c3d291d806eae148ea04faf0e013ee69e2439b9679dd"
         }
       },
-      "repo": "/shared/charlie/taylor-app2app/repo"
+      "repo": "<app2app-root>/repo"
     }
   },
   "data": {
@@ -921,259 +921,259 @@
     "Two 8-GPU training pods were resubmitted with lower scheduler memory reservations while still pending; no optimizer step ran in those scheduling-only attempts."
   ],
   "result_files": {
-    "/shared/charlie/taylor-app2app/results/0b/swa-fixed-qk-norm/core/__shared__charlie__taylor-app2app__checkpoints__swa__0b-fixed-qk-norm/results_2026-09-03T09-18-00.244349.json": {
+    "<app2app-root>/results/0b/swa-fixed-qk-norm/core/__app2app-root__checkpoints__swa__0b-fixed-qk-norm/results_2026-09-03T09-18-00.244349.json": {
       "bytes": 18007,
       "sha256": "4a6ed3231e44cc3962618bb702cdf262781134ca4ba9875908800aa8bc0efee3"
     },
-    "/shared/charlie/taylor-app2app/results/0b/swa-fixed-qk-norm/mmlu/__shared__charlie__taylor-app2app__checkpoints__swa__0b-fixed-qk-norm/results_2026-09-03T09-39-29.811509.json": {
+    "<app2app-root>/results/0b/swa-fixed-qk-norm/mmlu/__app2app-root__checkpoints__swa__0b-fixed-qk-norm/results_2026-09-03T09-39-29.811509.json": {
       "bytes": 134020,
       "sha256": "85e71e96e4700adfac0ce66ecae82cd1de26aeb4b64c05b48f474b001b22a0aa"
     },
-    "/shared/charlie/taylor-app2app/results/0b/swa-fixed-qk-norm/ppl/results.json": {
+    "<app2app-root>/results/0b/swa-fixed-qk-norm/ppl/results.json": {
       "bytes": 302,
       "sha256": "6728d5278873f655523f22eff0996f9ce83f7cca6e9bff7c295b353b85d0cf3c"
     },
-    "/shared/charlie/taylor-app2app/results/0b/swa-fixed-qk-norm/ruler-shards/niah_multikey_1/__shared__charlie__taylor-app2app__checkpoints__swa__0b-fixed-qk-norm/results_2026-09-03T14-43-39.704328.json": {
+    "<app2app-root>/results/0b/swa-fixed-qk-norm/ruler-shards/niah_multikey_1/__app2app-root__checkpoints__swa__0b-fixed-qk-norm/results_2026-09-03T14-43-39.704328.json": {
       "bytes": 12095,
       "sha256": "1c230978a6ad9505e2e94b5b2d5bb2bf34f44cd688f730e52f83dd7f8df6b5ba"
     },
-    "/shared/charlie/taylor-app2app/results/0b/swa-fixed-qk-norm/ruler-shards/niah_multikey_2/__shared__charlie__taylor-app2app__checkpoints__swa__0b-fixed-qk-norm/results_2026-09-03T14-57-28.925592.json": {
+    "<app2app-root>/results/0b/swa-fixed-qk-norm/ruler-shards/niah_multikey_2/__app2app-root__checkpoints__swa__0b-fixed-qk-norm/results_2026-09-03T14-57-28.925592.json": {
       "bytes": 12067,
       "sha256": "8f52b1e2d621d39edf6974cd771d6e261029e792579675acd28e59bd708221d6"
     },
-    "/shared/charlie/taylor-app2app/results/0b/swa-fixed-qk-norm/ruler-shards/niah_multikey_3/__shared__charlie__taylor-app2app__checkpoints__swa__0b-fixed-qk-norm/results_2026-09-03T14-49-00.225259.json": {
+    "<app2app-root>/results/0b/swa-fixed-qk-norm/ruler-shards/niah_multikey_3/__app2app-root__checkpoints__swa__0b-fixed-qk-norm/results_2026-09-03T14-49-00.225259.json": {
       "bytes": 12068,
       "sha256": "73ce16d3588b3b783773bf6d3c72ff61a9ffc9cb3cd1de43596a978f0ef43e3c"
     },
-    "/shared/charlie/taylor-app2app/results/0b/swa-fixed-qk-norm/ruler-shards/niah_multiquery/__shared__charlie__taylor-app2app__checkpoints__swa__0b-fixed-qk-norm/results_2026-09-03T14-43-55.223506.json": {
+    "<app2app-root>/results/0b/swa-fixed-qk-norm/ruler-shards/niah_multiquery/__app2app-root__checkpoints__swa__0b-fixed-qk-norm/results_2026-09-03T14-43-55.223506.json": {
       "bytes": 12094,
       "sha256": "116bed6d610b60912e022b02b324ccc4b14178bbee1e16792086da292a6641be"
     },
-    "/shared/charlie/taylor-app2app/results/0b/swa-fixed-qk-norm/ruler-shards/niah_multivalue/__shared__charlie__taylor-app2app__checkpoints__swa__0b-fixed-qk-norm/results_2026-09-03T14-45-00.267141.json": {
+    "<app2app-root>/results/0b/swa-fixed-qk-norm/ruler-shards/niah_multivalue/__app2app-root__checkpoints__swa__0b-fixed-qk-norm/results_2026-09-03T14-45-00.267141.json": {
       "bytes": 12100,
       "sha256": "5a5a6e524690e4813a6a2e10aad4a2377844b4acfbf1f2722cc98f96f4c42b13"
     },
-    "/shared/charlie/taylor-app2app/results/0b/swa-fixed-qk-norm/ruler-shards/niah_single_1/__shared__charlie__taylor-app2app__checkpoints__swa__0b-fixed-qk-norm/results_2026-09-03T14-48-39.723317.json": {
+    "<app2app-root>/results/0b/swa-fixed-qk-norm/ruler-shards/niah_single_1/__app2app-root__checkpoints__swa__0b-fixed-qk-norm/results_2026-09-03T14-48-39.723317.json": {
       "bytes": 12049,
       "sha256": "17b7db16ab501b26bd5ba4b477cb3cca2016765f67190dad9b83048bcee7284b"
     },
-    "/shared/charlie/taylor-app2app/results/0b/swa-fixed-qk-norm/ruler-shards/niah_single_2/__shared__charlie__taylor-app2app__checkpoints__swa__0b-fixed-qk-norm/results_2026-09-03T14-33-32.285556.json": {
+    "<app2app-root>/results/0b/swa-fixed-qk-norm/ruler-shards/niah_single_2/__app2app-root__checkpoints__swa__0b-fixed-qk-norm/results_2026-09-03T14-33-32.285556.json": {
       "bytes": 12046,
       "sha256": "3f277a05a57667d34f069a1d792abb688954e3856e8abb25a4a5c86beaccf877"
     },
-    "/shared/charlie/taylor-app2app/results/0b/swa-fixed-qk-norm/ruler-shards/niah_single_3/__shared__charlie__taylor-app2app__checkpoints__swa__0b-fixed-qk-norm/results_2026-09-03T14-43-41.434856.json": {
+    "<app2app-root>/results/0b/swa-fixed-qk-norm/ruler-shards/niah_single_3/__app2app-root__checkpoints__swa__0b-fixed-qk-norm/results_2026-09-03T14-43-41.434856.json": {
       "bytes": 12045,
       "sha256": "e6b0fe3cd9b3d4ece43e9b03d3aaf4c5ae2efc72bec70ac05e2159bc8469a1c2"
     },
-    "/shared/charlie/taylor-app2app/results/0b/swa-fixed-qk-norm/ruler-shards/ruler_cwe/__shared__charlie__taylor-app2app__checkpoints__swa__0b-fixed-qk-norm/results_2026-09-03T14-41-36.388039.json": {
+    "<app2app-root>/results/0b/swa-fixed-qk-norm/ruler-shards/ruler_cwe/__app2app-root__checkpoints__swa__0b-fixed-qk-norm/results_2026-09-03T14-41-36.388039.json": {
       "bytes": 11913,
       "sha256": "7298ba735816bc35c09161f8db4f1bf9068d9a7c7d0eb42c4729f97aa38d32c3"
     },
-    "/shared/charlie/taylor-app2app/results/0b/swa-fixed-qk-norm/ruler-shards/ruler_fwe/__shared__charlie__taylor-app2app__checkpoints__swa__0b-fixed-qk-norm/results_2026-09-03T14-24-00.434918.json": {
+    "<app2app-root>/results/0b/swa-fixed-qk-norm/ruler-shards/ruler_fwe/__app2app-root__checkpoints__swa__0b-fixed-qk-norm/results_2026-09-03T14-24-00.434918.json": {
       "bytes": 11918,
       "sha256": "41e764632439568f491022938ee2d66c64baf0951922dcf6a535fa41fb29579a"
     },
-    "/shared/charlie/taylor-app2app/results/0b/swa-fixed-qk-norm/ruler-shards/ruler_qa_hotpot/__shared__charlie__taylor-app2app__checkpoints__swa__0b-fixed-qk-norm/results_2026-09-03T14-37-59.486566.json": {
+    "<app2app-root>/results/0b/swa-fixed-qk-norm/ruler-shards/ruler_qa_hotpot/__app2app-root__checkpoints__swa__0b-fixed-qk-norm/results_2026-09-03T14-37-59.486566.json": {
       "bytes": 11631,
       "sha256": "80a2a2f5d7723fe055cd88fc266c782a3c49959481b05d5b81dfcda9da000890"
     },
-    "/shared/charlie/taylor-app2app/results/0b/swa-fixed-qk-norm/ruler-shards/ruler_qa_squad/__shared__charlie__taylor-app2app__checkpoints__swa__0b-fixed-qk-norm/results_2026-09-03T14-13-39.472440.json": {
+    "<app2app-root>/results/0b/swa-fixed-qk-norm/ruler-shards/ruler_qa_squad/__app2app-root__checkpoints__swa__0b-fixed-qk-norm/results_2026-09-03T14-13-39.472440.json": {
       "bytes": 11628,
       "sha256": "18d817efbdf3373759143b6b0c06eb948b23b821b871a60ca68bd1dc3c20bca2"
     },
-    "/shared/charlie/taylor-app2app/results/0b/swa-fixed-qk-norm/ruler-shards/ruler_vt/__shared__charlie__taylor-app2app__checkpoints__swa__0b-fixed-qk-norm/results_2026-09-03T14-24-09.376519.json": {
+    "<app2app-root>/results/0b/swa-fixed-qk-norm/ruler-shards/ruler_vt/__app2app-root__checkpoints__swa__0b-fixed-qk-norm/results_2026-09-03T14-24-09.376519.json": {
       "bytes": 11939,
       "sha256": "f7d0a4de5a92fab2d19a5d0cf0203b5f3331cc337afa7f90ad01b392585b5f04"
     },
-    "/shared/charlie/taylor-app2app/results/0b/taylor/core/__shared__charlie__taylor-app2app__checkpoints__taylor__0b/results_2026-09-03T08-36-52.600377.json": {
+    "<app2app-root>/results/0b/taylor/core/__app2app-root__checkpoints__taylor__0b/results_2026-09-03T08-36-52.600377.json": {
       "bytes": 17924,
       "sha256": "d6cba507cf418adc82d928e7a4ca8edbf765f48a16106e89e4b88ece715bbe2b"
     },
-    "/shared/charlie/taylor-app2app/results/0b/taylor/mmlu/__shared__charlie__taylor-app2app__checkpoints__taylor__0b/results_2026-09-03T08-50-01.134639.json": {
+    "<app2app-root>/results/0b/taylor/mmlu/__app2app-root__checkpoints__taylor__0b/results_2026-09-03T08-50-01.134639.json": {
       "bytes": 133388,
       "sha256": "fb36c2d2bcb35eb5508afef4aaf3f887283ffaefeac00add5e058d87e1920a6c"
     },
-    "/shared/charlie/taylor-app2app/results/0b/taylor/ppl/results.json": {
+    "<app2app-root>/results/0b/taylor/ppl/results.json": {
       "bytes": 290,
       "sha256": "1fec99b881597f292a14a64769a2b23b8c3c379a19e74ae03e26d2d37d5dc3c0"
     },
-    "/shared/charlie/taylor-app2app/results/0b/taylor/ruler-shards/niah_multikey_1/__shared__charlie__taylor-app2app__checkpoints__taylor__0b/results_2026-09-03T14-37-07.993333.json": {
+    "<app2app-root>/results/0b/taylor/ruler-shards/niah_multikey_1/__app2app-root__checkpoints__taylor__0b/results_2026-09-03T14-37-07.993333.json": {
       "bytes": 12052,
       "sha256": "52a926823ba7e2504d2708301f1d8096a681d2551f3c4137768da57ecb67a335"
     },
-    "/shared/charlie/taylor-app2app/results/0b/taylor/ruler-shards/niah_multikey_2/__shared__charlie__taylor-app2app__checkpoints__taylor__0b/results_2026-09-03T14-37-17.078830.json": {
+    "<app2app-root>/results/0b/taylor/ruler-shards/niah_multikey_2/__app2app-root__checkpoints__taylor__0b/results_2026-09-03T14-37-17.078830.json": {
       "bytes": 12024,
       "sha256": "6a63d5459afa348f708e41d3ed7d57714a8df3af6f56941a60540169f47d354d"
     },
-    "/shared/charlie/taylor-app2app/results/0b/taylor/ruler-shards/niah_multikey_3/__shared__charlie__taylor-app2app__checkpoints__taylor__0b/results_2026-09-03T14-37-53.925676.json": {
+    "<app2app-root>/results/0b/taylor/ruler-shards/niah_multikey_3/__app2app-root__checkpoints__taylor__0b/results_2026-09-03T14-37-53.925676.json": {
       "bytes": 12024,
       "sha256": "9d41fcf04a711eb880fb4859cf66a43d27e8149e660b05f5a493afd084cd2b7f"
     },
-    "/shared/charlie/taylor-app2app/results/0b/taylor/ruler-shards/niah_multiquery/__shared__charlie__taylor-app2app__checkpoints__taylor__0b/results_2026-09-03T14-35-14.764062.json": {
+    "<app2app-root>/results/0b/taylor/ruler-shards/niah_multiquery/__app2app-root__checkpoints__taylor__0b/results_2026-09-03T14-35-14.764062.json": {
       "bytes": 12053,
       "sha256": "36cd357cfbbf886088f3530081373dc650c66cb222b6485becd483636b6f3868"
     },
-    "/shared/charlie/taylor-app2app/results/0b/taylor/ruler-shards/niah_multivalue/__shared__charlie__taylor-app2app__checkpoints__taylor__0b/results_2026-09-03T14-37-48.468461.json": {
+    "<app2app-root>/results/0b/taylor/ruler-shards/niah_multivalue/__app2app-root__checkpoints__taylor__0b/results_2026-09-03T14-37-48.468461.json": {
       "bytes": 12053,
       "sha256": "0b721fa95e011424ea7afe462dfa375148bb952a3e7427e917a9b51ec5b69327"
     },
-    "/shared/charlie/taylor-app2app/results/0b/taylor/ruler-shards/niah_single_1/__shared__charlie__taylor-app2app__checkpoints__taylor__0b/results_2026-09-03T14-37-07.972720.json": {
+    "<app2app-root>/results/0b/taylor/ruler-shards/niah_single_1/__app2app-root__checkpoints__taylor__0b/results_2026-09-03T14-37-07.972720.json": {
       "bytes": 12006,
       "sha256": "674c6685130fec827665864636f862884a4776c22bb89b21d377995b137cdd63"
     },
-    "/shared/charlie/taylor-app2app/results/0b/taylor/ruler-shards/niah_single_2/__shared__charlie__taylor-app2app__checkpoints__taylor__0b/results_2026-09-03T14-37-43.614252.json": {
+    "<app2app-root>/results/0b/taylor/ruler-shards/niah_single_2/__app2app-root__checkpoints__taylor__0b/results_2026-09-03T14-37-43.614252.json": {
       "bytes": 12004,
       "sha256": "5fe8cf9c1ef894fe00ecdafdbf0074e87eabd094ca070087fe83b7f4e4914379"
     },
-    "/shared/charlie/taylor-app2app/results/0b/taylor/ruler-shards/niah_single_3/__shared__charlie__taylor-app2app__checkpoints__taylor__0b/results_2026-09-03T14-35-57.631269.json": {
+    "<app2app-root>/results/0b/taylor/ruler-shards/niah_single_3/__app2app-root__checkpoints__taylor__0b/results_2026-09-03T14-35-57.631269.json": {
       "bytes": 11998,
       "sha256": "39aedba104cf5a119e1ce2a47b4d7fe4ca5dc3bef504ee0a75d41c3c85a85164"
     },
-    "/shared/charlie/taylor-app2app/results/0b/taylor/ruler-shards/ruler_cwe/__shared__charlie__taylor-app2app__checkpoints__taylor__0b/results_2026-09-03T14-36-07.201802.json": {
+    "<app2app-root>/results/0b/taylor/ruler-shards/ruler_cwe/__app2app-root__checkpoints__taylor__0b/results_2026-09-03T14-36-07.201802.json": {
       "bytes": 11874,
       "sha256": "c5058c996d18960979d9aa971642d4008a87e4b8d1174d40675c8890698d7f7e"
     },
-    "/shared/charlie/taylor-app2app/results/0b/taylor/ruler-shards/ruler_fwe/__shared__charlie__taylor-app2app__checkpoints__taylor__0b/results_2026-09-03T14-11-18.638811.json": {
+    "<app2app-root>/results/0b/taylor/ruler-shards/ruler_fwe/__app2app-root__checkpoints__taylor__0b/results_2026-09-03T14-11-18.638811.json": {
       "bytes": 11857,
       "sha256": "1287e9a60b183f3f4be3e1a33730f0abf2f16f45cae586b136b69da2249e5f9c"
     },
-    "/shared/charlie/taylor-app2app/results/0b/taylor/ruler-shards/ruler_qa_hotpot/__shared__charlie__taylor-app2app__checkpoints__taylor__0b/results_2026-09-03T14-04-46.948589.json": {
+    "<app2app-root>/results/0b/taylor/ruler-shards/ruler_qa_hotpot/__app2app-root__checkpoints__taylor__0b/results_2026-09-03T14-04-46.948589.json": {
       "bytes": 11587,
       "sha256": "5af55595a17d5f4624ae1a09fb03465b32f0166aea4d4e8cbecc8ebe5157946b"
     },
-    "/shared/charlie/taylor-app2app/results/0b/taylor/ruler-shards/ruler_qa_squad/__shared__charlie__taylor-app2app__checkpoints__taylor__0b/results_2026-09-03T14-04-46.317694.json": {
+    "<app2app-root>/results/0b/taylor/ruler-shards/ruler_qa_squad/__app2app-root__checkpoints__taylor__0b/results_2026-09-03T14-04-46.317694.json": {
       "bytes": 11588,
       "sha256": "39b36a9abfe5c44cf184f8b344a8ae4e3a9cd07cc8629e70eb87a661e1f0c6ed"
     },
-    "/shared/charlie/taylor-app2app/results/0b/taylor/ruler-shards/ruler_vt/__shared__charlie__taylor-app2app__checkpoints__taylor__0b/results_2026-09-03T14-04-07.883184.json": {
+    "<app2app-root>/results/0b/taylor/ruler-shards/ruler_vt/__app2app-root__checkpoints__taylor__0b/results_2026-09-03T14-04-07.883184.json": {
       "bytes": 11896,
       "sha256": "fd0f18f1b1b123dde8dafab04728d64653e5b9cafba5a1dcf5dcaaa1c14b2335"
     },
-    "/shared/charlie/taylor-app2app/results/100m/swa/core/__shared__charlie__taylor-app2app__checkpoints__swa__stage2__final/results_2026-09-03T17-33-24.452663.json": {
+    "<app2app-root>/results/100m/swa/core/__app2app-root__checkpoints__swa__stage2__final/results_2026-09-03T17-33-24.452663.json": {
       "bytes": 17970,
       "sha256": "b6b99abbe352ff12c8b87378a896687b3cdaa54642bdfa3e86d4064ebc0e1297"
     },
-    "/shared/charlie/taylor-app2app/results/100m/swa/mmlu/__shared__charlie__taylor-app2app__checkpoints__swa__stage2__final/results_2026-09-03T17-54-18.174821.json": {
+    "<app2app-root>/results/100m/swa/mmlu/__app2app-root__checkpoints__swa__stage2__final/results_2026-09-03T17-54-18.174821.json": {
       "bytes": 133804,
       "sha256": "86dcbf66b7209c8944e270e42e2071f31d13f76938df7096cb785284734b0ef2"
     },
-    "/shared/charlie/taylor-app2app/results/100m/swa/ppl/results.json": {
+    "<app2app-root>/results/100m/swa/ppl/results.json": {
       "bytes": 299,
       "sha256": "99cb151044719ec26944c33d5c10868f6ef2160a8d8cf6c665ffe80d82e49f84"
     },
-    "/shared/charlie/taylor-app2app/results/100m/swa/ruler-shards/niah_multikey_1/__shared__charlie__taylor-app2app__checkpoints__swa__stage2__final/results_2026-09-03T18-09-56.258310.json": {
+    "<app2app-root>/results/100m/swa/ruler-shards/niah_multikey_1/__app2app-root__checkpoints__swa__stage2__final/results_2026-09-03T18-09-56.258310.json": {
       "bytes": 12078,
       "sha256": "21a7800ee00974d2dfd0e70c5702f2a7f7adac5f90600ac8a9e1e75b82b6dbbb"
     },
-    "/shared/charlie/taylor-app2app/results/100m/swa/ruler-shards/niah_multikey_2/__shared__charlie__taylor-app2app__checkpoints__swa__stage2__final/results_2026-09-03T18-10-42.447201.json": {
+    "<app2app-root>/results/100m/swa/ruler-shards/niah_multikey_2/__app2app-root__checkpoints__swa__stage2__final/results_2026-09-03T18-10-42.447201.json": {
       "bytes": 12051,
       "sha256": "c5de5ba5be349008f758ccc54bfd6237fed6cb19b0c532bef4806ad0b379f691"
     },
-    "/shared/charlie/taylor-app2app/results/100m/swa/ruler-shards/niah_multikey_3/__shared__charlie__taylor-app2app__checkpoints__swa__stage2__final/results_2026-09-03T18-10-56.167350.json": {
+    "<app2app-root>/results/100m/swa/ruler-shards/niah_multikey_3/__app2app-root__checkpoints__swa__stage2__final/results_2026-09-03T18-10-56.167350.json": {
       "bytes": 12048,
       "sha256": "0908f118d0d73fc8938b64c53637ec9442ea011516b159de4ec81c8e72b2babb"
     },
-    "/shared/charlie/taylor-app2app/results/100m/swa/ruler-shards/niah_multiquery/__shared__charlie__taylor-app2app__checkpoints__swa__stage2__final/results_2026-09-03T18-11-27.774068.json": {
+    "<app2app-root>/results/100m/swa/ruler-shards/niah_multiquery/__app2app-root__checkpoints__swa__stage2__final/results_2026-09-03T18-11-27.774068.json": {
       "bytes": 12079,
       "sha256": "d8e61928dec16fb8c7b592d1803c4bcee1b2c6fd987dc15394ed63efedce6c87"
     },
-    "/shared/charlie/taylor-app2app/results/100m/swa/ruler-shards/niah_multivalue/__shared__charlie__taylor-app2app__checkpoints__swa__stage2__final/results_2026-09-03T18-11-11.864354.json": {
+    "<app2app-root>/results/100m/swa/ruler-shards/niah_multivalue/__app2app-root__checkpoints__swa__stage2__final/results_2026-09-03T18-11-11.864354.json": {
       "bytes": 12082,
       "sha256": "40e78460bd39348cba63d6f057eb45cbf6d853a7ce29591dbd1682bbb5adb857"
     },
-    "/shared/charlie/taylor-app2app/results/100m/swa/ruler-shards/niah_single_1/__shared__charlie__taylor-app2app__checkpoints__swa__stage2__final/results_2026-09-03T18-10-14.281448.json": {
+    "<app2app-root>/results/100m/swa/ruler-shards/niah_single_1/__app2app-root__checkpoints__swa__stage2__final/results_2026-09-03T18-10-14.281448.json": {
       "bytes": 12032,
       "sha256": "ce100ce9930fd22f7a5e0615be0d2f8f1a5d729ff335995c3a7fcfd65ba21435"
     },
-    "/shared/charlie/taylor-app2app/results/100m/swa/ruler-shards/niah_single_2/__shared__charlie__taylor-app2app__checkpoints__swa__stage2__final/results_2026-09-03T18-12-08.914188.json": {
+    "<app2app-root>/results/100m/swa/ruler-shards/niah_single_2/__app2app-root__checkpoints__swa__stage2__final/results_2026-09-03T18-12-08.914188.json": {
       "bytes": 12032,
       "sha256": "8d5b88fef28e47580d4b812646117e97520110d8e21be153d51a8d9bd139a38e"
     },
-    "/shared/charlie/taylor-app2app/results/100m/swa/ruler-shards/niah_single_3/__shared__charlie__taylor-app2app__checkpoints__swa__stage2__final/results_2026-09-03T18-11-22.626843.json": {
+    "<app2app-root>/results/100m/swa/ruler-shards/niah_single_3/__app2app-root__checkpoints__swa__stage2__final/results_2026-09-03T18-11-22.626843.json": {
       "bytes": 12027,
       "sha256": "5b400686e80bfde22feb455982603d21e58c737cd93d1e2085cb1888bdc1ea1a"
     },
-    "/shared/charlie/taylor-app2app/results/100m/swa/ruler-shards/ruler_cwe/__shared__charlie__taylor-app2app__checkpoints__swa__stage2__final/results_2026-09-03T18-04-14.028529.json": {
+    "<app2app-root>/results/100m/swa/ruler-shards/ruler_cwe/__app2app-root__checkpoints__swa__stage2__final/results_2026-09-03T18-04-14.028529.json": {
       "bytes": 11898,
       "sha256": "a82337de81b895ecea73892a1a94483779ec56d12f678db7102a1b722daff26a"
     },
-    "/shared/charlie/taylor-app2app/results/100m/swa/ruler-shards/ruler_fwe/__shared__charlie__taylor-app2app__checkpoints__swa__stage2__final/results_2026-09-03T17-45-55.121556.json": {
+    "<app2app-root>/results/100m/swa/ruler-shards/ruler_fwe/__app2app-root__checkpoints__swa__stage2__final/results_2026-09-03T17-45-55.121556.json": {
       "bytes": 11901,
       "sha256": "c7e2a75ce6059994b1b52bf6f72ed8185125cb6aaba0a77ed8b6c6c1adf7bb2e"
     },
-    "/shared/charlie/taylor-app2app/results/100m/swa/ruler-shards/ruler_qa_hotpot/__shared__charlie__taylor-app2app__checkpoints__swa__stage2__final/results_2026-09-03T17-40-10.553917.json": {
+    "<app2app-root>/results/100m/swa/ruler-shards/ruler_qa_hotpot/__app2app-root__checkpoints__swa__stage2__final/results_2026-09-03T17-40-10.553917.json": {
       "bytes": 11614,
       "sha256": "352e5973993a2e59d552010ac80c68f864e17d481e578ea2e04942dd661247f1"
     },
-    "/shared/charlie/taylor-app2app/results/100m/swa/ruler-shards/ruler_qa_squad/__shared__charlie__taylor-app2app__checkpoints__swa__stage2__final/results_2026-09-03T17-38-34.591185.json": {
+    "<app2app-root>/results/100m/swa/ruler-shards/ruler_qa_squad/__app2app-root__checkpoints__swa__stage2__final/results_2026-09-03T17-38-34.591185.json": {
       "bytes": 11613,
       "sha256": "cb795e6808158bea03e7b47ba971f918d32c44fbd9f65dc89448b0fcaad2460d"
     },
-    "/shared/charlie/taylor-app2app/results/100m/swa/ruler-shards/ruler_vt/__shared__charlie__taylor-app2app__checkpoints__swa__stage2__final/results_2026-09-03T17-37-31.778971.json": {
+    "<app2app-root>/results/100m/swa/ruler-shards/ruler_vt/__app2app-root__checkpoints__swa__stage2__final/results_2026-09-03T17-37-31.778971.json": {
       "bytes": 11920,
       "sha256": "899952f12733c69627065f0fcc09499eea6f31165657c49578c7d2ac234dbf89"
     },
-    "/shared/charlie/taylor-app2app/results/100m/taylor/core/__shared__charlie__taylor-app2app__checkpoints__taylor__stage2__final/results_2026-09-03T17-32-50.093585.json": {
+    "<app2app-root>/results/100m/taylor/core/__app2app-root__checkpoints__taylor__stage2__final/results_2026-09-03T17-32-50.093585.json": {
       "bytes": 17995,
       "sha256": "18f71959d058263e47597c1cafcac8e04eff90b01f7c9bef67b5a916b2c3cfe0"
     },
-    "/shared/charlie/taylor-app2app/results/100m/taylor/mmlu/__shared__charlie__taylor-app2app__checkpoints__taylor__stage2__final/results_2026-09-03T17-44-25.318797.json": {
+    "<app2app-root>/results/100m/taylor/mmlu/__app2app-root__checkpoints__taylor__stage2__final/results_2026-09-03T17-44-25.318797.json": {
       "bytes": 133996,
       "sha256": "3f45599f05af7e9eca18f1debbef6c12f0bf4bf0ca6ac3bd2d65e7ab13306050"
     },
-    "/shared/charlie/taylor-app2app/results/100m/taylor/ppl/results.json": {
+    "<app2app-root>/results/100m/taylor/ppl/results.json": {
       "bytes": 301,
       "sha256": "475b12874cec7b697655ba41b33a1a2589a7ef587b7eaa57c8bc71880738d1d9"
     },
-    "/shared/charlie/taylor-app2app/results/100m/taylor/ruler-shards/niah_multikey_1/__shared__charlie__taylor-app2app__checkpoints__taylor__stage2__final/results_2026-09-03T18-12-49.374866.json": {
+    "<app2app-root>/results/100m/taylor/ruler-shards/niah_multikey_1/__app2app-root__checkpoints__taylor__stage2__final/results_2026-09-03T18-12-49.374866.json": {
       "bytes": 12091,
       "sha256": "490e91460c25f027a01a89faafaceb8812e56fd7923b977d41ae0182e7ba46b4"
     },
-    "/shared/charlie/taylor-app2app/results/100m/taylor/ruler-shards/niah_multikey_2/__shared__charlie__taylor-app2app__checkpoints__taylor__stage2__final/results_2026-09-03T18-13-16.046064.json": {
+    "<app2app-root>/results/100m/taylor/ruler-shards/niah_multikey_2/__app2app-root__checkpoints__taylor__stage2__final/results_2026-09-03T18-13-16.046064.json": {
       "bytes": 12063,
       "sha256": "3cb3e7a6f3bf27601c1ad69405c9e2454f45ba2428534d65bc08406e43f998c9"
     },
-    "/shared/charlie/taylor-app2app/results/100m/taylor/ruler-shards/niah_multikey_3/__shared__charlie__taylor-app2app__checkpoints__taylor__stage2__final/results_2026-09-03T18-13-25.055641.json": {
+    "<app2app-root>/results/100m/taylor/ruler-shards/niah_multikey_3/__app2app-root__checkpoints__taylor__stage2__final/results_2026-09-03T18-13-25.055641.json": {
       "bytes": 12062,
       "sha256": "046b95edb1e3dd6b59ade750acae0199d906c60c1a3da5eca5b8426dc30d2c8a"
     },
-    "/shared/charlie/taylor-app2app/results/100m/taylor/ruler-shards/niah_multiquery/__shared__charlie__taylor-app2app__checkpoints__taylor__stage2__final/results_2026-09-03T18-13-24.874874.json": {
+    "<app2app-root>/results/100m/taylor/ruler-shards/niah_multiquery/__app2app-root__checkpoints__taylor__stage2__final/results_2026-09-03T18-13-24.874874.json": {
       "bytes": 12094,
       "sha256": "112376787ec98945e9c3e679640c7347776400cae8bb869d132dc0c15861363d"
     },
-    "/shared/charlie/taylor-app2app/results/100m/taylor/ruler-shards/niah_multivalue/__shared__charlie__taylor-app2app__checkpoints__taylor__stage2__final/results_2026-09-03T18-13-10.328979.json": {
+    "<app2app-root>/results/100m/taylor/ruler-shards/niah_multivalue/__app2app-root__checkpoints__taylor__stage2__final/results_2026-09-03T18-13-10.328979.json": {
       "bytes": 12094,
       "sha256": "047244c4f8eca7f3da2b7fb4d1dd78e9345b6f6e380dd7f05ce17128ac874e6f"
     },
-    "/shared/charlie/taylor-app2app/results/100m/taylor/ruler-shards/niah_single_1/__shared__charlie__taylor-app2app__checkpoints__taylor__stage2__final/results_2026-09-03T18-12-31.643448.json": {
+    "<app2app-root>/results/100m/taylor/ruler-shards/niah_single_1/__app2app-root__checkpoints__taylor__stage2__final/results_2026-09-03T18-12-31.643448.json": {
       "bytes": 12046,
       "sha256": "1a85e57f1912d1c87aacd6c5ae9e72b3ae12cd06238641ecb887a8cabda65e29"
     },
-    "/shared/charlie/taylor-app2app/results/100m/taylor/ruler-shards/niah_single_2/__shared__charlie__taylor-app2app__checkpoints__taylor__stage2__final/results_2026-09-03T18-12-49.354513.json": {
+    "<app2app-root>/results/100m/taylor/ruler-shards/niah_single_2/__app2app-root__checkpoints__taylor__stage2__final/results_2026-09-03T18-12-49.354513.json": {
       "bytes": 12042,
       "sha256": "fcd53b2a0b1558f9667dc04723d3d855786c9c1bc88468806399e8a5949c2a10"
     },
-    "/shared/charlie/taylor-app2app/results/100m/taylor/ruler-shards/niah_single_3/__shared__charlie__taylor-app2app__checkpoints__taylor__stage2__final/results_2026-09-03T18-12-49.360951.json": {
+    "<app2app-root>/results/100m/taylor/ruler-shards/niah_single_3/__app2app-root__checkpoints__taylor__stage2__final/results_2026-09-03T18-12-49.360951.json": {
       "bytes": 12040,
       "sha256": "e9eb75366509af943a55fb00cbdaff29127ee95c4daf3fbd00cc3bd081a1135e"
     },
-    "/shared/charlie/taylor-app2app/results/100m/taylor/ruler-shards/ruler_cwe/__shared__charlie__taylor-app2app__checkpoints__taylor__stage2__final/results_2026-09-03T18-09-11.719757.json": {
+    "<app2app-root>/results/100m/taylor/ruler-shards/ruler_cwe/__app2app-root__checkpoints__taylor__stage2__final/results_2026-09-03T18-09-11.719757.json": {
       "bytes": 11911,
       "sha256": "a527a2bae18e589a009f8e6f3581cfcc600f897ad2a56fcb1ec834e29615a1b0"
     },
-    "/shared/charlie/taylor-app2app/results/100m/taylor/ruler-shards/ruler_fwe/__shared__charlie__taylor-app2app__checkpoints__taylor__stage2__final/results_2026-09-03T17-45-40.230825.json": {
+    "<app2app-root>/results/100m/taylor/ruler-shards/ruler_fwe/__app2app-root__checkpoints__taylor__stage2__final/results_2026-09-03T17-45-40.230825.json": {
       "bytes": 11895,
       "sha256": "f5dff5a30887bcda1699022a00597cd6e2906b34154aeda0bf6ac175b3c8fdef"
     },
-    "/shared/charlie/taylor-app2app/results/100m/taylor/ruler-shards/ruler_qa_hotpot/__shared__charlie__taylor-app2app__checkpoints__taylor__stage2__final/results_2026-09-03T17-39-32.396773.json": {
+    "<app2app-root>/results/100m/taylor/ruler-shards/ruler_qa_hotpot/__app2app-root__checkpoints__taylor__stage2__final/results_2026-09-03T17-39-32.396773.json": {
       "bytes": 11623,
       "sha256": "2cca9f0dcb5f7119f4379701a5184575a5dc7c5f76f2d86bc4ea245f7f62346a"
     },
-    "/shared/charlie/taylor-app2app/results/100m/taylor/ruler-shards/ruler_qa_squad/__shared__charlie__taylor-app2app__checkpoints__taylor__stage2__final/results_2026-09-03T17-39-08.057668.json": {
+    "<app2app-root>/results/100m/taylor/ruler-shards/ruler_qa_squad/__app2app-root__checkpoints__taylor__stage2__final/results_2026-09-03T17-39-08.057668.json": {
       "bytes": 11624,
       "sha256": "92c0ac68da5673bf06c8530dcfca125ec1c5bcbd9fb8a4264516ad57379d3311"
     },
-    "/shared/charlie/taylor-app2app/results/100m/taylor/ruler-shards/ruler_vt/__shared__charlie__taylor-app2app__checkpoints__taylor__stage2__final/results_2026-09-03T17-38-52.126631.json": {
+    "<app2app-root>/results/100m/taylor/ruler-shards/ruler_vt/__app2app-root__checkpoints__taylor__stage2__final/results_2026-09-03T17-38-52.126631.json": {
       "bytes": 11935,
       "sha256": "d06d77befc4e96f58a99818a7e4ea0fc075254e20e282ce5fdc2c73da75df0bf"
     }
