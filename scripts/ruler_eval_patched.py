@@ -42,10 +42,31 @@ _HOTPOT_PINNED = (
 )
 
 
+_URL_CACHE = os.environ.get("RULER_URL_CACHE")
+
+
 def _requests_get_with_ruler_mirror(url, *args, **kwargs):
     if url == _HOTPOT_OLD:
         url = _HOTPOT_PINNED
-    return _orig_requests_get(url, *args, **kwargs)
+    if not (_URL_CACHE and url.endswith(".json")):
+        return _orig_requests_get(url, *args, **kwargs)
+    import hashlib
+    path = os.path.join(_URL_CACHE, hashlib.sha1(url.encode()).hexdigest() + ".json")
+    if os.path.exists(path):
+        response = requests.models.Response()
+        response.status_code = 200
+        response.url = url
+        with open(path, "rb") as handle:
+            response._content = handle.read()
+        return response
+    response = _orig_requests_get(url, *args, **kwargs)
+    if response.status_code == 200:
+        os.makedirs(_URL_CACHE, exist_ok=True)
+        tmp = f"{path}.{os.getpid()}"
+        with open(tmp, "wb") as handle:
+            handle.write(response.content)
+        os.replace(tmp, path)
+    return response
 
 
 requests.get = _requests_get_with_ruler_mirror

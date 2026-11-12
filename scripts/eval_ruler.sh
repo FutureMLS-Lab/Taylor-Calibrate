@@ -2,7 +2,10 @@
 set -euo pipefail
 
 usage() {
-    echo "Usage: $0 <model_path> [--gpus GPU_IDS] [--seq_lengths '4096,8192,16384'] [--batch_size BS] [--output_dir DIR]"
+    echo "Usage: $0 <model_path> [--gpus GPU_IDS] [--seq_lengths '4096,8192,16384'] [--batch_size BS] [--output_dir DIR] [--limit N] [--unpatched]"
+    echo ""
+    echo "Runs scripts/ruler_eval_patched.py (the evaluator behind the paper's RULER numbers);"
+    echo "--unpatched uses eval/harness.py instead."
     echo ""
     echo "RULER subtasks: ruler_cwe, ruler_fwe, ruler_qa_hotpot, ruler_qa_squad, ruler_vt"
     echo "  cwe       : Common Words Extraction"
@@ -28,6 +31,8 @@ SEQ_LENGTHS="4096"
 BATCH_SIZE="1"
 OUTPUT_DIR=""
 RULER_TASKS="ruler"
+RULER_EVAL="scripts/ruler_eval_patched.py"
+LIMIT_ARGS=()
 
 while [[ $# -gt 0 ]]; do
     case "$1" in
@@ -36,6 +41,8 @@ while [[ $# -gt 0 ]]; do
         --batch_size)  BATCH_SIZE="$2"; shift 2 ;;
         --output_dir)  OUTPUT_DIR="$2"; shift 2 ;;
         --tasks)       RULER_TASKS="$2"; shift 2 ;;
+        --limit)       LIMIT_ARGS=(--limit "$2"); shift 2 ;;
+        --unpatched)   RULER_EVAL="eval/harness.py"; shift ;;
         *) echo "Unknown arg: $1"; usage ;;
     esac
 done
@@ -52,7 +59,9 @@ for CONDA_BASE in "$HOME/miniconda3" "$HOME/anaconda3" /opt/conda; do
     break
   fi
 done
-conda activate taylor
+if command -v conda >/dev/null 2>&1 && conda env list 2>/dev/null | awk '{print $1}' | grep -qx "${CONDA_ENV:-taylor}"; then
+  conda activate "${CONDA_ENV:-taylor}"
+fi
 set -u
 
 MODEL_NAME=$(basename "$MODEL_PATH")
@@ -88,7 +97,7 @@ for LEN in "${LENGTHS[@]}"; do
     mkdir -p "$LEN_DIR"
 
     HF_ALLOW_CODE_EVAL=1 PYTHONPATH="$PROJECT_DIR/src:$PROJECT_DIR" CUDA_VISIBLE_DEVICES="${CUDA_VISIBLE_DEVICES:-$GPU_IDS}" \
-    python eval/harness.py \
+    python "$RULER_EVAL" \
         --model hf \
         --model_args "pretrained=${MODEL_PATH},dtype=bfloat16,trust_remote_code=True,max_length=${LEN}" \
         --tasks "$RULER_TASKS" \
@@ -97,6 +106,7 @@ for LEN in "${LENGTHS[@]}"; do
         --output_path "$LEN_DIR" \
         --metadata="{\"max_seq_lengths\":[${LEN}]}" \
         --seed 0 \
+        ${LIMIT_ARGS[@]+"${LIMIT_ARGS[@]}"} \
         2>&1 | tee "${LEN_DIR}/eval.log"
 
     echo "  Results for seq_len=$LEN saved to: $LEN_DIR"

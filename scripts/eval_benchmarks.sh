@@ -70,7 +70,9 @@ for CONDA_BASE in "$HOME/miniconda3" "$HOME/anaconda3" /opt/conda; do
     break
   fi
 done
-conda activate taylor
+if command -v conda >/dev/null 2>&1 && conda env list 2>/dev/null | awk '{print $1}' | grep -qx "${CONDA_ENV:-taylor}"; then
+  conda activate "${CONDA_ENV:-taylor}"
+fi
 set -u
 
 MODEL_NAME=$(basename "$MODEL_PATH")

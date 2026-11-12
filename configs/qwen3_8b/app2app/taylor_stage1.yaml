@@ -1,8 +1,8 @@
 data:
-  cache_dir: /shared/charlie/taylor-app2app/data/cleaned-alpaca-qwen3-8b-100m/stage1_context1000
+  cache_dir: ./data/cleaned-alpaca-qwen3-8b-100m/stage1_context1000
 
 teacher_model:
-  name: /shared/charlie/taylor-app2app/artifacts/teacher-qwen3-8b-fla
+  name: ./artifacts/teacher-qwen3-8b-fla
 
 student_model:
   name: gdn_v4
@@ -18,14 +18,14 @@ train:
   lr: 0.001
   lr_attn: 0.001
   max_grad_norm: 1.0
-  output_dir: /shared/charlie/taylor-app2app/checkpoints/taylor/stage1
+  output_dir: ./checkpoints/taylor/stage1
   gradient_checkpointing: false
   quantize_frozen: true
   save_steps: 1250
   save_total_limit: 1
   add_eos_token: false
   resume_from_checkpoint: null
-  student_init_ckpt: /shared/charlie/taylor-app2app/checkpoints/taylor/0b
-  deepspeed_config: /shared/charlie/taylor-app2app/repo/configs/deepspeed/stage_1.json
+  student_init_ckpt: ./checkpoints/taylor/0b
+  deepspeed_config: configs/deepspeed/stage_1.json
 
 stage: 1

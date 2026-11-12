@@ -48,11 +48,11 @@ def load_student(ckpt_path, device='cuda'):
 
 
 @torch.no_grad()
-def evaluate_ppl(model, tokenizer, seqlen=2048, device='cuda'):
+def evaluate_ppl(model, tokenizer, seqlen=2048, device='cuda', split='test'):
     ds = load_dataset(
         'wikitext',
         'wikitext-2-raw-v1',
-        split='test',
+        split=split,
         revision=WIKITEXT_REVISION,
     )
     text = "\n\n".join(ds['text'])
@@ -98,6 +98,8 @@ def main():
     parser.add_argument("--ckpt", required=True)
     parser.add_argument("--tokenizer", default=None)
     parser.add_argument("--seqlen", type=int, default=2048)
+    parser.add_argument("--split", choices=["test", "validation"], default="test",
+                        help="Calibration uses the first 1,024 test tokens; validation is disjoint.")
     parser.add_argument("--device", default="cuda:0")
     parser.add_argument("--output", default=None)
     args = parser.parse_args()
@@ -112,11 +114,11 @@ def main():
         model = AutoModelForCausalLM.from_pretrained(
             args.ckpt, torch_dtype=torch.bfloat16, trust_remote_code=True,
         ).to(args.device).eval()
-    print(f"Model loaded. Evaluating PPL on wikitext2 (seqlen={args.seqlen})...")
+    print(f"Model loaded. Evaluating PPL on wikitext2 {args.split} (seqlen={args.seqlen})...")
 
-    ppl = evaluate_ppl(model, tokenizer, args.seqlen, args.device)
+    ppl = evaluate_ppl(model, tokenizer, args.seqlen, args.device, args.split)
     print(f"\n{'='*50}")
-    print(f"Wikitext2 PPL = {ppl:.2f}")
+    print(f"Wikitext2 {args.split} PPL = {ppl:.2f}")
     print(f"{'='*50}")
     if args.output:
         os.makedirs(os.path.dirname(os.path.abspath(args.output)), exist_ok=True)
@@ -127,7 +129,7 @@ def main():
                     "dataset": "Salesforce/wikitext",
                     "dataset_revision": WIKITEXT_REVISION,
                     "config": "wikitext-2-raw-v1",
-                    "split": "test",
+                    "split": args.split,
                     "sequence_length": args.seqlen,
                     "perplexity": ppl,
                 },

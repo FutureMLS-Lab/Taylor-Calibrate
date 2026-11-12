@@ -7,7 +7,7 @@ import yaml
 
 import fla  # noqa: F401
 import torch
-from transformers import AutoConfig, AutoModelForCausalLM, AutoTokenizer
+from transformers import AutoConfig, AutoModelForCausalLM, AutoTokenizer, set_seed
 
 from distill_model.config_distilled_student import StudentConfig
 from distill_model.modeling_distilled_student import StudentForCausalLM
@@ -90,8 +90,11 @@ def main():
     parser = argparse.ArgumentParser(description="Initialize a student/hybrid checkpoint from a converted teacher without training.")
     parser.add_argument("--cfg", required=True, help="Path to stage1/stage2 yaml config.")
     parser.add_argument("--output", default=None, help="Where to save the initialized HF checkpoint.")
+    parser.add_argument("--seed", type=int, default=None)
     args = parser.parse_args()
 
+    if args.seed is not None:
+        set_seed(args.seed)
     cfg = parse_config(args.cfg)
     output_dir = args.output or os.path.join(cfg["train"]["output_dir"], "init-from-teacher")
     os.makedirs(output_dir, exist_ok=True)
@@ -106,6 +109,7 @@ def main():
             {
                 "method": cfg["student_model"]["name"],
                 "strategy": "projection_copy",
+                "seed": args.seed,
                 "recovery_training_tokens": 0,
                 "calibration": {
                     "unique_tokens": 0,

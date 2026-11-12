@@ -19,6 +19,7 @@ Variants:
   --strategy zero_calibrate  : zero g_proj + calibrated A_log/dt_bias/b_proj
   --strategy small_gate      : g_proj *= 0.02 (tiny non-zero for immediate gradients)
   --strategy calibrate_gproj : per-layer gradient descent on g_proj to match teacher attn output
+  --strategy zero_gate_align : zero g_proj, then the same local alignment as alignment_only
 """
 
 import argparse
@@ -30,7 +31,7 @@ import yaml
 
 import fla  # noqa: F401
 import torch
-from transformers import AutoConfig, AutoModelForCausalLM, AutoTokenizer
+from transformers import AutoConfig, AutoModelForCausalLM, AutoTokenizer, set_seed
 
 from distill_model.config_distilled_student import StudentConfig
 from distill_model.modeling_distilled_student import StudentForCausalLM
@@ -52,9 +53,26 @@ STRATEGIES = [
     "layer_distill",
     "taylor_calibrate",
     "alignment_only",
+    "rms_ols",
+    "output_only",
+    "zero_gate_align",
 ]
 
 WIKITEXT_REVISION = "b08601e04326c79dfdd32d625aee71d232d685c3"
+
+STAT_PERTURBATIONS = ["none", "shuffle", "const_hl", "const_beta"]
+
+# Controlled-experiment switches; main() and scripts/fidelity_control.py set them.
+CALIB_OPTIONS = {
+    "seqlen": None,
+    "num_samples": None,
+    "stat_perturb": "none",
+    "const_half_life": 71.0,
+    "perturb_seed": 0,
+    "skip_gates": False,
+    "skip_ols": False,
+}
+DEFAULT_CALIB_OPTIONS = dict(CALIB_OPTIONS)
 
 
 def apply_zero_gate(student, keep_layers):
@@ -181,6 +199,8 @@ def apply_zero_calibrate(student, keep_layers, hf_model, tokenizer, device):
 
 def _get_calibration_data(tokenizer, device, seqlen=256, num_samples=4):
     from datasets import load_dataset
+    seqlen = CALIB_OPTIONS["seqlen"] or seqlen
+    num_samples = CALIB_OPTIONS["num_samples"] or num_samples
     ds = load_dataset(
         "wikitext",
         "wikitext-2-raw-v1",
@@ -676,6 +696,14 @@ def _calibrate_gates_inplace(student, hf_model, t_out, cfg, device):
         ent = -(attn_w * lp * valid.float()).sum(-1)
         avg_entropy = (ent * m).sum(dim=(0, 2)) / cnt
 
+        perturb = CALIB_OPTIONS["stat_perturb"]
+        gen = torch.Generator().manual_seed(CALIB_OPTIONS["perturb_seed"] * 1009 + layer_idx)
+        if perturb == "shuffle":
+            perm = torch.randperm(avg_distance.numel(), generator=gen).to(avg_distance.device)
+            avg_distance = avg_distance[perm]
+        elif perturb == "const_hl":
+            avg_distance = torch.full_like(avg_distance, CALIB_OPTIONS["const_half_life"])
+
         sa.A_log.data.zero_()
         target_g = (math.log(2.0) / avg_distance).clamp(0.001, 5.0).clamp_min(1e-4)
         inv_dt = target_g + torch.log(-torch.expm1(-target_g))
@@ -684,6 +712,11 @@ def _calibrate_gates_inplace(student, hf_model, t_out, cfg, device):
         max_e, min_e = avg_entropy.max(), avg_entropy.min()
         ent_range = (max_e - min_e).clamp_min(1e-3)
         concentration = 1.0 - (avg_entropy - min_e) / ent_range
+        if perturb == "shuffle":
+            perm = torch.randperm(concentration.numel(), generator=gen).to(concentration.device)
+            concentration = concentration[perm]
+        elif perturb == "const_beta":
+            concentration = torch.full_like(concentration, 0.5)
         target_beta = 0.3 + 0.4 * concentration
         target_logit = torch.log(target_beta / (1.0 - target_beta))
         fan_in = sa.b_proj.weight.shape[1]
@@ -929,11 +962,20 @@ def _taylor_analytical_init(student, hf_model, t_out, cfg, device):
     )
     use_silu = not isinstance(first_gdn, GatedDeltaNetStudentV4NoSilu)
 
-    print(f"  [Taylor Step 1/3] Gate calibration from attention stats...")
-    _calibrate_gates_inplace(student, hf_model, t_out, cfg, device)
+    if CALIB_OPTIONS["skip_gates"]:
+        print(f"  [Taylor Step 1/3] Gate calibration skipped")
+    else:
+        print(f"  [Taylor Step 1/3] Gate calibration from attention stats "
+              f"(stat_perturb={CALIB_OPTIONS['stat_perturb']})...")
+        _calibrate_gates_inplace(student, hf_model, t_out, cfg, device)
 
-    print(f"\n  [Taylor Step 2/3] OLS sigma per head (scaling V, streaming)...")
-    for layer_idx in range(len(student.model.layers)):
+    if CALIB_OPTIONS["skip_ols"]:
+        print(f"\n  [Taylor Step 2/3] OLS sigma skipped")
+        ols_layers = []
+    else:
+        print(f"\n  [Taylor Step 2/3] OLS sigma per head (scaling V, streaming)...")
+        ols_layers = range(len(student.model.layers))
+    for layer_idx in ols_layers:
         if layer_idx in keep_layers:
             continue
         sa = student.model.layers[layer_idx].attn
@@ -1335,6 +1377,37 @@ def apply_alignment_only(student, hf_model, tokenizer, cfg, device,
     print("\n  Alignment-only gradient fine-tuning done.")
 
 
+def _apply_taylor_with(student, hf_model, tokenizer, cfg, device, **switches):
+    saved = {k: CALIB_OPTIONS[k] for k in switches}
+    CALIB_OPTIONS.update(switches)
+    try:
+        apply_taylor_calibrate(student, hf_model, tokenizer, cfg, device)
+    finally:
+        CALIB_OPTIONS.update(saved)
+
+
+def apply_rms_ols(student, hf_model, tokenizer, cfg, device):
+    """Taylor-Calibrate without decay/write-logit statistics: OLS + g_proj + Phase 2."""
+    _apply_taylor_with(student, hf_model, tokenizer, cfg, device, skip_gates=True)
+
+
+def apply_output_only(student, hf_model, tokenizer, cfg, device):
+    """Output-gate stabilization + Phase 2: no decay/write-logit statistics, no OLS."""
+    _apply_taylor_with(student, hf_model, tokenizer, cfg, device,
+                       skip_gates=True, skip_ols=True)
+
+
+def apply_zero_gate_align(student, hf_model, tokenizer, cfg, device):
+    """Zero-Gate start followed by the same local alignment as alignment_only."""
+    keep_layers = set(cfg["student_model"].get("keep_full_attention_layers", []))
+    apply_zero_gate(student, keep_layers)
+    apply_alignment_only(student, hf_model, tokenizer, cfg, device)
+
+
+LOCAL_ALIGNMENT_STRATEGIES = ("taylor_calibrate", "alignment_only", "rms_ols", "output_only",
+                              "zero_gate_align")
+
+
 def main():
     total_start = time.perf_counter()
     parser = argparse.ArgumentParser()
@@ -1342,11 +1415,33 @@ def main():
     parser.add_argument("--strategy", choices=STRATEGIES, default="zero_gate")
     parser.add_argument("--output", default=None)
     parser.add_argument("--hf-teacher", default="Qwen/Qwen2.5-1.5B-Instruct")
+    parser.add_argument("--seed", type=int, default=None)
+    parser.add_argument("--calib-seqlen", type=int, default=None)
+    parser.add_argument("--calib-samples", type=int, default=None)
+    parser.add_argument("--stat-perturb", choices=STAT_PERTURBATIONS, default="none")
+    parser.add_argument("--const-half-life", type=float, default=71.0)
     args = parser.parse_args()
+
+    if args.seed is not None:
+        set_seed(args.seed)
+        CALIB_OPTIONS["perturb_seed"] = args.seed
+    CALIB_OPTIONS.update(
+        seqlen=args.calib_seqlen,
+        num_samples=args.calib_samples,
+        stat_perturb=args.stat_perturb,
+        const_half_life=args.const_half_life,
+    )
+    calib_seqlen = args.calib_seqlen or 256
+    calib_samples = args.calib_samples or 4
 
     cfg = parse_config(args.cfg)
     suffix = f"init-{args.strategy.replace('_', '-')}"
-    output_dir = args.output or os.path.join(cfg["train"]["output_dir"], suffix)
+    init_ckpt = cfg["train"].get("student_init_ckpt")
+    if init_ckpt and str(init_ckpt) != "None":
+        default_dir = str(init_ckpt)
+    else:
+        default_dir = os.path.join(cfg["train"]["output_dir"], suffix)
+    output_dir = args.output or default_dir
     os.makedirs(output_dir, exist_ok=True)
 
     keep_layers = set(cfg["student_model"].get("keep_full_attention_layers", []))
@@ -1382,7 +1477,8 @@ def main():
     elif args.strategy in ("calibrate_gproj", "calibrate_gproj_reg", "calibrate_gates_gproj",
                            "gproj_from_v", "gproj_from_o", "calib_gates_gproj_v",
                            "ols_calibrate", "taylor_calibrate_init", "small_gate_calibrate",
-                           "layer_distill", "taylor_calibrate", "alignment_only"):
+                           "layer_distill", "taylor_calibrate", "alignment_only",
+                           "rms_ols", "output_only", "zero_gate_align"):
         student.cpu()
         torch.cuda.empty_cache()
         print(f"Loading HF teacher: {args.hf_teacher}")
@@ -1405,8 +1501,11 @@ def main():
             "layer_distill": apply_layer_distill,
             "taylor_calibrate": apply_taylor_calibrate,
             "alignment_only": apply_alignment_only,
+            "rms_ols": apply_rms_ols,
+            "output_only": apply_output_only,
+            "zero_gate_align": apply_zero_gate_align,
         }
-        if args.strategy not in ("taylor_calibrate", "alignment_only"):
+        if args.strategy not in LOCAL_ALIGNMENT_STRATEGIES:
             student.to(device)
         calibration_start = time.perf_counter()
         dispatch[args.strategy](student, hf_model, tokenizer_hf, cfg, device)
@@ -1420,7 +1519,7 @@ def main():
     tokenizer = AutoTokenizer.from_pretrained(cfg["teacher_model"]["name"])
     tokenizer.save_pretrained(output_dir)
     converted_layers = len(student.model.layers) - len(keep_layers)
-    local_steps = 300 if args.strategy == "taylor_calibrate" else 0
+    local_steps = 300 if args.strategy in LOCAL_ALIGNMENT_STRATEGIES else 0
     with open(os.path.join(output_dir, "initialization_manifest.json"), "w") as handle:
         json.dump(
             {
@@ -1431,9 +1530,11 @@ def main():
                     "dataset": "Salesforce/wikitext",
                     "revision": WIKITEXT_REVISION,
                     "split": "test",
-                    "unique_tokens": 4 * 256,
-                    "sequence_length": 256,
-                    "samples": 4,
+                    "unique_tokens": calib_samples * calib_seqlen,
+                    "sequence_length": calib_seqlen,
+                    "samples": calib_samples,
+                    "seed": args.seed,
+                    "stat_perturb": args.stat_perturb,
                     "local_steps_per_converted_layer": local_steps,
                     "converted_layers": converted_layers,
                     "total_local_steps": local_steps * converted_layers,
