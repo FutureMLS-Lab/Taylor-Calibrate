@@ -50,7 +50,7 @@ def load_student(ckpt_path, device='cuda'):
 @torch.no_grad()
 def evaluate_ppl(model, tokenizer, seqlen=2048, device='cuda', split='test'):
     ds = load_dataset(
-        'wikitext',
+        'Salesforce/wikitext',
         'wikitext-2-raw-v1',
         split=split,
         revision=WIKITEXT_REVISION,
@@ -112,7 +112,7 @@ def main():
         model = load_student(args.ckpt, args.device)
     else:
         model = AutoModelForCausalLM.from_pretrained(
-            args.ckpt, torch_dtype=torch.bfloat16, trust_remote_code=True,
+            args.ckpt, dtype=torch.bfloat16, trust_remote_code=True,
         ).to(args.device).eval()
     print(f"Model loaded. Evaluating PPL on wikitext2 {args.split} (seqlen={args.seqlen})...")
 

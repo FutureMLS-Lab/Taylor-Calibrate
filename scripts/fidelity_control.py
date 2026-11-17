@@ -57,7 +57,7 @@ METRICS = ("mse", "cosine", "kl", "ppl")
 def validation_ids(tokenizer):
     from datasets import load_dataset
     ds = load_dataset(
-        "wikitext", "wikitext-2-raw-v1", split="validation",
+        "Salesforce/wikitext", "wikitext-2-raw-v1", split="validation",
         revision=icc.WIKITEXT_REVISION,
     )
     text = "\n\n".join(t for t in ds["text"] if t.strip())
@@ -168,7 +168,7 @@ def main():
     if tokenizer.pad_token is None:
         tokenizer.pad_token = tokenizer.eos_token
     hf_model = AutoModelForCausalLM.from_pretrained(
-        args.hf_teacher, torch_dtype=torch.bfloat16, attn_implementation="eager",
+        args.hf_teacher, dtype=torch.bfloat16, attn_implementation="eager",
     ).to(device).eval()
     keep = [i for i in range(hf_model.config.num_hidden_layers) if i not in converted]
     cfg = {

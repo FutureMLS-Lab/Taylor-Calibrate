@@ -182,7 +182,7 @@ def build_stage1_model(cfg):
             setattr(base_config, key, cfg.student_model[key])
 
     model = AutoModelForCausalLM.from_pretrained(
-        teacher_name, config=base_config, torch_dtype=torch.bfloat16
+        teacher_name, config=base_config, dtype=torch.bfloat16
     )
 
     student_attn_class = get_student_attention_class(cfg.student_model.name)
@@ -363,7 +363,7 @@ def main(cfg):
         train_dataset=train_loader.dataset,
         eval_dataset=None,
         optimizers=(optimizer, None),
-        tokenizer=tokenizer,
+        processing_class=tokenizer,
     )
 
     resume_ckpt = cfg.train.get('resume_from_checkpoint', None)

@@ -139,7 +139,7 @@ def main():
             print(f"  {k}")
 
         print(f"\nLoading teacher to fill missing/mismatched keys...")
-        teacher = AutoModelForCausalLM.from_pretrained(args.teacher, torch_dtype=torch.bfloat16)
+        teacher = AutoModelForCausalLM.from_pretrained(args.teacher, dtype=torch.bfloat16)
         teacher_sd = teacher.state_dict()
 
         fill = {}
@@ -155,7 +155,7 @@ def main():
         del teacher
 
     student_model.tie_weights()
-    student_model.save_pretrained(output_dir, safe_serialization=True)
+    student_model.save_pretrained(output_dir)
 
     tokenizer = AutoTokenizer.from_pretrained(ckpt_dir)
     tokenizer.save_pretrained(output_dir)

@@ -40,7 +40,7 @@ from transformers import AutoModelForCausalLM, AutoTokenizer
 
 @torch.no_grad()
 def evaluate_ppl(model, tokenizer, seqlen=2048, device="cuda"):
-    ds = load_dataset("wikitext", "wikitext-2-raw-v1", split="test",
+    ds = load_dataset("Salesforce/wikitext", "wikitext-2-raw-v1", split="test",
                       cache_dir=os.environ.get("HF_DATASETS_CACHE", None))
     text = "\n\n".join(ds["text"])
     enc = tokenizer(text, return_tensors="pt")
@@ -163,7 +163,7 @@ def main():
 
     print(f"Loading teacher: {args.model}")
     model = AutoModelForCausalLM.from_pretrained(
-        args.model, torch_dtype=torch.bfloat16,
+        args.model, dtype=torch.bfloat16,
     ).to(device).eval()
     tokenizer = AutoTokenizer.from_pretrained(args.model)
 

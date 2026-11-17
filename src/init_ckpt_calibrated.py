@@ -132,7 +132,7 @@ def apply_zero_calibrate(student, keep_layers, hf_model, tokenizer, device):
         if hasattr(attn, 'g_proj'):
             attn.g_proj.weight.data.zero_()
 
-    ds = load_dataset("wikitext", "wikitext-2-raw-v1", split="test")
+    ds = load_dataset("Salesforce/wikitext", "wikitext-2-raw-v1", split="test")
     full_text = "\n\n".join(t for t in ds["text"] if t.strip())
     enc = tokenizer(full_text, return_tensors="pt", truncation=False)
     all_ids = enc["input_ids"][0]
@@ -202,7 +202,7 @@ def _get_calibration_data(tokenizer, device, seqlen=256, num_samples=4):
     seqlen = CALIB_OPTIONS["seqlen"] or seqlen
     num_samples = CALIB_OPTIONS["num_samples"] or num_samples
     ds = load_dataset(
-        "wikitext",
+        "Salesforce/wikitext",
         "wikitext-2-raw-v1",
         split="test",
         revision=WIKITEXT_REVISION,
@@ -1465,7 +1465,7 @@ def main():
     elif args.strategy == "zero_calibrate":
         print(f"Loading HF teacher: {args.hf_teacher}")
         hf_model = AutoModelForCausalLM.from_pretrained(
-            args.hf_teacher, torch_dtype=torch.bfloat16, attn_implementation="eager",
+            args.hf_teacher, dtype=torch.bfloat16, attn_implementation="eager",
         ).to(device).eval()
         tokenizer_hf = AutoTokenizer.from_pretrained(args.hf_teacher)
         if tokenizer_hf.pad_token is None:
@@ -1483,7 +1483,7 @@ def main():
         torch.cuda.empty_cache()
         print(f"Loading HF teacher: {args.hf_teacher}")
         hf_model = AutoModelForCausalLM.from_pretrained(
-            args.hf_teacher, torch_dtype=torch.bfloat16, attn_implementation="eager",
+            args.hf_teacher, dtype=torch.bfloat16, attn_implementation="eager",
         ).to(device).eval()
         tokenizer_hf = AutoTokenizer.from_pretrained(args.hf_teacher)
         if tokenizer_hf.pad_token is None:

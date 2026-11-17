@@ -160,7 +160,7 @@ def build_teacher(cfg):
     logger.info(f"Loading teacher from: {cfg.teacher_model.name}")
 
     teacher = AutoModelForCausalLM.from_pretrained(
-        cfg.teacher_model.name, torch_dtype=torch.bfloat16
+        cfg.teacher_model.name, dtype=torch.bfloat16
     )
     teacher.config.use_cache = False
     teacher.eval()
@@ -281,7 +281,7 @@ def main(cfg):
         train_dataset=train_loader.dataset,
         eval_dataset=None,
         optimizers=(optimizer, None),
-        tokenizer=tokenizer,
+        processing_class=tokenizer,
     )
 
     resume_ckpt = cfg.train.get('resume_from_checkpoint', None)

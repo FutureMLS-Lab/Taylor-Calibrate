@@ -90,7 +90,7 @@ def _register_student_model_if_needed(pretrained: str):
 def _load_model_and_tokenizer(args):
     dtype = _dtype_from_name(args.dtype)
     common_kwargs = {
-        "torch_dtype": dtype,
+        "dtype": dtype,
         "trust_remote_code": args.trust_remote_code,
     }
 

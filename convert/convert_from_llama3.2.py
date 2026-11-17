@@ -57,7 +57,7 @@ def convert(
     precision: str = 'float32'
 ):
     AutoTokenizer.from_pretrained(llama).save_pretrained(output)
-    llama = AutoModelForCausalLM.from_pretrained(llama, torch_dtype=precision)
+    llama = AutoModelForCausalLM.from_pretrained(llama, dtype=precision)
     print(f"Loading Llama ...\n{llama}")
 
     # Check if config is a directory with config.json, otherwise use config_dict
@@ -68,7 +68,7 @@ def convert(
     else:
         raise ValueError(f"Config '{config}' is neither a known key nor a directory with config.json")
 
-    config_obj.torch_dtype = precision
+    config_obj.dtype = precision
     model = AutoModelForCausalLM.from_config(config_obj)
     if precision in ['float16', 'fp16']:
         model = model.to(torch.float16)
@@ -191,7 +191,8 @@ def convert(
         print("llama.model.lm_head.weight -> model.lm_head.weight")
         model.lm_head.weight.data[:vocab_size].copy_(llama.lm_head.weight[:vocab_size])
         torch.testing.assert_close(model.lm_head.weight[:vocab_size], llama.lm_head.weight[:vocab_size])
-    model.config.rope_theta = llama.config.rope_theta
+    # transformers v5 keeps rope_theta in config.rope_parameters.
+    model.config.rope_theta = llama.config.rope_parameters["rope_theta"]
 
     print(f"Saving converted model to {output} ...\n{model}")
     model.save_pretrained(output)

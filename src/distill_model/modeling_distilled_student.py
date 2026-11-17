@@ -20,7 +20,7 @@ import importlib
 
 if torch.cuda.is_available():
     from fla.layers.attn import Attention as _FLAAttention
-    from fla.models.utils import Cache
+    from fla.models.utils import Cache, FLAGenerationMixin
     from fla.modules import FusedCrossEntropyLoss, FusedLinearCrossEntropyLoss
     from fla.modules import RMSNorm
     from fla.modules.mlp import SwiGLULinear, swiglu
@@ -50,6 +50,9 @@ if torch.cuda.is_available():
 
 if TYPE_CHECKING:
     from transformers.processing_utils import Unpack
+
+# FLA's mixin keeps generation on FLA's recurrent cache instead of a default DynamicCache.
+_StudentGenerationMixin = FLAGenerationMixin if torch.cuda.is_available() else GenerationMixin
 
 logger = logging.get_logger(__name__)
 
@@ -387,9 +390,9 @@ class StudentModel(StudentPreTrainedModel):
         )
 
 
-class StudentForCausalLM(StudentPreTrainedModel, GenerationMixin):
+class StudentForCausalLM(StudentPreTrainedModel, _StudentGenerationMixin):
 
-    _tied_weights_keys = ["lm_head.weight"]
+    _tied_weights_keys = {"lm_head.weight": "model.embeddings.weight"}
 
     def __init__(self, config, **kwargs):
         super().__init__(config)

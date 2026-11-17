@@ -92,7 +92,7 @@ def main():
 
     # Model
     model = AutoModelForCausalLM.from_pretrained(
-        cfg.train.resume_ckpt, torch_dtype=torch.bfloat16
+        cfg.train.resume_ckpt, dtype=torch.bfloat16
     )
     model.gradient_checkpointing_enable()
 
@@ -143,7 +143,7 @@ def main():
         model=model,
         args=training_args,
         train_dataset=ds,
-        tokenizer=tokenizer,
+        processing_class=tokenizer,
         data_collator=DataCollatorForSeq2Seq(tokenizer, padding="max_length",
                                              max_length=cfg.train.train_seq_len,
                                              label_pad_token_id=-100),

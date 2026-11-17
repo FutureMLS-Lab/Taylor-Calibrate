@@ -136,11 +136,11 @@ def main():
     def load(kind):
         if kind == "teacher":
             return AutoModelForCausalLM.from_pretrained(
-                args.teacher, torch_dtype=torch.bfloat16,
+                args.teacher, dtype=torch.bfloat16,
                 attn_implementation=args.attn_implementation,
             )
         if args.student:
-            return AutoModelForCausalLM.from_pretrained(args.student, torch_dtype=torch.bfloat16)
+            return AutoModelForCausalLM.from_pretrained(args.student, dtype=torch.bfloat16)
         keep = [int(x) for x in args.keep.split(",")]
         return build_student_from_teacher({
             "teacher_model": {"name": args.student_fla_teacher},

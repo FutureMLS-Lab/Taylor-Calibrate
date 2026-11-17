@@ -55,9 +55,9 @@ def build_student_from_teacher(cfg):
 
     dtype = torch.bfloat16
     teacher = AutoModelForCausalLM.from_pretrained(
-        teacher_name, torch_dtype=dtype, low_cpu_mem_usage=True,
+        teacher_name, dtype=dtype, low_cpu_mem_usage=True,
     )
-    student = AutoModelForCausalLM.from_config(student_config, torch_dtype=dtype)
+    student = AutoModelForCausalLM.from_config(student_config, dtype=dtype)
 
     student.model.embeddings.weight.data.copy_(teacher.model.embeddings.weight.data)
     if hasattr(student.model, "norm") and hasattr(teacher.model, "norm"):

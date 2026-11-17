@@ -50,7 +50,7 @@ NEEDS_HF_TEACHER = {"taylor_calibrate_init", "taylor_calibrate"}
 
 
 def get_calibration_data(tokenizer, device, seqlen=256, num_samples=8):
-    ds = load_dataset("wikitext", "wikitext-2-raw-v1", split="train")
+    ds = load_dataset("Salesforce/wikitext", "wikitext-2-raw-v1", split="train")
     text = "\n\n".join([t for t in ds["text"] if len(t) > 100])
     enc = tokenizer(text, return_tensors="pt")
     ids = enc.input_ids[:, : seqlen * num_samples].view(num_samples, seqlen).to(device)
@@ -153,7 +153,7 @@ def apply_taylor_calibrate_fast(student, hf_model, tokenizer, cfg, device,
 
 @torch.no_grad()
 def evaluate_ppl_fast(model, tokenizer, seqlen=2048, device='cuda'):
-    ds = load_dataset('wikitext', 'wikitext-2-raw-v1', split='test')
+    ds = load_dataset('Salesforce/wikitext', 'wikitext-2-raw-v1', split='test')
     text = "\n\n".join(ds['text'])
     encodings = tokenizer(text, return_tensors='pt')
     input_ids = encodings.input_ids.to(device)
@@ -200,7 +200,7 @@ def probe_layer(layer_idx, cfg, hf_teacher_name, device, strategy="taylor_calibr
 
     if strategy in NEEDS_HF_TEACHER:
         hf_model = AutoModelForCausalLM.from_pretrained(
-            hf_teacher_name, torch_dtype=torch.bfloat16, attn_implementation="eager",
+            hf_teacher_name, dtype=torch.bfloat16, attn_implementation="eager",
         ).to(device).eval()
 
     if strategy == "baseline":
